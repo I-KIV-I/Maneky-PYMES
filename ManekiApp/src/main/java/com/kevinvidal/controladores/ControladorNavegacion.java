@@ -24,6 +24,9 @@ public class ControladorNavegacion {
 	}
 	@PostMapping("crear_pyme")
 	public String procesarFormularioTemporal(HttpSession sesion) {
+		
+		//agregar logica para guardar datos temporales en sesion
+		
 		return "redirect:/guiaCrearPyme";
 	}
 	
@@ -31,6 +34,8 @@ public class ControladorNavegacion {
 	public String desplegarInformacionTramites(HttpSession sesion) {
 		return "InfoTramites.jsp";
 	}
+
+	
 	@GetMapping("/perfil")
 	public String desplegarInformacionUsuario() {
 		return "PerfilUsuario.jsp";

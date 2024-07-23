@@ -26,7 +26,7 @@ public class Pyme {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String run;
+	private String rol;
 	
 	private String nombre;
 	
@@ -86,13 +86,13 @@ public class Pyme {
 	}
 
 
-	public String getRun() {
-		return run;
+	public String getRol() {
+		return rol;
 	}
 
 
-	public void setRun(String run) {
-		this.run = run;
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 
 
