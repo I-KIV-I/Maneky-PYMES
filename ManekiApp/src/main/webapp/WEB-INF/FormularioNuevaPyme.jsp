@@ -8,19 +8,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Makeni Pymes</title>
+<title>Maneki Pymes Inscripcion</title>
 </head>
 <body>
-	<header>
-		<h1>Maneki Pymes</h1> 
-		<div>
-		<a href="/maneki_pyme/inicio">Volver</a>
-		</div>
-	</header>
-	<main>
-		<h2>¿Ya Tienes una Pyme?</h2>
-		<a href="/inscripcion_pyme">Si</a>
-		<a href="/crear_pyme">No</a>
-	</main>
+	
 </body>
 </html>
