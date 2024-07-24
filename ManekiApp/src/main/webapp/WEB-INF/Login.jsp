@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Log</title>
 </head>
 <body>
 	<div class="contenedor">
