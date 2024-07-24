@@ -3,21 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page isErrorPage="true" %>
+<link rel="stylesheet" href="/css/Style.css">
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/bootstrap.css">
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-    </div>
-  </nav>
-</div>
 	<header>
 		<h1>Maneki Pymes</h1><!-- poner en estilo wapo -->
 		<div>
