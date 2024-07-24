@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login modifique todo</title>
+<title>Login</title>
 </head>
 <body>
 	<div class="contenedor">
