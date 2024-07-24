@@ -8,11 +8,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<<<<<<< HEAD
+
 <title>Login</title>
-=======
-<title>Logon</title>
->>>>>>> 16a067ff044d41273eb8337aff1437451a72a9fa
+
 </head>
 <body>
 	<div class="contenedor">
