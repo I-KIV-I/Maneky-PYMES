@@ -25,4 +25,9 @@ public class ControladorPyme {
 				
 		return "redirect:/perfil";
 	}
+	
+	@PostMapping("/editar_pyme")
+	public String procesasEdicionPyme(@Valid @ModelAttribute("edicioPyme") Pyme editarPyme){
+		return "FormularioEdicionPyme.jsp";
+	}
 }
