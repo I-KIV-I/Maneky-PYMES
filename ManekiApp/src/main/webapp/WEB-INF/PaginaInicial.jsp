@@ -14,7 +14,6 @@
 
 <!-- navbar -->
 <div class="container">
-<div class="container">
   <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-body" 
   data-bs-theme="dark">
     <div class="container-fluid">
@@ -30,9 +29,6 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/login">Ingresa!</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/login_prov">Registrate</a>
-        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -41,41 +37,60 @@
     </div>
     </div>
   </nav>
-</div>
 <!-- fin navbar -->
 
 
 <!-- Carrusel -->
+<div class="h-50">
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/img/finanzas.jpg" class="d-block w-100" alt="Finanzas">
+      <img src="/img/pexels-leeloothefirst-8962451.jpg" class="d-block w-100" alt="Finanzas">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Ten pleno control sobre tus finanzas</h5>
+        <p>Aprende a menajar tu negocio con nuestras herramientas de finanzas y 
+        asesorias sobre cómo llevar tu negocio</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="/img/empezar.jpg" class="d-block w-100" alt="Foro">
+      <img src="/img/pexels-fauxels-3184418.jpg" class="d-block w-100" alt="Foro">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Comparte y recibe ayuda!</h5>
+        <p>Nuestro foro está dedicado para que todos los emprendedores compartan entre si y 
+        tengan mejor acceso a ayudas financieras  y asesorías de sus propios rubros</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="/img/feria.jpg" class="d-block w-100" alt="Redes de apoyo">
+      <img src="/img/empezar.jpg" class="d-block w-100" alt="Empezar pyme">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>¿Por dónde empiezo?</h5>
+        <p>Registrate para poder recibir ayuda gratuita sobre cómo iniciar tu PYME</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/img/feria.jpg" class="d-block w-100" alt="Eventos">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Participa en Actividades que impulsen tu negocio</h5>
+        <p>En el foro para empresarios podrás encontrar todos los eventos relaciónados a tu 
+        empresa que están ocurriendo en el país, ¡registrate en ellos para participar!</p>
+      </div>
     </div>
         <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="Cursos">
+      <img src="/img/proveedores.jpg" class="d-block w-100" alt="Proveedores">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Contacta fácilmente con proveedores</h5>
+        <p>Te ofrecemos una lista de los mejores proveedores que trabajan con tu rubro, 
+        para que se te sea más fácil competir con tus productos en el mercado </p>
+      </div>
     </div>
         <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="Eventos">
+      <img src="/img/cursos.jpg" class="d-block w-100" alt="Cursos">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>¡Accede a cursos gratuitos!</h5>
+        <p>Te ofrecemos una lista de cursos gratuitos que puedes tomar para que aprendas 
+        más sobre tu negocio y te especialices en el</p>
+      </div>
     </div>
-        <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="Noticias">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="Consejos">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="Inventario">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="Proveedores">
-    </div>
-  </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -84,12 +99,8 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-	<main>
-		<div>
-			<h1>Cuadro con noticias de la pagina</h1>
-		</div>
-	</main>
+  </div>
+  </div>
 	<footer>
 		<h5>informacion legal de la organizacion "Maneki Pymes"</h5>
 		<h5>contactos grupo "Maneki Pymes"</h5>
