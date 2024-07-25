@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <link rel="stylesheet" href="/css/bootstrap.css">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
