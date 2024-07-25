@@ -1,0 +1,6 @@
+git pull
+git add .
+git commit -m "mensaje a enviar"
+git push -u origin main
+
+git state
