@@ -26,6 +26,9 @@ replay_pid*
 # 
 /.metadata/
 
-#base de datos y variables de entornos
-application.properties
+#base de datos
+*.properties
+
+#variables de entornos
+*.xml
 
