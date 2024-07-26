@@ -1,0 +1,148 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page isErrorPage="true" %>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/home.css">
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary mainbackground border-bottom border-body" 
+  data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/maneki_pyme/inicio">
+      <img src="/img/logo2.jpeg" alt="Logo" width="60" height="50" class="d-inline-block align-text-center"> 
+      Maneki Pymes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active align-text-center" aria-current="page" href="/login">Ingresa</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  
+  
+<div class="main-content">
+  <div class="concept concept-one">
+   	<div class="hover hover-1"></div>
+        <div class="hover hover-2"></div>
+        <div class="hover hover-3"></div>
+        <div class="hover hover-4"></div>
+        <div class="hover hover-5"></div>
+        <div class="hover hover-6"></div>
+        <div class="hover hover-7"></div>
+        <div class="hover hover-8"></div>
+        <div class="hover hover-9"></div>
+    <h1 class="hover-1">Inicia tu Pyme</h1>
+  </div>
+  <div class="concept concept-two">
+  <div class="hover">
+            <h1>Unete</h1>
+        </div>
+        <div class="hover">
+            <h1></h1>
+        </div>
+        <div class="hover">
+            <h1>al</h1>
+        </div>
+        <div class="hover">
+            <h1></h1>
+        </div>
+        <div class="hover">
+            <h1>Foro</h1>
+        </div>
+        <div class="hover">
+            <h1></h1>
+        </div>
+  </div>
+  <div class="concept concept-three">
+    <div class="word">
+      <div class="hover">
+      <div></div>
+        <div></div>
+        <h1>Controla tus Finanzas</h1>
+      </div>
+      <!-- Similar blocks for 'A', 'N', 'Y', 'O', 'N' -->
+    </div>
+  </div>
+  <div class="concept concept-four">
+    <h1>Mantente al día</h1>
+  </div>
+  <div class="concept concept-five">
+  <h1 class="word">
+      <span class="char">E</span>
+      <span class="char">S</span>
+      <span class="char">P</span>
+      <span class="char">E</span>
+      <span class="char">C</span>
+      <span class="char">I</span>
+      <span class="char">A</span>
+      <span class="char">L</span>
+      <span class="char">I</span>
+      <span class="char">Z</span>
+      <span class="char">A</span>
+      <span class="char">T</span>
+      <span class="char">E</span>
+      <!-- Similar spans for 'N', 'T', 'A', 'I', 'N', 'S' -->
+    </h1>
+  </div>
+  <div class="concept concept-six">
+    <h1 class="word">
+      <span class="char">P</span>
+      <span class="char">a</span>
+      <span class="char">r</span>
+      <span class="char">t</span>
+      <span class="char">i</span>
+      <span class="char">c</span>
+      <span class="char">i</span>
+      <span class="char">p</span>
+      <span class="char">a</span>
+    </h1>
+  </div>
+  <div class="concept concept-seven">
+    <h1>fries</h1>
+  </div>
+  <div class="concept concept-eight">
+    <h1 class="word">
+      <div class="char" data-content="F">F</div>
+      <div class="char" data-content="A">A</div>
+      <div class="char" data-content="L">L</div>
+      <div class="char" data-content="L">L</div>
+      <div class="char" data-content="S">S</div>
+    </h1>
+  </div>
+</div>
+<footer>
+  <a href="/maneki_pyme/about" target="_blank">
+  </a>
+  <a href="/maneki_pyme/donations" target="_blank">
+  </a>
+  <a href="/maneki_pyme/login" target="_blank">
+  </a>
+</footer>
+
+	<div>
+	<ul class="nav justify-content-center bg-dark bg-opacity-50">
+	<li class="nav-item">
+    <a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#">Acerca de</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">Donaciones</a>
+  </li>
+</ul>
+	</div>
+</body>
+</html>
