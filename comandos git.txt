@@ -4,3 +4,10 @@ git commit -m "mensaje a enviar"
 git push -u origin main
 
 git state
+
+git init
+
+git config --global core.excludesfile .gitignore
+
+graficos -api IA chat gpt
+

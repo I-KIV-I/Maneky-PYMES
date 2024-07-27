@@ -3,6 +3,7 @@ package com.kevinvidal.controladores;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpSession;
 
@@ -22,10 +23,10 @@ public class ControladorNavegacion {
 	public String desplegarFormularioTemporal(HttpSession sesion) {
 		return"FormularioTemporal.jsp";
 	}
-	@PostMapping("crear_pyme")
+	@PostMapping("/crear_pyme")
 	public String procesarFormularioTemporal(HttpSession sesion) {
-		
-		//agregar logica para guardar datos temporales en sesion
+	
+	
 		
 		return "redirect:/guiaCrearPyme";
 	}

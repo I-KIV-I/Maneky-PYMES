@@ -61,7 +61,7 @@ public class ControladorUsuario{
 		sesion.setAttribute("nombreUsuario", nuevoUsuario.getNombre());
 		sesion.setAttribute("apellidoUsuario", nuevoUsuario.getApellido());
 		System.out.println(nuevoUsuario.getApellido());
-		return "redirect:/home";
+		return "redirect:/existenciaPyme";
 	}
 	
 	
