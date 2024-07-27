@@ -1,0 +1,8 @@
+@charset "ISO-8859-1";
+.backblack{
+	background-color: black;
+}
+.mainbackground{
+	background-color: rgb(153, 196, 177);
+  	background-size: cover;
+}
