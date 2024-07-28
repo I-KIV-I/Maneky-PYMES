@@ -44,7 +44,7 @@
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="genero">Sexo</form:label>
-								<form:select class="form-select" path="genero" label="Seleccione">
+								<form:select class="form-select text-center" path="genero" label="Seleccione">
 			                    	<form:option value="" label="Seleccione"/>
 			                    	<form:option value="Masculino" label="Masculino"/>
 			                    	<form:option value="Femenino" label="Femenino"/>
