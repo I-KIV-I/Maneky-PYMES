@@ -43,31 +43,38 @@ public class ControladorNavegacion {
 	}
 	
 	@GetMapping("/existenciaPyme")
-	public String desplegarConsultaPyme(Model model) {
-		List<Categoria> todasCategorias = servicioCategoria.obtenerTodos();
-		model.addAttribute("listaCategorias",todasCategorias);
-		
+	public String desplegarConsultaExistenciaPyme(HttpSession sesion) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		}
 		return "EleccionExistenciaEmpresa.jsp";	
 	}
 	
-	@GetMapping("/procesar/informacion/temporal")
-	public String desplegarFormularioTemporal(HttpSession sesion,
+	@GetMapping("/solicitud/informacion")
+	public String desplegarFormularioTemporal(Model model, HttpSession sesion,
 											  @ModelAttribute("formTemp")FormularioTemporal formTemp) {
-		sesion.setAttribute("categoriaPyme", formTemp);
-		sesion.setAttribute(null, formTemp);
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		}
+		List<Categoria> todasCategorias = servicioCategoria.obtenerTodos();
+		model.addAttribute("listaCategorias",todasCategorias);
+		
 		return"FormularioTemporal.jsp";
 	}
-	@PostMapping("/procesar/informacion/temporal")
-	public String procesarFormularioTemporal(HttpSession sesion) {
-		
-		////////
-		
-		
+	@PostMapping("/solicitud/informacion")
+	public String procesarFormularioTemporal(HttpSession sesion,
+											 @ModelAttribute("formTemp")FormularioTemporal formTemp) {
+		sesion.setAttribute("respuestasTemporales", formTemp);
 		return "redirect:/guiaCrearPyme";
 	}
 	
 	@GetMapping("/guiaCrearPyme")
 	public String desplegarInformacionTramites(HttpSession sesion) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		}
+		
+			
 		return "InfoTramites.jsp";
 	}
 	

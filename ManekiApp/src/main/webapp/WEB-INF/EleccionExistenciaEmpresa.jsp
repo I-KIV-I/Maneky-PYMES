@@ -12,15 +12,15 @@
 </head>
 <body>
 	<header>
-		<h1>Hola ${nombreUsuario } Maneki Pymes</h1> 
+		<h1>Maneki Pymes</h1> 
 		<div>
 		<a href="/maneki_pyme/inicio">Volver</a>
 		</div>
 	</header>
 	<main>
 		<h2>¿Ya Tienes una Pyme?</h2>
-		<a href="/inscripcion_pyme">Si</a>
-		<a href="/crear_pyme">No</a>
+		<a href="/inscripcion/pyme">Si</a>
+		<a href="/solicitud/informacion">No</a>
 	</main>
 </body>
 </html>

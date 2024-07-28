@@ -16,7 +16,7 @@
 	</header>
 	<main>
 		<h2>Inscibe tu pyme</h2>
-	<form:form action="/procesar_registro" method="post" modelAttribute="formPyme">  
+	<form:form action="/inscripcion_pyme" method="post" modelAttribute="formPyme">  
 				<div class="flex form">
 					<form:label path="nombre">Nombre Pyme:</form:label>
 					<form:input path="nombre" type="text"/>

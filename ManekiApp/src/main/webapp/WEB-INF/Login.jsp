@@ -47,6 +47,9 @@
 						<form action="/registro">
 							<button class="btn btn-outline-secondary">¿Aun no tienes una cuenta? Registrate aquí</button> 
 						</form>
+						<form action="/maneki_pyme/inicio">
+							<button class="estilo pendiente">Volver a la pagina principal</button> 
+						</form>
 					
 				</div>
 			</div>
