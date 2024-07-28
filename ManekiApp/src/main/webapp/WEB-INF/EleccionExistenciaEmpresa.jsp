@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header>
-		<h1>Maneki Pymes</h1> 
+		<h1>Hola ${nombreUsuario } Maneki Pymes</h1> 
 		<div>
 		<a href="/maneki_pyme/inicio">Volver</a>
 		</div>

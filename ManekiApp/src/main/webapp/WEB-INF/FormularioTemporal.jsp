@@ -13,7 +13,10 @@
 <body>
 	<form action="/procesar/informacion/temporal" method="post" modelAttribute="formTemp">
 		<div>
-			
+			<label>Categoria PYME</label>
+			<select>
+				<c:forEach >
+			</select>
 		</div>
 	</form>
 </body>

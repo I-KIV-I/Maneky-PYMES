@@ -1,35 +1,57 @@
 package com.kevinvidal.controladores;
 
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.kevinvidal.modelos.Categoria;
+import com.kevinvidal.modelos.FormularioTemporal;
 import com.kevinvidal.modelos.Usuario;
+import com.kevinvidal.servicios.ServicioCategoria;
 
 import jakarta.servlet.http.HttpSession;
 
 
 @Controller
 public class ControladorNavegacion {
+	@Autowired
+	private final ServicioCategoria servicioCategoria;
+	
+	public ControladorNavegacion(ServicioCategoria servicioCategoria) {
+		this.servicioCategoria = servicioCategoria;
+	}
+	
+	
 	@GetMapping("/maneki_pyme/inicio")
 	public String desplegarPaginaInicial() {
 		return "PaginaInicial.jsp";
 	}
+	
 	@GetMapping("/existenciaPyme")
-	public String desplegarConsulta() {
-	return "EleccionExistenciaEmpresa.jsp";	
+	public String desplegarConsultaPyme(Model model) {
+		List<Categoria> todasCategorias = servicioCategoria.obtenerTodos();
+		model.addAttribute("listaCategorias",todasCategorias);
+		
+		return "EleccionExistenciaEmpresa.jsp";	
 	}
 	
-	@GetMapping("/crear_pyme")
-	public String desplegarFormularioTemporal(HttpSession sesion) {
+	@GetMapping("/procesar/informacion/temporal")
+	public String desplegarFormularioTemporal(HttpSession sesion,
+											  @ModelAttribute("formTemp")FormularioTemporal formTemp) {
+		sesion.setAttribute("categoriaPyme", formTemp);
+		sesion.setAttribute(null, formTemp);
 		return"FormularioTemporal.jsp";
 	}
-	@PostMapping("/crear_pyme")
+	@PostMapping("/procesar/informacion/temporal")
 	public String procesarFormularioTemporal(HttpSession sesion) {
-	
-	
+		
+		
 		
 		return "redirect:/guiaCrearPyme";
 	}
