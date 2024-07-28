@@ -30,8 +30,8 @@ public class ControladorUsuario{
 	
 	@PostMapping("/procesar/login")
 	public String procesarLogin(@Valid @ModelAttribute("formLogin") Login loginNuevo,
-			BindingResult validaciones,
-			HttpSession sesion) {
+								BindingResult validaciones,
+								HttpSession sesion) {
 		validaciones = this.servicioUsuario.validarLogin(validaciones, loginNuevo);
 		if(validaciones.hasErrors()) {
 			return"Login.jsp";
@@ -61,7 +61,7 @@ public class ControladorUsuario{
 		sesion.setAttribute("nombreUsuario", nuevoUsuario.getNombre());
 		sesion.setAttribute("apellidoUsuario", nuevoUsuario.getApellido());
 		System.out.println(nuevoUsuario.getApellido());
-		return "redirect:/home";
+		return "redirect:/existenciaPyme";
 	}
 	
 	

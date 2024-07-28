@@ -2,13 +2,13 @@ package com.kevinvidal.modelos;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 
 public class Login {
-	@NotBlank(message = "Por favor proporciona tu correo")
+	//@NotBlank(message = "Por favor proporciona tu correo")
 	@Email(message="Por favor proporciona un correo valido")
 	private String correoUsuario;
-	@NotNull(message = "Por favor porporcione su clave")
+	@NotEmpty(message = "Por favor porporcione su clave")
 	private String contraseniaUsuario;
 	
 	public Login() {}
