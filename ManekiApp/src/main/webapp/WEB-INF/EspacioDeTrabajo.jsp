@@ -1,4 +1,8 @@
-pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page isErrorPage="true" %> 
 <!DOCTYPE html>
 <html>
 
@@ -12,23 +16,22 @@ pageEncoding="UTF-8"%>
         <header>
             <div>
                 <form action="/procesar/logout"><button>Cerrar Sesion</button></form>
-                <form action="/procesar/logout"><button>Foro</button></form>
-                <form action="/finanzas/${usuario.id}"><button>Finanzas</button></form>
+                <form action="/finanzas/${idUsuario}"><button>Finanzas</button></form>
             </div>
             <div>
             	<form action="/procesar/logout"><button>Info Perfil</button></form>
             </div>
             <div>
-                <img src="" alt="">
-                <h4>Bienvenido,nombre</h4>
+                <img th:src="${user.profileImageUrl}" alt="">
+                <h5>Bienvenido,${nombreUsuario}</h5>
             </div>
         </header>
 
         <article>
             <ul>
-                <li>
-                    <div><a href="/procesa/pyme/${pyme.id}"></a>${pyme.nombre}</div>
-                </li>
+            	<c:forEach>
+	                <li><p>comentarios/chats de foros(investigar) </p></li>
+                </c:forEach>
             </ul>
         </article>
         <article>
@@ -53,8 +56,8 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-                            <h5 class="raleway">¿Por dónde empiezo?</h5>
-                            <p class="raleway">Registrate para poder recibir ayuda gratuita sobre cómo iniciar tu PYME
+                            <h5 class="raleway">Â¿Por dÃ³nde empiezo?</h5>
+                            <p class="raleway">Registrate para poder recibir ayuda gratuita sobre cÃ³mo iniciar tu PYME
                             </p>
                         </div>
                     </div>
@@ -66,7 +69,7 @@ pageEncoding="UTF-8"%>
                         <div class="carousel-caption d-none d-md-block">
                             <div class="concept concept-two">
                                 <div class="hover">
-                                    <h1>Únete</h1>
+                                    <h1>Ãšnete</h1>
                                 </div>
                                 <div class="hover">
                                     <h1></h1>
@@ -86,10 +89,10 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-                            <h5 class="raleway px-2">¡Comparte y recibe ayuda!</h5>
-                            <p class="raleway px-2">Nuestro foro está dedicado para que todos los emprendedores
+                            <h5 class="raleway px-2">Â¡Comparte y recibe ayuda!</h5>
+                            <p class="raleway px-2">Nuestro foro estÃ¡ dedicado para que todos los emprendedores
                                 compartan entre si y
-                                tengan mejor acceso a ayudas financieras y asesorías de sus propios rubros</p>
+                                tengan mejor acceso a ayudas financieras y asesorÃ­as de sus propios rubros</p>
                         </div>
                     </div>
 
@@ -110,8 +113,8 @@ pageEncoding="UTF-8"%>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
                             <h5 class="raleway px-4">Usa nuestras herramientas de contabilidad</h5>
-                            <p class="raleway px-4">Aprende a menajar tu negocio, conocer tus números y recibe
-                                consejos sobre cómo llevar tu negocio</p>
+                            <p class="raleway px-4">Aprende a menajar tu negocio, conocer tus nÃºmeros y recibe
+                                consejos sobre cÃ³mo llevar tu negocio</p>
                         </div>
                     </div>
 
@@ -122,7 +125,7 @@ pageEncoding="UTF-8"%>
                         <img src="/img/ley.jpg" class="d-block w-100 imgcarrusel" alt="Eventos">
                         <div class="carousel-caption d-none d-md-block">
                             <div class="concept concept-four">
-                                <h1>Mantente al día</h1>
+                                <h1>Mantente al dÃ­a</h1>
                             </div>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
@@ -155,10 +158,10 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-                            <h5 class="raleway px-4">¡Accede a cursos gratuitos!</h5>
+                            <h5 class="raleway px-4">Â¡Accede a cursos gratuitos!</h5>
                             <p class="raleway px-4">Te ofrecemos una lista de cursos gratuitos que puedes tomar para que
                                 aprendas
-                                más sobre tu negocio y te especialices en el</p>
+                                mÃ¡s sobre tu negocio y te especialices en el</p>
                         </div>
                     </div>
 
@@ -183,8 +186,8 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-                            <h5 class="raleway px-4">Asiste a eventos para pequeños emprendedores</h5>
-                            <p class="raleway px-4">Accede a una lista de los eventos que están ocrruiendo en el país
+                            <h5 class="raleway px-4">Asiste a eventos para pequeÃ±os emprendedores</h5>
+                            <p class="raleway px-4">Accede a una lista de los eventos que estÃ¡n ocrruiendo en el paÃ­s
                                 que
                                 puedan potenciar tu negocio</p>
                         </div>
@@ -201,10 +204,10 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                         <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-                            <h5 class="raleway px-4">Obten una lista de proveedores de tu área</h5>
+                            <h5 class="raleway px-4">Obten una lista de proveedores de tu Ã¡rea</h5>
                             <p class="raleway px-4">Te ofrecemos una lista de los mejores proveedores que trabajan con
                                 tu rubro,
-                                para que se te sea más fácil competir con tus productos en el mercado</p>
+                                para que se te sea mÃ¡s fÃ¡cil competir con tus productos en el mercado</p>
                         </div>
                     </div>
 
