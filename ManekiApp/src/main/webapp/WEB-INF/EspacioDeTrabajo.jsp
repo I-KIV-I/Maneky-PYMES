@@ -12,10 +12,12 @@ pageEncoding="UTF-8"%>
         <header>
             <div>
                 <form action="/procesar/logout"><button>Cerrar Sesion</button></form>
-                <form action="/procesar/logout"><button>Cerrar Sesion</button></form>
-                <form action="/procesar/logout"><button>Cerrar Sesion</button></form>
+                <form action="/procesar/logout"><button>Foro</button></form>
+                <form action="/finanzas/${usuario.id}"><button>Finanzas</button></form>
             </div>
-            <form action="/procesar/logout"><button>Cerrar Sesion</button></form>
+            <div>
+            	<form action="/procesar/logout"><button>Info Perfil</button></form>
+            </div>
             <div>
                 <img src="" alt="">
                 <h4>Bienvenido,nombre</h4>
