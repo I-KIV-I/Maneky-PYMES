@@ -15,7 +15,7 @@
 		<h1>Maneki Pyme</h1>
 	</header>
 	<h2>¿Nuevo en las pymes? ¡No hay problema! Te ayudamos</h2>
-	<form action="/procesar/informacion/temporal" method="post" modelAttribute="formTemp">
+	<form action="/solicitud/informacion" method="post" modelAttribute="formTemp">
 		<div>
 			<label for="categoria">Categoría PYME</label>
 			<select id="categoria" name="categoria.id">

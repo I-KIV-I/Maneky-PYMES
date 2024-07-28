@@ -55,7 +55,8 @@ public class Usuario {
 	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	private List<Pyme> pymes;
 
-	
+	@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
+    private List<Mensaje> mensajes;
 
 	
 	@Temporal(TemporalType.DATE)
@@ -158,6 +159,23 @@ public class Usuario {
 	public void setPerfilImagen(String perfilImagen) {
 		this.perfilImagen = perfilImagen;
 	}
+
+	public List<Pyme> getPymes() {
+		return pymes;
+	}
+
+	public void setPymes(List<Pyme> pymes) {
+		this.pymes = pymes;
+	}
+
+	public List<Mensaje> getMensajes() {
+		return mensajes;
+	}
+
+	public void setMensajes(List<Mensaje> mensajes) {
+		this.mensajes = mensajes;
+	}
+	
 	
 
 }

@@ -17,6 +17,7 @@
             <div>
                 <form action="/procesar/logout"><button>Cerrar Sesion</button></form>
                 <form action="/finanzas/${idUsuario}"><button>Finanzas</button></form>
+                <form action="/foro">Foro</form>
             </div>
             <div>
             	<form action="/perfil"><button>Info Perfil/PYME</button></form>

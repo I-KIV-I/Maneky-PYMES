@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	${ nombreUsuario}
+
 
 
 <!-- navbar -->
@@ -39,7 +39,20 @@
     </div>
   </nav>
 <!-- fin navbar -->
-
+	
+	
+	
+	<main>
+		<h1>
+		
+			informacion y consejos,
+			alguna idea de consejos e informacion?
+		</h1>
+		<p> hay que crear una distribucion de informacion en este lugar </p>
+		
+	
+		
+	</main>
 
 
 
