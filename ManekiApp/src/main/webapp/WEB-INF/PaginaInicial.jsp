@@ -40,13 +40,15 @@
 <!-- fin navbar -->
 
 
+
+
 <!-- Carrusel -->
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
   
   <!-- Primera -->
     <div class="carousel-item active">
-      <img src="/img/empezar.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
+      <img src="/img/empezar.jpg" class="d-block w-100 h-100" alt="Finanzas">
       <div class="carousel-caption d-none d-md-block">
       	<div class="concept concept-one">
    			<div class="hover hover-1"></div>
@@ -70,7 +72,7 @@
     
     <!-- Segunda -->
     <div class="carousel-item">
-      	<img src="/img/pexels-fauxels-3184418.jpg" class="d-block w-100 imgcarrusel" alt="Foro">
+      	<img src="/img/foro.jpg" class="d-block w-100 imgcarrusel" alt="Foro">
       	<div class="carousel-caption d-none d-md-block">
       		<div class="concept concept-two">
   				<div class="hover">
@@ -103,7 +105,7 @@
     
     <!-- Tercera -->
     <div class="carousel-item">
-      <img src="/img/finanzas3.jpg" class="d-block w-100 imgcarrusel" alt="Empezar pyme">
+      <img src="/img/finanzas.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
       <div class="carousel-caption d-none d-md-block">
       	<div class="concept concept-three">
     		<div class="word">
@@ -226,7 +228,7 @@
   </div>
  </div>
   <!-- fin Carrusel -->
-  
+
 
   
   <!-- Footer -->
@@ -245,7 +247,6 @@
 </div>
 	
 	
-<div class="container-fluid mainbackground"></div>
 <script src="/js/bootstrap.bundle.js"></script>
 </body>
 </html>

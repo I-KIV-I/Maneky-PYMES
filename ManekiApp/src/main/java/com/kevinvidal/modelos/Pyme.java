@@ -36,6 +36,7 @@ public class Pyme {
 	@NotNull
 	private String ubicacion;
 	@NotNull
+	@Column(updatable=false)
 	private String rutCreador;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaCreacionEmpresa; 

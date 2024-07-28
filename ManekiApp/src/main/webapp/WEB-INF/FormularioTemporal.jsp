@@ -15,7 +15,9 @@
 		<div>
 			<label>Categoria PYME</label>
 			<select>
-				<c:forEach >
+				<c:forEach var="categoria" item="listaCategorias">
+					
+				</c:forEach>
 			</select>
 		</div>
 	</form>

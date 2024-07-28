@@ -1,4 +1,21 @@
 @charset "ISO-8859-1";
+ #carouselExampleAutoplaying {
+    height: 580px; /* Ajusta la altura como desees */
+  }
+  .carousel-item{
+  	height: 100%;
+  }
+  
+ .carousel-inner {
+    height: 100%;
+  }
+  
+ .carousel-item img {
+    height: 100%;
+        object-fit: cover; /* Esto asegura que las imágenes cubran el contenedor sin deformarse */
+  }
+
+
 
 .raleway{
   font-family: "Raleway", sans-serif;

@@ -3,30 +3,39 @@ package com.kevinvidal.controladores;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.kevinvidal.modelos.Categoria;
 import com.kevinvidal.modelos.FormularioTemporal;
 import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioCategoria;
-
+import com.kevinvidal.modelos.Pyme;
+import com.kevinvidal.servicios.ServicioPyme;
+import com.kevinvidal.servicios.ServicioUsuario;
 import jakarta.servlet.http.HttpSession;
 
 
 @Controller
 public class ControladorNavegacion {
+
 	@Autowired
 	private final ServicioCategoria servicioCategoria;
+	private final ServicioUsuario servicioUsuario;
+	private final ServicioPyme sercvicioPyme;
 	
-	public ControladorNavegacion(ServicioCategoria servicioCategoria) {
+	public ControladorNavegacion(ServicioUsuario servicioUsuario,
+						   	     ServicioPyme sercvicioPyme,
+						   	     ServicioCategoria servicioCategoria) {
+		this.servicioUsuario = servicioUsuario;
+		this.sercvicioPyme = sercvicioPyme;
 		this.servicioCategoria = servicioCategoria;
 	}
-	
 	
 	@GetMapping("/maneki_pyme/inicio")
 	public String desplegarPaginaInicial() {
@@ -51,6 +60,7 @@ public class ControladorNavegacion {
 	@PostMapping("/procesar/informacion/temporal")
 	public String procesarFormularioTemporal(HttpSession sesion) {
 		
+		////////
 		
 		
 		return "redirect:/guiaCrearPyme";
@@ -66,10 +76,25 @@ public class ControladorNavegacion {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
 		}
+		
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	@GetMapping("/Finanzas")
+	@GetMapping("/finanzas/opciones")
+	public String seleccionFinanzas(HttpSession sesion) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		} 
+		return "AdministradorDeFinanzas.jsp";
+	}
+	@PostMapping("procesar/finanzas/{id}")
+	public String procesarInfoPyme(HttpSession sesion) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		} 
+		return "AdministradorDeFinanzas.jsp";
+	}
+	@GetMapping("/finanzas")
 	public String desplegarInformeFinanzas(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
@@ -78,7 +103,12 @@ public class ControladorNavegacion {
 	}
 	
 	@GetMapping("/perfil")
-	public String desplegarInformacionUsuario(HttpSession sesion,@ModelAttribute("Usuario") Usuario usuario) {
+	public String desplegarInformacionUsuario(HttpSession sesion,Usuario usuario,Pyme pyme) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		} 
+		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId(usuario.getId());
+		
 		return "PerfilUsuario.jsp";
 	}
 	
