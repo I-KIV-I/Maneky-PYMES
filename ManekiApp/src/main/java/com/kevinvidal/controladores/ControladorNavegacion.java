@@ -26,10 +26,10 @@ public class ControladorNavegacion {
 	public String desplegarFormularioTemporal(HttpSession sesion) {
 		return"FormularioTemporal.jsp";
 	}
-	@PostMapping("crear_pyme")
+	@PostMapping("/crear_pyme")
 	public String procesarFormularioTemporal(HttpSession sesion) {
-		
-		//agregar logica para guardar datos temporales en sesion
+	
+	
 		
 		return "redirect:/guiaCrearPyme";
 	}
@@ -40,7 +40,7 @@ public class ControladorNavegacion {
 	}
 	
 	@GetMapping("/herramientas")
-	public String desplegarEspacioDeTrabajo(HttpSession sesion, @ModelAttribute("Usuario") Usuario usuario) {
+	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
 		}

@@ -2,5 +2,18 @@
 <libraryInfos>
     <libraryInfo home="C:\Users\Martín González\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.11.v20240426-1830\jre" version="17.0.11"/>
     <libraryInfo home="C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot" version="17.0.11"/>
+    <libraryInfo home="C:\Users\56995\OneDrive\Escritorio\Nueva carpeta\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530" version="21.0.3">
+        <bootpath>
+            <entry path="null"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="null"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="null"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="C:\Users\56995\OneDrive\Escritorio\Nueva carpeta\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre" version="21.0.3"/>
     <libraryInfo home="C:\Users\Martín González\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.11.v20240426-1830" version="17.0.11"/>
+    <libraryInfo home="C:\Program Files\Eclipse Adoptium\jdk-21.0.3.9-hotspot" version="21.0.3"/>
 </libraryInfos>

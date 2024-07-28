@@ -3,6 +3,8 @@ package com.kevinvidal.modelos;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,6 +20,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="pymes")
@@ -26,14 +29,15 @@ public class Pyme {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotNull
 	private String rol;
-	
+	@NotNull
 	private String nombre;
-	
+	@NotNull
 	private String ubicacion;
-	
+	@NotNull
 	private String rutCreador;
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaCreacionEmpresa; 
 	
 	
