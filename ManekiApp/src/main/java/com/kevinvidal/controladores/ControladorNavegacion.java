@@ -40,7 +40,7 @@ public class ControladorNavegacion {
 	}
 	
 	@GetMapping("/herramientas")
-	public String desplegarEspacioDeTrabajo(HttpSession sesion, @ModelAttribute("Usuario") Usuario usuario) {
+	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
 		}
