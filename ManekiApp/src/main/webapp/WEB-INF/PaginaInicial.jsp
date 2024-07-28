@@ -15,11 +15,11 @@
 <body>
 
 <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" 
+  <nav class="navbar navbar-expand-lg navbbarback" 
   data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
-	      <img src="/img/logo2.jpeg" alt="Logo" width="60" height="50" 
+	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" 
 	      class="d-inline-block align-text-center iconmaneki"> 
 	      <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
       </a>
@@ -30,7 +30,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
         <form action="/login">
-          <button class="nav-link active align-text-center btn btn-outline-success ms-5 p-2 raleway" aria-current="page">Ingresa</button>
+          <button class="btn btn-outline-success ms-5 p-2 raleway" aria-current="page">Ingresa</button>
           </form>
         </li>
       </ul>
