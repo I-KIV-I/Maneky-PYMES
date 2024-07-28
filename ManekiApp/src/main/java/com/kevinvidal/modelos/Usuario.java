@@ -42,6 +42,7 @@ public class Usuario {
 	private Date fechaNacimiento;
 	
 	private String perfilImagen;
+	
 	private String genero;
 	
 	@Size(min=8, message="La contraseña debe ser de al menos 8 caracteres")

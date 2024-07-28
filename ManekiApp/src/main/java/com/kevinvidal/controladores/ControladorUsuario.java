@@ -1,23 +1,32 @@
 package com.kevinvidal.controladores;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kevinvidal.modelos.Login;
 import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioUsuario;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Path;
 import jakarta.validation.Valid;
 
 @Controller
 public class ControladorUsuario{
 	@Autowired
 	private final ServicioUsuario servicioUsuario;
+	
+	private static final String UPLOAD_DIR = "uploads/";
 	
 	public ControladorUsuario(ServicioUsuario servicioUsuario) {
 		this.servicioUsuario = servicioUsuario;
@@ -63,6 +72,25 @@ public class ControladorUsuario{
 		System.out.println(nuevoUsuario.getApellido());
 		return "redirect:/existenciaPyme";
 	}
+	 @PostMapping("/upload")
+	    public String uploadImage(@RequestParam("image") MultipartFile file, @RequestParam("userId") Long userId) {
+	        if (file.isEmpty()) {
+	            return "redirect:/perfil";
+	        }
+	        //corregir subida de imagen//
+	        try {
+	            byte[] bytes = file.getBytes();
+	            java.nio.file.Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
+	            Files.write(path, bytes);
+
+	            Usuario user = servicioUsuario.obtenerUno(userId);
+	            user.setPerfilImagen("/" + UPLOAD_DIR + file.getOriginalFilename());
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        return "redirect:/perfil";
+	    }
 	
 	
 	

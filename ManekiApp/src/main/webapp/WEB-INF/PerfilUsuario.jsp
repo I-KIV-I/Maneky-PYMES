@@ -37,7 +37,7 @@
 
         <section>
             <ul>
-            	<c:forEach>
+            	<c:forEach var="pyme" items="${pymes}">
 	                <li><div><a href="/finanzas/pyme/${pyme.id}"></a>${pyme.nombre}</div></li>
                 </c:forEach>
             </ul>

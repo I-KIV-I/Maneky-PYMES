@@ -19,7 +19,7 @@
                 <form action="/finanzas/${idUsuario}"><button>Finanzas</button></form>
             </div>
             <div>
-            	<form action="/procesar/logout"><button>Info Perfil</button></form>
+            	<form action="/perfil"><button>Info Perfil/PYME</button></form>
             </div>
             <div>
                 <img th:src="${user.profileImageUrl}" alt="">
@@ -29,9 +29,7 @@
 
         <article>
             <ul>
-            	<c:forEach>
-	                <li><p>comentarios/chats de foros(investigar) </p></li>
-                </c:forEach>
+	            <li><p>comentarios/chats de foros(investigar)</p></li>
             </ul>
         </article>
         <article>

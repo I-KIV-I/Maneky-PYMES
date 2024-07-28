@@ -61,7 +61,21 @@ public class ControladorNavegacion {
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	@GetMapping("/Finanzas")
+	@GetMapping("/finanzas/opciones")
+	public String seleccionFinanzas(HttpSession sesion) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		} 
+		return "AdministradorDeFinanzas.jsp";
+	}
+	@PostMapping("procesar/finanzas/{id}")
+	public String procesarInfoPyme(HttpSession sesion) {
+		if(sesion.getId().equals(null)) {
+			return "redirect:/login";
+		} 
+		return "AdministradorDeFinanzas.jsp";
+	}
+	@GetMapping("/finanzas")
 	public String desplegarInformeFinanzas(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
