@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page isErrorPage="true" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +25,9 @@
         </header>
         <article>
             <form:form action="procesar/finanzas/{pyme.id}">
-                <form:select name="pymes">
+                <form:select path="" name="pymes">
                     <c:forEach var="pyme" items="${pymes}"> 
-                        <form:option>${pyme.nombre}</form:option>
+                        <form:option value="">${pyme.nombre}</form:option>
                     </c:forEach>
                 </form:select>
                 <button type="submit">info</button>

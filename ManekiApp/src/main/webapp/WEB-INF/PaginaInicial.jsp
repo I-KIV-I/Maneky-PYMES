@@ -6,6 +6,7 @@
 <!DOCTYPEhtml>
 <html>
 <head>
+<link rel="stylesheet" href="/css/Style.css">
 <link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="/css/home.css">
 <meta charset="UTF-8">
@@ -13,7 +14,7 @@
 <title>Maneki Pymes</title>
 </head>
 <body>
-
+<div id="particles-js"></div>
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary" 
   data-bs-theme="dark">
@@ -246,7 +247,8 @@
 	</ul>
 </div>
 	
-	
+<script src="/particles/particles.js"></script>
+<script src="/particles/data/app.js"></script>	
 <script src="/js/bootstrap.bundle.js"></script>
 </body>
 </html>
