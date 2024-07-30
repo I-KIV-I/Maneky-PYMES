@@ -1,4 +1,4 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
  #carouselExampleAutoplaying {
     height: 660px; /* Ajusta la altura como desees */
   }
@@ -12,7 +12,7 @@
   
  .carousel-item img {
     height: 100%;
-        object-fit: cover; /* Esto asegura que las im·genes cubran el contenedor sin deformarse */
+        object-fit: cover; /* Esto asegura que las im√°genes cubran el contenedor sin deformarse */
   }
 
 .navbbarback{

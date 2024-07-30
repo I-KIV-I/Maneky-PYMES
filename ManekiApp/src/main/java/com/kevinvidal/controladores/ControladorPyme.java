@@ -36,7 +36,7 @@ public class ControladorPyme {
 		
 		return "FormularioNuevaPyme.jsp";
 	}
-	@PostMapping("/inscripcion_pyme")
+	@PostMapping("/inscripcion/pyme")
 	public String procesarFormularioTemporal(@Valid@ModelAttribute("formPyme") Pyme nuevaPyme,
 										     BindingResult validaciones,
 										     HttpSession sesion) {
