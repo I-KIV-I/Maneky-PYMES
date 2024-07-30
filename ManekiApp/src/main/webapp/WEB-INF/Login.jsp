@@ -15,7 +15,6 @@
 </head>
 <body>
 	<div id="particles-js"></div>
-		
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-4 px-5 py-4 my-5 text-center bg-black bg-opacity-50 rounded text-white position-absolute " >
@@ -45,10 +44,10 @@
 							<button class="btn btn-outline-primary mb-4">Ingresar</button>
 						</form:form>
 						<form action="/registro">
-							<button class="btn btn-outline-secondary">¿Aun no tienes una cuenta? Registrate aquí</button> 
+							<button class="btn btn-outline-secondary mb-4">¿Aun no tienes una cuenta? Registrate aquí</button> 
 						</form>
 						<form action="/maneki_pyme/inicio">
-							<button class="estilo pendiente">Volver a la pagina principal</button> 
+							<button class="btn btn-outline-secondary">Volver a la pagina principal</button> 
 						</form>
 					
 				</div>
