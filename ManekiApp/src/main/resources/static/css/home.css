@@ -1,6 +1,6 @@
 @charset "ISO-8859-1";
  #carouselExampleAutoplaying {
-    height: 580px; /* Ajusta la altura como desees */
+    height: 660px; /* Ajusta la altura como desees */
   }
   .carousel-item{
   	height: 100%;
@@ -15,7 +15,9 @@
         object-fit: cover; /* Esto asegura que las imágenes cubran el contenedor sin deformarse */
   }
 
-
+.navbbarback{
+background-color:  #00131D;
+}
 
 .raleway{
   font-family: "Raleway", sans-serif;
@@ -23,9 +25,7 @@
   font-weight: 100;
   font-style: normal;
 }
-.iconmaneki{
-	border-radius: 70%;
-}
+
 .mainbackground{
 	background-color: rgb(153, 196, 177);
   	background-size: cover;

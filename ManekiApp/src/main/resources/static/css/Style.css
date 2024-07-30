@@ -10,6 +10,11 @@
 	--color-3: #0088A6; /*azul pastel*/
 	--color-4: #00131D; /*azul oscuro*/
 	--color-5: #F1B9B8; /*rosado pastel*/
+	--back-1:linear-gradient
+			 (0deg, rgba(0,85,105,1) 0%,
+			 rgba(0,136,166,1) 26%, 
+			 rgba(0,136,166,1) 78%, 
+			 rgba(0,85,105,1) 100%); /*Background*/
 } 
 #particles-js{
   position: fixed;

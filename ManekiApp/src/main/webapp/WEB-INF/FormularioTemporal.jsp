@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page isErrorPage="true" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +13,6 @@
 <title>¿Como te gustaria que fuera tu Pyme?</title>
 </head>
 <body>
-
 <div id="particles-js"></div>
 	<div class="container">
 		<div class="row justify-content-center">

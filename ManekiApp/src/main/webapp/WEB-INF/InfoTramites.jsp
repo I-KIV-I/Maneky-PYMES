@@ -7,20 +7,20 @@
 <html>
 <head>
 <link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/tramites.css">
 <meta charset="UTF-8">
-<title>Start up!</title>
+<title>Empieza!</title>
 </head>
 <body>
 
 
-
-
 <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" 
+  <nav class="navbar navbar-expand-lg navbbarback" 
   data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
-	      <img src="/img/logo2.jpeg" alt="Logo" width="60" height="50" 
+	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" 
 	      class="d-inline-block align-text-center iconmaneki"> 
 	      <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
       </a>
@@ -30,8 +30,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <form action="/login">
-          <button class="nav-link active align-text-center btn btn-outline-success ms-5 p-2 raleway" aria-current="page">Ingresa</button>
+        <form action="/procesar/logout">
+          <button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
           </form>
         </li>
       </ul>
@@ -39,20 +39,160 @@
     </div>
   </nav>
 <!-- fin navbar -->
+
+
+<!-- Cartas -->
+<div class="container2 d-block">
+	<div class="textContainer">
+		<div class='console-container'>
+			<span id='text'></span>
+			<div class='console-underscore' id='console'>&#95;</div>
+		</div>
+		<img src="/img/LogoManeki.png" class="w-20 mb-4 imgLogo" alt="logo maneki pymes">
+	</div>
 	
+	<!-- Fila 1 -->
+	<div class="cartasContainer">
 	
-	
-	<main>
-		<h1>
+		<!-- Carta 1 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/cohete.svg">
+					<h3>Tramite 1</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 1: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
 		
-			informacion y consejos,
-			alguna idea de consejos e informacion?
-		</h1>
-		<p> hay que crear una distribucion de informacion en este lugar </p>
+		<!-- Carta 2 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/pie.svg">
+					<h3>Tramite 2</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 2: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
 		
+		<!-- Carta 3 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/bank.svg">
+					<h3>Tramite 3</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 3: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Carta 4 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/column.svg">
+					<h3>Tramite 4</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 3: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	
+	<!-- Fila 2 -->
+	<div class="cartasContainer">
 		
-	</main>
+		<!-- Carta 1 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/document.svg">
+					<h3>Tramite 1</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 1: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Carta 2 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/thumb.svg">
+					<h3>Tramite 2</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 2: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Carta 3 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/business.svg">
+					<h3>Tramite 3</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 3: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Carta 4 -->
+		<div class="card">
+			<div class="face face1">
+				<div class="content">
+					<img src="/img/creativity.svg">
+					<h3>Tramite 4</h3>
+				</div>
+			</div>
+			<div class="face face2">
+				<div class="content">
+					<p>info tramite 3: tienes que hacer esto!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Texto -->
+	<div class="textContainer">
+		<h3 class="text-white bg-black bg-opacity-50 rounded p-3 hoverme">Cuando hayas completado
+		 los trámites para iniciar tu Pyme, ¡Inscribela!</h3>
+	</div>
+	<div class="textContainer">
+		 <form action="/inscripcion/pyme">
+		 <button type="button" class="btn btn-success btn-lg">Inscribir mi PYME</button>
+		 </form>
+	</div>
+</div>
+
+
+
 
 
 
@@ -73,6 +213,6 @@
 </div>
 
 <script src="/js/bootstrap.bundle.js"></script>
-
+<script src="/js/tramites.js"></script>
 </body>
 </html>
