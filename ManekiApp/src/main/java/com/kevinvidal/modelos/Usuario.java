@@ -57,6 +57,9 @@ public class Usuario {
 
 	@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
     private List<Mensaje> mensajes;
+	
+	@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
+	private List<Hilo> hilos;
 
 	
 	@Temporal(TemporalType.DATE)
@@ -174,6 +177,14 @@ public class Usuario {
 
 	public void setMensajes(List<Mensaje> mensajes) {
 		this.mensajes = mensajes;
+	}
+
+	public List<Hilo> getHilos() {
+		return hilos;
+	}
+
+	public void setHilos(List<Hilo> hilos) {
+		this.hilos = hilos;
 	}
 	
 	

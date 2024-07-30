@@ -20,6 +20,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -29,11 +30,11 @@ public class Pyme {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	@NotBlank
 	private String rol;
-	@NotNull
+	@NotBlank
 	private String nombre;
-	@NotNull
+	@NotBlank
 	private String ubicacion;
 	@NotNull
 	@Column(updatable=false)
