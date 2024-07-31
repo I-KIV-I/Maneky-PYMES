@@ -9,12 +9,14 @@
 <link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/tramites.css">
+<link rel="stylesheet" href="/css/Style.css">
 <meta charset="UTF-8">
 <title>Empieza!</title>
 </head>
 <body>
+<div id="particles-js"></div>
 
-
+	
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbbarback" 
   data-bs-theme="dark">
@@ -42,7 +44,7 @@
 
 
 <!-- Cartas -->
-<div class="container2 d-block">
+<div class="d-block">
 	<div class="textContainer">
 		<div class='console-container'>
 			<span id='text'></span>
@@ -211,7 +213,8 @@
   		</li>
 	</ul>
 </div>
-
+<script src="/particles/particles.js"></script>
+<script src="/particles/data/app.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/tramites.js"></script>
 </body>
