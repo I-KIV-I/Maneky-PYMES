@@ -4,6 +4,7 @@ package com.kevinvidal.controladores;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,35 +53,29 @@ public class ControladorNavegacion {
 		return "InfoTramites.jsp";
 	}
 	
-	@GetMapping("/herramientas")
+	@GetMapping("/herramientas/{id}")
 	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
 		}
-		
+		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	@GetMapping("/finanzas/opciones")
-	public String seleccionFinanzas(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
-			return "redirect:/login";
-		} 
-		return "AdministradorDeFinanzas.jsp";
-	}
+	
 	@PostMapping("procesar/finanzas/{id}")
 	public String procesarInfoPyme(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
 		} 
-		return "AdministradorDeFinanzas.jsp";
+		return "redirect:/finanzas/{id}";
 	}
-	@GetMapping("/finanzas")
+	@GetMapping("/finanzas/{id}")
 	public String desplegarInformeFinanzas(HttpSession sesion) {
 		if(sesion.getId().equals(null)) {
 			return "redirect:/login";
 		} 
-		return "AdministradorDeFinanzas.jsp";
+		return "FinanzasPyme.jsp";
 	}
 	
 	@GetMapping("/perfil")

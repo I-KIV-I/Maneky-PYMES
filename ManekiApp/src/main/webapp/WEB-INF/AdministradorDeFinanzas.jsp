@@ -16,19 +16,18 @@
             	<form action="/perfil"><button>Info Perfil/PYME</button></form>
             </div>
             <div>
-                <img th:src="${user.profileImageUrl}" alt="imagen_perfil">
+                <img th:src="${usuario.perfilImagen}" alt="imagen_perfil">
                 <h5>Bienvenido,${nombreUsuario}</h5>
             </div>
         </header>
         <article>
-            <form:form action="procesar/finanzas/{pyme.id}">
-                <form:select name="pymes">
-                    <c:forEach var="pyme" items="${pymes}"> 
-                        <form:option>${pyme.nombre}</form:option>
+            <section>
+                <ul>
+                    <c:forEach var="informes" items="${informes}">
+                        <li><div><a href="/finanzas/pyme/${pyme.id}"></a>${informes}</div></li>
                     </c:forEach>
-                </form:select>
-                <button type="submit">info</button>
-            </form:form>
+                </ul>
+            </section>
         </article>
 </body>
 </html>

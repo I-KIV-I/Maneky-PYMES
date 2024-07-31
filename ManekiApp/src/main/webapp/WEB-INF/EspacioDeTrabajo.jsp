@@ -26,10 +26,20 @@
                 <h5>Bienvenido,${nombreUsuario}</h5>
             </div>
         </header>
+        <article>
+            <form:form action="procesar/finanzas/{pyme.id}">
+                <form:select path="pymes">
+                    <c:forEach var="pyme" items="${listaPyme}"> 
+                        <form:option value="${pyme.id}">${pyme.nombre}</form:option>
+                    </c:forEach>
+                </form:select>
+                <button type="submit">info</button>
+            </form:form>
+        </article>
 
         <article>
             <ul>
-	            <li><p>comentarios/chats de foros(investigar)</p></li>
+	            <li><p>hilo foros</p></li>
             </ul>
         </article>
         <article>
