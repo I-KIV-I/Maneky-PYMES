@@ -12,7 +12,6 @@
 <title>Maneki Pymes Inscripcion</title>
 </head>
 <body>
-
 <div id="particles-js"></div>
 	<div class="container">
 		<div class="row justify-content-center">
