@@ -1,5 +1,7 @@
 package com.kevinvidal.controladores;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -77,7 +79,8 @@ public class ControladorForo {
 		return "redirect:/login";
 		}
 		modelo.addAttribute("hilo", servicioHilo.obtenPorId(idHilo));
-		modelo.addAttribute("listaMensajes", servicioMensaje.obtenerPorHiloId(idHilo));
+		List<Mensaje> listaMensajes = servicioMensaje.obtenerPorHiloId(idHilo);
+		modelo.addAttribute("listaMensajes", listaMensajes);
 		
 		return "ForoHilo.jsp";
 	}
