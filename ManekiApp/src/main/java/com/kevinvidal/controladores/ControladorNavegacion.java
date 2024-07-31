@@ -26,18 +26,17 @@ public class ControladorNavegacion {
 
 	@Autowired
 	private final ServicioCategoria servicioCategoria;
-	private final ServicioUsuario servicioUsuario;
 	private final ServicioPyme sercvicioPyme;
 	
-	public ControladorNavegacion(ServicioUsuario servicioUsuario,
-						   	     ServicioPyme sercvicioPyme,
+	public ControladorNavegacion(ServicioPyme sercvicioPyme,
 						   	     ServicioCategoria servicioCategoria) {
-		this.servicioUsuario = servicioUsuario;
+		
 		this.sercvicioPyme = sercvicioPyme;
 		this.servicioCategoria = servicioCategoria;
 	}
 	
-	@GetMapping("/")
+
+	@GetMapping({"/maneki_pyme/inicio", "/"})
 	public String desplegarPaginaInicial() {
 		return "PaginaInicial.jsp";
 	}

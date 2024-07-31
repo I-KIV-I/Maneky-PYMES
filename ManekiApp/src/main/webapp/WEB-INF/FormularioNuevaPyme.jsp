@@ -12,7 +12,6 @@
 <title>Maneki Pymes Inscripcion</title>
 </head>
 <body>
-
 <div id="particles-js"></div>
 	<div class="container">
 		<div class="row justify-content-center">
@@ -23,7 +22,7 @@
 				</header>
 				<main>
 					<h2>Inscibe tu pyme</h2>
-				<form:form action="/inscripcion_pyme" method="post" modelAttribute="formPyme">  
+				<form:form action="/inscripcion/pyme" method="post" modelAttribute="formPyme">  
 							<div class="flex form">
 								<form:label class="form-label" path="nombre">Nombre Pyme:</form:label>
 								<form:input class="form-control mb-4 text-center" path="nombre" type="text"/>

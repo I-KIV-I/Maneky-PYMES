@@ -1,6 +1,8 @@
 @charset "UTF-8";
  #carouselExampleAutoplaying {
+
     height: 795px; /* Ajusta la altura como desees */
+
   }
   .carousel-item{
   	height: 100%;
@@ -12,18 +14,12 @@
   
  .carousel-item img {
     height: 100%;
-        object-fit: cover; /* Esto asegura que las imágenes cubran el contenedor sin deformarse */
+    object-fit: cover; /* Esto asegura que las imágenes cubran el contenedor sin deformarse */
+
   }
 
 .navbbarback{
 background-color:  #00131D;
-}
-
-.raleway{
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
 }
 
 .mainbackground{

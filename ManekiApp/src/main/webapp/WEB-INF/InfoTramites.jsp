@@ -15,8 +15,6 @@
 </head>
 <body>
 <div id="particles-js"></div>
-
-	
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbbarback" 
   data-bs-theme="dark">
@@ -188,7 +186,7 @@
 	</div>
 	<div class="textContainer">
 		 <form action="/inscripcion/pyme">
-		 <button type="button" class="btn btn-success btn-lg">Inscribir mi PYME</button>
+			<button class="btn btn-success btn-lg">Inscribir mi PYME</button>
 		 </form>
 	</div>
 </div>

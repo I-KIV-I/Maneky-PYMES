@@ -16,7 +16,7 @@ public class ServicioMensaje {
 	public List<Mensaje> obtenerTodos(){
 		return (List<Mensaje>) repositorioMensaje.findAll();
 	}
-	public Mensaje guardar(Mensaje nuevoMensaje) {
+	public Mensaje guardarMensaje(Mensaje nuevoMensaje) {
 		return repositorioMensaje.save(nuevoMensaje);
 	}
 	public Mensaje obtenerPorId(Long idMensaje) {

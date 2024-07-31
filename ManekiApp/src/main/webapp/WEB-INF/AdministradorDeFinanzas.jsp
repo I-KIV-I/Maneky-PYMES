@@ -8,10 +8,15 @@
 <head>
 <link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/finanzas.css">
+<link rel="stylesheet" href="/css/style.css">
 <meta charset="UTF-8">
 <title>Finanzas</title>
 </head>
 <body>
+<div class="main">
+	<div id="particles-js"></div>
+	
 
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbbarback" 
@@ -37,17 +42,11 @@
     </div>
   </nav>
 <!-- fin navbar -->
-
-<div class="main">
+	
+	<!-- barra perfil y titulo -->
 	<div class="topbar">
-		<div class="toggle">
-			<ion-icon name="menu-outline"></ion-icon>
-		</div>
-		<div class="search">
-			<label>
-				<input type="text" placeholder="search here">
-				<ion-icon name="search-outline"></ion-icon>
-			</label>
+		<div class="title">
+			<h1>Hola username, ¿quieres saber tus numeros? </h1>
 		</div>
 		<div class="user">
 			<img src="/img/LogoManeki.png">
@@ -55,48 +54,176 @@
 	</div>
 	
 	<div class="cardbox">
-		<div class="card">
+		<div class="cardcss">
 			<div>
-				<div class="numbers">1,504</div>
-				<div class="cardName">Daily Views</div>
+				<div class="numbers">$105.504</div>
+				<div class="cardName">Gastos</div>
 			</div>
 			<div class="iconBx">
-				icon
+				<img src="/img/coinsCash.svg">
 			</div>
 		</div>
-		<div class="card">
+		<div class="cardcss">
 			<div>
-				<div class="numbers">88</div>
-				<div class="cardName">Sales</div>
+				<div class="numbers">$32.988</div>
+				<div class="cardName">IVA</div>
 			</div>
 			<div class="iconBx">
-				icon
+				<img src="/img/money.svg">
 			</div>
 		</div>
-		<div class="card">
+		<div class="cardcss">
 			<div>
-				<div class="numbers">284</div>
-				<div class="cardName">Comments</div>
+				<div class="numbers">$284.000</div>
+				<div class="cardName">Margen</div>
 			</div>
 			<div class="iconBx">
-				icon
+				<img src="/img/piggy.svg">
 			</div>
 		</div>
-		<div class="card">
+		<div class="cardcss">
 			<div>
-				<div class="numbers">$7.842</div>
-				<div class="cardName">Earning</div>
+				<div class="numbers">$73.842</div>
+				<div class="cardName">Ganancia</div>
 			</div>
 			<div class="iconBx">
-				icon
+				<img src="/img/coinsMoney.svg">
 			</div>
 		</div>
 	</div>
 	
-</div>
+	<div class="graphBox">
+		<div class="box">
+			<canvas id="grafico1"></canvas>
+		</div>
+		<div class="box">
+			<canvas id="grafico2"></canvas>
+		</div>
+	</div>
+	
+	
+	<div class="details">
+		<div class="recentOrders">
+			<div class="cardHeader">
+				<h2>Historial Finanzas</h2>
+				<a href="#" class="viewAll">View All</a>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<td>Mes</td>
+						<td>Gastos</td>
+						<td>Ganancias</td>
+						<td>Estado</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Enero</td>
+						<td>$120.000</td>
+						<td>$300.000</td>
+						<td><span class="status bien">Bien!</span></td>
+					</tr>
+					<tr>
+						<td>Febrero</td>
+						<td>$120.000</td>
+						<td>$150.000</td>
+						<td><span class="status regular">Regular</span></td>
+					</tr>
+					<tr>
+						<td>Marzo</td>
+						<td>$120.000</td>
+						<td>$100.000</td>
+						<td><span class="status mal">Mejorable</span></td>
+					</tr>
+					<tr>
+						<td>Abril</td>
+						<td>$120.000</td>
+						<td>$120.000</td>
+						<td><span class="status regular">Regular</span></td>
+					</tr>
+					<tr>
+						<td>Mayo</td>
+						<td>$120.000</td>
+						<td>$200.000</td>
+						<td><span class="status bien">Bien!</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<div class="recentCustomers">
+			<div class="cardHeader">
+				<h2>Consejos</h2>
+			</div>
+			<table>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/LogoManeki.png">
+							</div>
+						</td>
+						<td>
+							<h4>
+								Cuidado
+								<span>Parece que tus ahorros son bajos, recuerda no gastar demasiado</span>
+							</h4>
+						</td>
+					</tr>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/LogoManeki.png">
+							</div>
+						</td>
+						<td>
+							<h4>
+								Ahorra
+								<span>Manten siempre un colchon de dinero ahorrado ante cualquier cosa</span>
+							</h4>
+						</td>
+					</tr>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/LogoManeki.png">
+							</div>
+						</td>
+						<td>
+							<h4>
+								Cuidado
+								<span>No es momento de expandirse por si lo estabas pensando</span>
+							</h4>
+						</td>
+					</tr>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/LogoManeki.png">
+							</div>
+						</td>
+						<td>
+							<h4>
+							Mantente informado
+								<span>¿Ya revisaste las ultimas noticias?</span>
+							</h4>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		
+	</div>
+	
 
 
-       
+
+<script src="/particles/particles.js"></script>
+<script src="/particles/data/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>       
 <script src="/js/bootstrap.bundle.js"></script>
+<script src="/js/finanzas.js"></script>
 </body>
 </html>
