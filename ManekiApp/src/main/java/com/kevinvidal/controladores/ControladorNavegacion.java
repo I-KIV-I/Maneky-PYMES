@@ -43,7 +43,7 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/existenciaPyme")
 	public String desplegarConsultaExistenciaPyme(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		}
 		return "EleccionExistenciaEmpresa.jsp";	
@@ -52,7 +52,7 @@ public class ControladorNavegacion {
 	@GetMapping("/solicitud/informacion")
 	public String desplegarFormularioTemporal(Model model, HttpSession sesion,
 											  @ModelAttribute("formTemp")FormularioTemporal formTemp) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		}
 		List<Categoria> todasCategorias = servicioCategoria.obtenerTodos();
@@ -69,7 +69,7 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/guiaCrearPyme")
 	public String desplegarInformacionTramites(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		}
 		
@@ -79,30 +79,30 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/herramientas")
 	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		/*if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
-		}
+		}*/
 		
 		return "EspacioDeTrabajo.jsp";
 	}
 	
 	@GetMapping("/finanzas/opciones")
 	public String seleccionFinanzas(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()== null) {
 			return "redirect:/login";
 		} 
 		return "AdministradorDeFinanzas.jsp";
 	}
 	@PostMapping("procesar/finanzas/{id}")
 	public String procesarInfoPyme(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
 		return "AdministradorDeFinanzas.jsp";
 	}
 	@GetMapping("/finanzas")
 	public String desplegarInformeFinanzas(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
 		return "AdministradorDeFinanzas.jsp";
@@ -110,7 +110,7 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/perfil")
 	public String desplegarInformacionUsuario(HttpSession sesion,Usuario usuario,Pyme pyme) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
 		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId(usuario.getId());

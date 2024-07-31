@@ -40,7 +40,7 @@ public class ControladorForo {
 	@GetMapping("/foro")
 	public String desplegarForoHome(HttpSession sesion, Model modelo,
 									@ModelAttribute("formHilo") Hilo nuevoHilo) {
-		if(sesion.getId() == (null)) {
+		if(sesion.getId() == null) {
 			return "redirect:/login";
 		}
 		modelo.addAttribute("listaHilos", servicioHilo.obtenerTodos());
@@ -73,12 +73,12 @@ public class ControladorForo {
 	public String desplegarHilo(@PathVariable("id") Long idHilo, Model modelo,
 							    HttpSession sesion,
 							    @ModelAttribute("formMensaje") Mensaje nuevoMensaje) {
-		if(sesion.getId() == (null)) {
+		if(sesion.getId() == null) {
 		return "redirect:/login";
 		}
 		modelo.addAttribute("hilo", servicioHilo.obtenPorId(idHilo));
 		modelo.addAttribute("listaMensajes", servicioMensaje.obtenerPorHiloId(idHilo));
-
+		
 		return "ForoHilo.jsp";
 	}
 	
