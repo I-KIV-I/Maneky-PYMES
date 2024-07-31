@@ -73,7 +73,7 @@ public class ControladorForo {
 	public String desplegarHilo(@PathVariable("id") Long idHilo, Model modelo,
 							    HttpSession sesion,
 							    @ModelAttribute("formMensaje") Mensaje nuevoMensaje) {
-		if(sesion.getId() == null) {
+		if(sesion.getAttribute("idUsuario") == null) {
 		return "redirect:/login";
 		}
 		modelo.addAttribute("hilo", servicioHilo.obtenPorId(idHilo));
