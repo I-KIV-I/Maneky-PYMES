@@ -92,5 +92,21 @@ public class Mensaje {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+
+	public Hilo getHilo() {
+		return hilo;
+	}
+
+
+	public void setHilo(Hilo hilo) {
+		this.hilo = hilo;
+	}
+
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
 	
 }

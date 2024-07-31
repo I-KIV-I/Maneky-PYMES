@@ -65,12 +65,12 @@ public class Hilo {
 		this.fechaActualizacion = new Date();
 	}
 
-	public Long getIdLong() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setIdLong(Long idLong) {
-		this.id = idLong;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTitulo() {

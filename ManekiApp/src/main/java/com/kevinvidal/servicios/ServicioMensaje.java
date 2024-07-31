@@ -22,6 +22,9 @@ public class ServicioMensaje {
 	public Mensaje obtenerPorId(Long idMensaje) {
 		return repositorioMensaje.findById(idMensaje).orElse(null);
 	}
+	public List<Mensaje> obtenerPorHiloId(Long hiloId){
+		return repositorioMensaje.findByHiloIdWithUsuario(hiloId);
+	}
 	public void eliminar(Long idMensaje) {
 		repositorioMensaje.deleteById(idMensaje);
 	}
