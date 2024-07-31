@@ -30,7 +30,7 @@ public class ControladorPyme {
 	@GetMapping("/inscripcion/pyme")
 	public String desplegarFormularioInscripcionEmpresa(@ModelAttribute("formPyme") Pyme nuevaPyme,
 			  											HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		}
 		

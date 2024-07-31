@@ -24,7 +24,7 @@
 					<c:forEach var="mensaje" items="${listaMensajes }">			 			
 			 			<tr>
 			 				<td>${mensaje.usuario.nombre }</td>			 	
-			 				<td>${mensaje.fecha_actualizacion}</td>			 	
+			 				<fmt:formatDate value="${mensaje.updatedAt}" pattern="dd/MM/yyyy HH:mm" />		 	
 			 							 	
 			 			</tr>
 			 			<tr>

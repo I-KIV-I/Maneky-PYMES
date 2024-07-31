@@ -37,8 +37,8 @@
 			      Mi cuenta
 			    </button>
 			    <ul class="dropdown-menu">
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mi Perfil -->
+			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mis pymes -->
 			    </ul>
 			  </div>
 		</div>
