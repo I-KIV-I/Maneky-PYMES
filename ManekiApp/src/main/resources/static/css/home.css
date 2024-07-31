@@ -1,23 +1,22 @@
 @charset "UTF-8";
- #carouselExampleAutoplaying {
+.c-size-home{
 
     height: 795px; /* Ajusta la altura como desees */
-
-  }
-  .carousel-item{
+}
+.c-item{
   	height: 100%;
-  }
+}
   
- .carousel-inner {
+ .c-inner {
     height: 100%;
-  }
+}
   
- .carousel-item img {
+ .c-item img {
     height: 100%;
-    object-fit: cover; /* Esto asegura que las imágenes cubran el contenedor sin deformarse */
 
-  }
+        object-fit: cover; /* Esto asegura que las imágenes cubran el contenedor sin deformarse */
 
+}
 .navbbarback{
 background-color:  #00131D;
 }
@@ -413,5 +412,3 @@ h1 {
 		top: 100px;
 	}
 }
-
-

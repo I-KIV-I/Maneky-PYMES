@@ -44,12 +44,12 @@
 
 
 <!-- Carrusel -->
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+<div id="carouselExampleAutoplaying" class="carousel slide c-size-home" data-bs-ride="carousel">
+  <div class="carousel-inner c-inner">
   
   
   <!-- Primera imagen -->
-    <div class="carousel-item active">
+    <div class="carousel-item c-item active">
       <img src="/img/empezar.jpg" class="d-block w-100 h-100" alt="Finanzas">
       <div class="carousel-caption d-none d-md-block">
       	<div class="concept concept-one">
@@ -73,7 +73,7 @@
     
     
     <!-- Segunda -->
-    <div class="carousel-item">
+    <div class="carousel-item c-item">
       	<img src="/img/foro.jpg" class="d-block w-100 imgcarrusel" alt="Foro">
       	<div class="carousel-caption d-none d-md-block">
       		<div class="concept concept-two">
@@ -106,7 +106,7 @@
     
     
     <!-- Tercera -->
-    <div class="carousel-item">
+    <div class="carousel-item c-item">
       <img src="/img/finanzas.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
       <div class="carousel-caption d-none d-md-block">
       	<div class="concept concept-three">
@@ -129,7 +129,7 @@
     
     
     <!-- Cuarta -->
-    <div class="carousel-item">
+    <div class="carousel-item c-item">
     	<img src="/img/ley.jpg" class="d-block w-100 imgcarrusel" alt="Eventos">
       	<div class="carousel-caption d-none d-md-block">
         	<div class="concept concept-four">
@@ -144,7 +144,7 @@
     </div>
     
       <!-- Quinta -->
-    <div class="carousel-item">
+    <div class="carousel-item c-item">
       	<img src="/img/cursos.jpg" class="d-block w-100 imgcarrusel" alt="Proveedores">
       	<div class="carousel-caption d-none d-md-block">
       		<div class="concept concept-five">
@@ -175,7 +175,7 @@
     
     
     <!-- Sexta -->
-    <div class="carousel-item">
+    <div class="carousel-item c-item">
     	<img src="/img/feria.jpg" class="d-block w-100 imgcarrusel" alt="Proveedores">
       		<div class="carousel-caption d-none d-md-block">
       		<div class="concept concept-six">
@@ -202,7 +202,7 @@
     
     
     <!-- Septima -->
-    <div class="carousel-item">
+    <div class="carousel-item c-item">
     	<img src="/img/proveedores.jpg" class="d-block w-100 imgcarrusel" alt="Cursos">
       	<div class="carousel-caption d-none d-md-block">
       		<div class="concept concept-seven">

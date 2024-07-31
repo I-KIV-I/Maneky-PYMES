@@ -17,11 +17,11 @@
 <body>
 	<div id="particles-js"></div>
 	<!-- navbar -->
-	<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+	<nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
     	<div class="container text-white ">
 	    	<div>
 				<a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
-					<img src="/img/logo2.jpeg" alt="Logo" width="60" height="50" class="d-inline-block align-text-center iconmaneki">
+					<img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
 				</a>
 			</div>
 
@@ -44,15 +44,12 @@
 		</div>
 	</nav>
 	<!-- fin navbar -->
-	
-	<!-- Carrusel -->
-	
-		<div class="container mt-5 ">
-			<div class="row justify-content-center ">
-				<div class="col-3 position-absolute " >
-			    
-			        	
-			            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+	<div class="container mt-3">
+		<div class="row justify-content-center ">
+			<div class="col-4" >
+	<!-- Carrusel -->    	
+			            <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
 			                <div class="carousel-inner">
 			                    <!-- Primera -->
 			                    <div class="carousel-item active">
@@ -72,9 +69,7 @@
 			                        
 			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
 			                            <h5 class="raleway px-2">¡Comparte y recibe ayuda!</h5>
-			                            <p class="raleway px-2">Nuestro foro está dedicado para que todos los emprendedores
-			                                compartan entre si y
-			                                tengan mejor acceso a ayudas financieras y asesorías de sus propios rubros</p>
+			                            <p class="raleway px-2">Nuestro foro está dedicado para que todos los emprendedores</p>
 			                        </div>
 			                    </div>
 			
@@ -85,8 +80,7 @@
 			                        
 			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
 			                            <h5 class="raleway px-4">Usa nuestras herramientas de contabilidad</h5>
-			                            <p class="raleway px-4">Aprende a menajar tu negocio, conocer tus números y recibe
-			                                consejos sobre cómo llevar tu negocio</p>
+			                            <p class="raleway px-4">Aprende a menajar tu negocio</p>
 			                        </div>
 			                    </div>
 			
@@ -98,8 +92,7 @@
 			                        
 			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
 			                            <h5 class="raleway px-4">Recibe las noticias relacionadas a tu rubro</h5>
-			                            <p class="raleway px-4">Echale un ojo a las nuevas normativas vigentes para tu negocio y
-			                                mantente siempre actualizado y en vanguardia</p>
+			                            <p class="raleway px-4">Echale un ojo a las nuevas normativas vigentes para tu negocio</p>
 			                        </div>
 			                    </div>
 			
@@ -109,9 +102,7 @@
 			                        
 			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
 			                            <h5 class="raleway px-4">¡Accede a cursos gratuitos!</h5>
-			                            <p class="raleway px-4">Te ofrecemos una lista de cursos gratuitos que puedes tomar para que
-			                                aprendas
-			                                más sobre tu negocio y te especialices en el</p>
+			                            <p class="raleway px-4">Te ofrecemos una lista de cursos gratuitos</p>
 			                        </div>
 			                    </div>
 			
@@ -123,9 +114,7 @@
 			                        
 			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
 			                            <h5 class="raleway px-4">Asiste a eventos para pequeños emprendedores</h5>
-			                            <p class="raleway px-4">Accede a una lista de los eventos que están ocrruiendo en el país
-			                                que
-			                                puedan potenciar tu negocio</p>
+			                            <p class="raleway px-4">Accede a una lista de los eventos</p>
 			                        </div>
 			                    </div>
 			
@@ -137,9 +126,7 @@
 			                        
 			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
 			                            <h5 class="raleway px-4">Obten una lista de proveedores de tu área</h5>
-			                            <p class="raleway px-4">Te ofrecemos una lista de los mejores proveedores que trabajan con
-			                                tu rubro,
-			                                para que se te sea más fácil competir con tus productos en el mercado</p>
+			                            <p class="raleway px-4">Te ofrecemos una lista de los mejores proveedores</p>
 			                        </div>
 			                    </div>
 			
@@ -158,11 +145,65 @@
 			                    </button>
 			                </div>
 			            </div>
-			            <!-- fin Carrusel -->
-			       
+	<!-- fin Carrusel -->
+			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2">
+			       		<div>
+				       		<h4>Titulo</h4>
+				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+			       		</div>
+			       	</div>
+			</div>
+			<!-- Contenido Derecho -->
+			<div class="col-8 text-center">
+				<h1>Contenido</h1>
+				<div class="row justify-content-around">
+					<div class="col-4">
+						<div class="card m-2 text-center" style="width: 18rem;">
+							<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card m-2 text-center" style="width: 18rem;">
+						 	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
 				</div>
+				<div class="row justify-content-around">
+					<div class="col-4">	
+						<div class="card m-2 text-center" style="width: 18rem;">
+						  <img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+					<div class="col-4">	
+						 <div class="card m-2 text-center" style="width: 18rem;">
+						  	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+				</div>
+				<!--FINAL Contenido Derecho -->	
 			</div>
 		</div>
+	</div>
 		
 	<script src="/particles/particles.js"></script>
 	<script src="/particles/data/app.js"></script>
