@@ -26,7 +26,7 @@
 			</div>
 
 			<form action="/procesar/logout"><button class="btn btn-outline-warning">Cerrar Sesion</button></form>
-			<form action="/finanzas/${idUsuario}"><button class="btn btn-outline-warning">Finanzas</button></form>
+			<form action="/finanzas/opciones"><button class="btn btn-outline-warning">Finanzas</button></form>
 			<form action="/foro"><button class="btn btn-outline-warning">Foro</button></form>
 			<form action="/perfil"><button class="btn btn-outline-warning">Info Perfil/PYME</button></form>
 			
@@ -146,12 +146,20 @@
 			                </div>
 			            </div>
 	<!-- fin Carrusel -->
+	
+	<!-- Mensajes Foro -->
+	
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2">
-			       		<div>
+			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
+				       		<h4>Titulo</h4>
+				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+			       		</div>
+			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
 				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
 			       		</div>
 			       	</div>
+	<!-- Final Mensajes Foro -->
 			</div>
 			<!-- Contenido Derecho -->
 			<div class="col-8 text-center">
