@@ -49,7 +49,7 @@ public class ControladorUsuario{
 		sesion.setAttribute("idUsuario", usuarioActual.getId());
 		sesion.setAttribute("nombreUsuario", usuarioActual.getNombre());
 		sesion.setAttribute("apellidoUsuario", usuarioActual.getApellido());
-		return "redirect:/home";
+		return "redirect:/herramientas";
 	}
 	
 	@GetMapping("/registro")
@@ -69,10 +69,9 @@ public class ControladorUsuario{
 		sesion.setAttribute("idUsuario", nuevoUsuario.getId());
 		sesion.setAttribute("nombreUsuario", nuevoUsuario.getNombre());
 		sesion.setAttribute("apellidoUsuario", nuevoUsuario.getApellido());
-		System.out.println(nuevoUsuario.getApellido());
 		return "redirect:/existenciaPyme";
 	}
-	 @PostMapping("/upload")
+	/* @PostMapping("/upload")
 	    public String uploadImage(@RequestParam("image") MultipartFile file, @RequestParam("userId") Long userId) {
 	        if (file.isEmpty()) {
 	            return "redirect:/perfil";
@@ -90,7 +89,7 @@ public class ControladorUsuario{
 	        }
 
 	        return "redirect:/perfil";
-	    }
+	    }*/
 	
 	
 	

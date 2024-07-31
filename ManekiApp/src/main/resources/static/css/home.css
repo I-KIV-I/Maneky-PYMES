@@ -1,6 +1,8 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
  #carouselExampleAutoplaying {
-    height: 580px; /* Ajusta la altura como desees */
+
+    height: 795px; /* Ajusta la altura como desees */
+
   }
   .carousel-item{
   	height: 100%;
@@ -12,20 +14,14 @@
   
  .carousel-item img {
     height: 100%;
-        object-fit: cover; /* Esto asegura que las im·genes cubran el contenedor sin deformarse */
+    object-fit: cover; /* Esto asegura que las im√°genes cubran el contenedor sin deformarse */
+
   }
 
-
-
-.raleway{
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+.navbbarback{
+background-color:  #00131D;
 }
-.iconmaneki{
-	border-radius: 70%;
-}
+
 .mainbackground{
 	background-color: rgb(153, 196, 177);
   	background-size: cover;

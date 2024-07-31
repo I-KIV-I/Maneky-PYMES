@@ -3,76 +3,114 @@ package com.kevinvidal.controladores;
 
 import java.util.List;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.kevinvidal.modelos.Login;
-import com.kevinvidal.modelos.Pyme;
+import com.kevinvidal.modelos.Categoria;
+import com.kevinvidal.modelos.FormularioTemporal;
 import com.kevinvidal.modelos.Usuario;
+import com.kevinvidal.servicios.ServicioCategoria;
+import com.kevinvidal.modelos.Pyme;
 import com.kevinvidal.servicios.ServicioPyme;
 import com.kevinvidal.servicios.ServicioUsuario;
-
 import jakarta.servlet.http.HttpSession;
 
 
 @Controller
 public class ControladorNavegacion {
-	
-	private final ServicioUsuario servicioUsuario;
+
+	@Autowired
+	private final ServicioCategoria servicioCategoria;
 	private final ServicioPyme sercvicioPyme;
 	
-	public ControladorNavegacion(ServicioUsuario servicioUsuario, ServicioPyme sercvicioPyme) {
-		super();
-		this.servicioUsuario = servicioUsuario;
+	public ControladorNavegacion(ServicioPyme sercvicioPyme,
+						   	     ServicioCategoria servicioCategoria) {
+		
 		this.sercvicioPyme = sercvicioPyme;
+		this.servicioCategoria = servicioCategoria;
 	}
 	
-	@GetMapping("/maneki_pyme/inicio")
+
+	@GetMapping({"/maneki_pyme/inicio", "/"})
 	public String desplegarPaginaInicial() {
 		return "PaginaInicial.jsp";
 	}
+	
 	@GetMapping("/existenciaPyme")
-	public String desplegarConsulta() {
-	return "EleccionExistenciaEmpresa.jsp";	
+	public String desplegarConsultaExistenciaPyme(HttpSession sesion) {
+		if(sesion.getId()==null) {
+			return "redirect:/login";
+		}
+		return "EleccionExistenciaEmpresa.jsp";	
 	}
 	
-	@GetMapping("/crear_pyme")
-	public String desplegarFormularioTemporal(HttpSession sesion) {
+	@GetMapping("/solicitud/informacion")
+	public String desplegarFormularioTemporal(Model model, HttpSession sesion,
+											  @ModelAttribute("formTemp")FormularioTemporal formTemp) {
+		if(sesion.getId()==null) {
+			return "redirect:/login";
+		}
+		List<Categoria> todasCategorias = servicioCategoria.obtenerTodos();
+		model.addAttribute("listaCategorias",todasCategorias);
+		
 		return"FormularioTemporal.jsp";
 	}
-	@PostMapping("/crear_pyme")
-	public String procesarFormularioTemporal(HttpSession sesion) {
+	@PostMapping("/solicitud/informacion")
+	public String procesarFormularioTemporal(HttpSession sesion,
+											 @ModelAttribute("formTemp")FormularioTemporal formTemp) {
+		sesion.setAttribute("respuestasTemporales", formTemp);
 		return "redirect:/guiaCrearPyme";
 	}
 	
 	@GetMapping("/guiaCrearPyme")
 	public String desplegarInformacionTramites(HttpSession sesion) {
+		if(sesion.getId()==null) {
+			return "redirect:/login";
+		}
+		
+			
 		return "InfoTramites.jsp";
 	}
 	
 	@GetMapping("/herramientas/{id}")
 	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		/*if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
+
 		}
-		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
+		
 		return "EspacioDeTrabajo.jsp";
 	}
 	
 	
+=======
+		}*/
+		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
+		return "EspacioDeTrabajo.jsp";
+	}
+	
+	@GetMapping("/finanzas/opciones")
+	public String seleccionFinanzas(HttpSession sesion) {
+		if(sesion.getId()== null) {
+			return "redirect:/login";
+		} 
+		return "AdministradorDeFinanzas.jsp";
+	}
 	@PostMapping("procesar/finanzas/{id}")
 	public String procesarInfoPyme(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
 		return "redirect:/finanzas/{id}";
 	}
 	@GetMapping("/finanzas/{id}")
 	public String desplegarInformeFinanzas(HttpSession sesion) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
 		return "FinanzasPyme.jsp";
@@ -80,7 +118,7 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/perfil")
 	public String desplegarInformacionUsuario(HttpSession sesion,Usuario usuario,Pyme pyme) {
-		if(sesion.getId().equals(null)) {
+		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
 		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId(usuario.getId());

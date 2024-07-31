@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .index{
 	z-index: 1;
 }
@@ -9,6 +10,11 @@
 	--color-3: #0088A6; /*azul pastel*/
 	--color-4: #00131D; /*azul oscuro*/
 	--color-5: #F1B9B8; /*rosado pastel*/
+	--back-1:linear-gradient
+			 (0deg, rgba(0,85,105,1) 0%,
+			 rgba(0,136,166,1) 26%, 
+			 rgba(0,136,166,1) 78%, 
+			 rgba(0,85,105,1) 100%); /*Background*/
 } 
 #particles-js{
   position: fixed;
@@ -21,11 +27,27 @@
   background-position: 50% 50%;
   z-index: -1;
 }
-canvas{
+.particles-js-canvas-el{
   display:block;
   vertical-align:bottom;
 }
+.password-wrapper {
+	position: relative;
+}
 
+.toggle-button {
+	display: inline-flex;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: unset;
+	right: 12px;
+	cursor: pointer;
+}
 
+.eye-icon {
+	width: 20px;
+	height: 20px;
+}
 
 

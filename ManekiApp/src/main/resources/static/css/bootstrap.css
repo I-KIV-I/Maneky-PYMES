@@ -4,8 +4,22 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ :root{
+	--color-1: #8FB57D; /*verde pastel*/
+	--color-2: #99C4B2; /*#celeste pastel*/
+	--color-3: #0088A6; /*azul pastel*/
+	--color-4: #00131D; /*azul oscuro*/
+	--color-5: #F1B9B8; /*rosado pastel*/
+	--back-1:linear-gradient
+			 (0deg, rgba(0,85,105,1) 0%,
+			 rgba(0,136,166,1) 26%, 
+			 rgba(0,136,166,1) 78%, 
+			 rgba(0,85,105,1) 100%); /*Background*/
+} 
+
 :root,
 [data-bs-theme=light] {
+	--color-4: #00131D; /*azul oscuro*/
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -3950,24 +3964,24 @@ textarea.form-control-lg {
   display: block;
 }
 
-.navbar {
+.navbar {  /*fix this*/
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
-  --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
-  --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
-  --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-color: rgba(var(--color-4), 0.65);
+  --bs-navbar-hover-color: rgba(var(--color-4), 0.8);
+  --bs-navbar-disabled-color: rgba(var(--color-4), 0.3);
+  --bs-navbar-active-color: rgba(var(--color-4), 1);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
-  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-brand-color: rgba(var(--color-4), 1);
+  --bs-navbar-brand-hover-color: rgba(var(--color-4), 1);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
   --bs-navbar-toggler-font-size: 1.25rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+  --bs-navbar-toggler-border-color: rgba(var(--color-4), 0.15);
   --bs-navbar-toggler-border-radius: var(--bs-border-radius);
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
