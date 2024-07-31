@@ -44,6 +44,10 @@ public class Mensaje {
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_hilo")
+	private Hilo hilo;
 	
 	public Mensaje() {}
 	
