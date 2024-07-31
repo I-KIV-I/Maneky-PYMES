@@ -152,10 +152,17 @@
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2">
 			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
+				       		<hr>
 				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
 			       		</div>
 			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
+				       		<hr>
+				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+			       		</div>
+			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
+				       		<h4>Titulo</h4>
+				       		<hr>
 				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
 			       		</div>
 			       	</div>
