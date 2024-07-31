@@ -103,7 +103,7 @@ public class Mensaje {
 		this.hilo = hilo;
 	}
 
-
+	
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}

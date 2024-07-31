@@ -100,6 +100,7 @@ public class ControladorForo {
 		Hilo hilo = servicioHilo.obtenPorId(idHilo);
 		nuevoMensaje.setHilo(hilo);
 		nuevoMensaje.setUsuario(usuario);
+		nuevoMensaje.setId(null);
 		servicioMensaje.guardarMensaje(nuevoMensaje);
 		return "redirect:/foro/"+idHilo;
 	}
