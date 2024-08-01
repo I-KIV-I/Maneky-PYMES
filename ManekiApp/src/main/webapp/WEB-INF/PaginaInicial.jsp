@@ -41,13 +41,13 @@
 <!-- fin navbar -->
 
 
-
+<div class="container mt-3">
+	<div class="row justify-content-center ">
+		<div class="col-8" >
 
 <!-- Carrusel -->
 <div id="carouselExampleAutoplaying" class="carousel slide c-size-home" data-bs-ride="carousel">
   <div class="carousel-inner c-inner">
-  
-  
   <!-- Primera imagen -->
     <div class="carousel-item c-item active">
       <img src="/img/empezar.jpg" class="d-block w-100 h-100" alt="Finanzas">
@@ -230,11 +230,13 @@
   </div>
  </div>
   <!-- fin Carrusel -->
-
+		</div>
+	</div>
+</div>
 
   
   <!-- Footer -->
-<div>
+<div class="footer-position">
 	<ul class="nav justify-content-center bg-dark bg-opacity-50">
 		<li class="nav-item">
     		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
