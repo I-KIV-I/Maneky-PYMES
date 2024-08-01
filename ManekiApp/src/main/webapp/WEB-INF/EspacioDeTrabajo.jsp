@@ -49,8 +49,8 @@
 		<div class="row justify-content-center ">
 			<div class="col-4" >
 	<!-- Carrusel -->    	
-			            <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
-			                <div class="carousel-inner">
+			            <div id="carouselExampleAutoplaying" class="carousel slide mt-2 card2" data-bs-ride="carousel">
+			                <div class="carousel-inner c-noticias">
 			                    <!-- Primera -->
 			                    <div class="carousel-item active">
 			                        <img src="/img/empezar.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
@@ -149,18 +149,18 @@
 	
 	<!-- Mensajes Foro -->
 	
-			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2">
-			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
+			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
+			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
 				       		<hr>
 				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
 			       		</div>
-			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
+			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
 				       		<hr>
 				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
 			       		</div>
-			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
+			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
 				       		<hr>
 				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
@@ -169,11 +169,10 @@
 	<!-- Final Mensajes Foro -->
 			</div>
 			<!-- Contenido Derecho -->
-			<div class="col-8 text-center">
-				<h1>Contenido</h1>
-				<div class="row justify-content-around">
+			<div class="col-7 text-center card2 ms-4 py-3">
+				<div class="row justify-content-around ">
 					<div class="col-4">
-						<div class="card m-2 text-center" style="width: 18rem;">
+						<div class="card text-center" style="width: 18rem;">
 							<img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
 								    <h5 class="card-title">Card title</h5>
@@ -183,7 +182,7 @@
 						</div>
 					</div>
 					<div class="col-4">
-						<div class="card m-2 text-center" style="width: 18rem;">
+						<div class="card text-center" style="width: 18rem;">
 						 	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
 								    <h5 class="card-title">Card title</h5>
@@ -193,9 +192,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="row justify-content-around">
+				<div class="row justify-content-around mt-5">
 					<div class="col-4">	
-						<div class="card m-2 text-center" style="width: 18rem;">
+						<div class="card text-center" style="width: 18rem;">
 						  <img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
 								    <h5 class="card-title">Card title</h5>
@@ -205,7 +204,7 @@
 						</div>
 					</div>
 					<div class="col-4">	
-						 <div class="card m-2 text-center" style="width: 18rem;">
+						 <div class="card text-center" style="width: 18rem;">
 						  	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
 								    <h5 class="card-title">Card title</h5>
@@ -219,7 +218,20 @@
 			</div>
 		</div>
 	</div>
-		
+  <!-- Footer -->
+<div class="footer-position">
+	<ul class="nav justify-content-center bg-dark bg-opacity-50">
+		<li class="nav-item">
+    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link text-white" href="#">Acerca de</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
+  		</li>
+	</ul>
+</div>		
 	<script src="/particles/particles.js"></script>
 	<script src="/particles/data/app.js"></script>
 	<script src="/js/bootstrap.bundle.js"></script>
