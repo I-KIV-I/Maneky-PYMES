@@ -77,7 +77,7 @@ public class ControladorNavegacion {
 		return "InfoTramites.jsp";
 	}
 	
-	@GetMapping("/herramientas/{id}")
+	@GetMapping("/herramientas")
 	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
 		/*if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";

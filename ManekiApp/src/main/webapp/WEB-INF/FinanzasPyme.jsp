@@ -25,7 +25,12 @@
         </header>
         <article>
             <ul>
-                <c:forEach ><li><p>hilo foros</p></li></c:forEach>
+                <c:forEach var="informes" items="${informes}"><li><p>hilo foros</p></li></c:forEach>
+            </ul>
+        </article>
+        <article>
+            <ul>
+                <c:forEach var="informes" items="${informes}"><li><p>hilo foros</p></li></c:forEach>
             </ul>
         </article>
 </body>

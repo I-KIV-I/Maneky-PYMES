@@ -13,7 +13,7 @@
 	 		<table>
 			 		<tr>
 			 			<th>
-			 				<h1>${hilo.titulo }</h1>
+			 				<h1>${hilo.titulo}</h1>
 			 			</th>
 			 		</tr>
 			 		<tr>
@@ -21,9 +21,9 @@
 			 				<h3>${hilo.contenido }</h3>
 			 			</th>
 			 		</tr>
-					<c:forEach var="mensaje" items="${listaMensajes }">			 			
+					<c:forEach var="mensaje" items="${listaMensajes}">			 			
 			 			<tr>
-			 				<td>${mensaje.usuario.nombre }</td>			 	
+			 				<td>${mensaje.usuario.nombre}</td>			 	
 			 				<fmt:formatDate value="${mensaje.updatedAt}" pattern="dd/MM/yyyy HH:mm" />		 	
 			 							 	
 			 			</tr>
@@ -32,7 +32,7 @@
 			 			</tr>
 			 		</c:forEach>
 			 </table>
-			 <form:form method="post"  action="/foro/${hilo.id }" modelAttribute="formMensaje">
+			 <form:form method="post"  action="/foro/${hilo.id}" modelAttribute="formMensaje">
 			 	<form:label path="contenido">Comenta algo:</form:label>
 			 	<form:input type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
 			 	<button>Publicar</button>

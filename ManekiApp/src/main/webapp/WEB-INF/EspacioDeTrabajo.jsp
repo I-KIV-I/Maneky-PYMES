@@ -28,17 +28,36 @@
                 <h5>Bienvenido,${nombreUsuario}</h5>
             </div>
         </header>
-        <article>
-            <form:form action="procesar/finanzas/{pyme.id}">
-                <form:select path="pymes">
-                    <c:forEach var="pyme" items="${listaPyme}"> 
-                        <form:option value="${pyme.id}">${pyme.nombre}</form:option>
-                    </c:forEach>
-                </form:select>
-                <button type="submit">Finanzas Pyme</button>
-            </form:form>
-        </article>
 
+         <c:if test="${not empty listaPyme}">
+            <article>
+                <form:form action="procesar/finanzas" method="post">
+                    <form:select path="pymeId" class="form-select" multiple="multiple" aria-label="Multiple select example">
+                        <form:option value="">Selecciona una de tus pymes</form:option>
+                        <c:forEach var="pyme" items="${listaPyme}">
+                            <form:option value="${pyme.id}">${pyme.nombre}</form:option>
+                        </c:forEach>
+                    </form:select>
+                    <button type="submit">Finanzas Pyme</button>
+                </form:form>
+            </article>
+        </c:if>
+        <c:if test="${empty listaPyme}">
+            <article>
+                <form:form>
+                    <form:select path="pymeId" class="form-select" multiple="multiple" aria-label="Multiple select example">
+                        <form:option value="">No tienes Pymes registradas</form:option>
+                    </form:select>
+                </form:form>
+                <form action="/inscripcion/pyme" method="get">
+                    <button type="submit">Inscribre tu pyme acá</button>
+                </form>
+                <p>o infórmate aca</p>
+                <form action="/guiaCrearPyme" method="get">
+                    <button type="submit">Informacion</button>
+                </form>
+            </article>
+        </c:if>
         <article>
             <ul>
 	            <li><p>hilo foros</p></li>
@@ -71,7 +90,7 @@
                             </p>
                         </div>
                     </div>
-
+					 
 
                     <!-- Segunda -->
                     <div class="carousel-item">
