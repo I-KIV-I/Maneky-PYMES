@@ -88,8 +88,18 @@ public class ControladorNavegacion {
 			return "redirect:/login";
 		}
 		
-		List<Hilo> listaHilos = servicioHilo.obtenerTodos(); 
-		
+		List<Hilo> todosHilos = servicioHilo.obtenerTodos(); 
+		for (Long i=(long)0; i<todosHilos.size(); i++) {
+			if(i == todosHilos.size()-3) {		 
+				modelo.addAttribute("tres", servicioHilo.obtenPorId(i+1)); 
+			}
+			if(i== todosHilos.size()-2){
+				modelo.addAttribute("dos", servicioHilo.obtenPorId(i+1));
+			}
+			if(i == todosHilos.size()-1) {
+				modelo.addAttribute("uno", servicioHilo.obtenPorId(i+1));
+			}
+		}
 		
 		return "EspacioDeTrabajo.jsp";
 	}

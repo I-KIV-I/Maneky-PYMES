@@ -151,21 +151,19 @@
 	
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
-				       		<h4>Titulo</h4>
+				       		<h4> <a href="/foro/${uno.id}"> ${uno.titulo }</a></h4>
 				       		<hr>
-				       		<div>
-				       			<p class="">Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksj k jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
-			       			</div>
+				       		<p class="">${uno.contenido}</p>	
 			       		</div>
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
-				       		<h4>Titulo</h4>
+				       		<h4><a href="/foro/${uno.id}">${dos.titulo}</a></h4>
 				       		<hr>
-				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+				       		<p>${dos.contenido}</p>
 			       		</div>
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
-				       		<h4>Titulo</h4>
+				       		<h4><a href="/foro/${uno.id}">${tres.titulo }</a></h4>
 				       		<hr>
-				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+				       		<p>${tres.contenido}</p>
 			       		</div>
 			       	</div>
 	<!-- Final Mensajes Foro -->
