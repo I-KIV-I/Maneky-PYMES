@@ -37,5 +37,20 @@
 			 	<form:input type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
 			 	<button>Publicar</button>
 			 </form:form>
+<a href="/foro">Atras</a>
+<h1>${hilo.titulo}</h1>
+    <h3>${hilo.contenido}</h3>
+    <form:form method="post" action="/foro/${hilo.id}" modelAttribute="formMensaje">
+        <form:label path="contenido">Comenta algo:</form:label>
+        <form:input type="text" path="contenido" placeholder="Escribe tu comentario aquí..." />
+        <button type="submit">Publicar</button>
+    </form:form>
+    <c:forEach var="mensaje" items="${listaMensajes}">
+        <div>
+            <p><strong>${mensaje.usuario.nombre} ${mensaje.usuario.apellido}</strong></p>
+            <p>${mensaje.contenido}</p>
+            <p><em>${mensaje.updatedAt}</em></p>
+        </div>
+    </c:forEach>
 </body>
 </html>

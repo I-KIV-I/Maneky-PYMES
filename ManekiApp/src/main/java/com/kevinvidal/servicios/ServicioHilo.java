@@ -25,4 +25,7 @@ public class ServicioHilo {
 	public void eliminar(Long idHilo) {
 		repositorioHilo.deleteById(idHilo);
 	}
+	public List<Hilo> obtenerPorUsuarioId(Long usuarioId){
+		return repositorioHilo.findByUsuarioId(usuarioId);
+	}
 }

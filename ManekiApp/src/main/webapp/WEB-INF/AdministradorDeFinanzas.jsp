@@ -43,12 +43,10 @@
 	
 
 <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbbarback" 
-  data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
-	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" 
-	      class="d-inline-block align-text-center iconmaneki"> 
+	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
 	      <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

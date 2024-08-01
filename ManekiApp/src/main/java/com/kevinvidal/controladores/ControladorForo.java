@@ -1,5 +1,7 @@
 package com.kevinvidal.controladores;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,7 +48,7 @@ public class ControladorForo {
 		modelo.addAttribute("listaHilos", servicioHilo.obtenerTodos());
 		return "ForoHome.jsp";
 	}
-	@PostMapping("/procesarforo")
+	@PostMapping("/foro")
 	public String publicarHilo(HttpSession sesion, Model modelo,
 							   @Valid@ModelAttribute("formHilo") Hilo nuevoHilo,
 							   BindingResult validaciones) {
@@ -77,7 +79,8 @@ public class ControladorForo {
 		return "redirect:/login";
 		}
 		modelo.addAttribute("hilo", servicioHilo.obtenPorId(idHilo));
-		modelo.addAttribute("listaMensajes", servicioMensaje.obtenerPorHiloId(idHilo));
+		List<Mensaje> listaMensajes = servicioMensaje.obtenerPorHiloId(idHilo);
+		modelo.addAttribute("listaMensajes", listaMensajes);
 		
 		return "ForoHilo.jsp";
 	}
@@ -97,6 +100,7 @@ public class ControladorForo {
 		Hilo hilo = servicioHilo.obtenPorId(idHilo);
 		nuevoMensaje.setHilo(hilo);
 		nuevoMensaje.setUsuario(usuario);
+		nuevoMensaje.setId(null);
 		servicioMensaje.guardarMensaje(nuevoMensaje);
 		return "redirect:/foro/"+idHilo;
 	}
