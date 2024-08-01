@@ -48,7 +48,7 @@ public class ControladorForo {
 		modelo.addAttribute("listaHilos", servicioHilo.obtenerTodos());
 		return "ForoHome.jsp";
 	}
-	@PostMapping("/procesarforo")
+	@PostMapping("/foro")
 	public String publicarHilo(HttpSession sesion, Model modelo,
 							   @Valid@ModelAttribute("formHilo") Hilo nuevoHilo,
 							   BindingResult validaciones) {

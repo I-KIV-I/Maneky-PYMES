@@ -37,8 +37,8 @@
 			      Mi cuenta
 			    </button>
 			    <ul class="dropdown-menu">
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mi Perfil -->
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mis pymes -->
+			      <li><a class="dropdown-item" href="/perfil">Mi Perfil</a></li> <!-- Mi Perfil -->
+			      <li><a class="dropdown-item" href="/pymes">Mis Pymes</a></li> <!-- Mis pymes -->
 			    </ul>
 			  </div>
 		</div>
@@ -151,9 +151,9 @@
 	
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2">
 			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
-				       		<h4>Titulo</h4>
+				       		<h4>Lista</h4>
 				       		<hr>
-				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+				       		<p>${listaHilos }</p>
 			       		</div>
 			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>

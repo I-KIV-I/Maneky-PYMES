@@ -11,7 +11,7 @@
 </head>
 <body>
 	<header>
-		<h1>FORO</h1>
+		<h1>FORO</h1> <a href="/herramientas">Atras</a>
 	</header>
 	<main>
 		<div>
@@ -29,7 +29,7 @@
 			 </table>
 		</div>
 		<h2>Crea tu Hilo aquí</h2>
-		<form:form method="post"  action="/procesarforo" modelAttribute="formHilo">
+		<form:form method="post"  action="/foro" modelAttribute="formHilo">
 			 <form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
 			 <form:input path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
 			

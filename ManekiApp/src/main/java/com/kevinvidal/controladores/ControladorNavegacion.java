@@ -3,7 +3,7 @@ package com.kevinvidal.controladores;
 
 import java.util.List;
 
-
+import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.kevinvidal.modelos.Categoria;
 import com.kevinvidal.modelos.FormularioTemporal;
+import com.kevinvidal.modelos.Hilo;
 import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioCategoria;
+import com.kevinvidal.servicios.ServicioHilo;
 import com.kevinvidal.modelos.Pyme;
 import com.kevinvidal.servicios.ServicioPyme;
 import com.kevinvidal.servicios.ServicioUsuario;
@@ -26,12 +28,14 @@ public class ControladorNavegacion {
 
 	@Autowired
 	private final ServicioCategoria servicioCategoria;
-	private final ServicioPyme sercvicioPyme;
+	private final ServicioPyme servicioPyme;
+	private final ServicioHilo servicioHilo;
 	
-	public ControladorNavegacion(ServicioPyme sercvicioPyme,
-						   	     ServicioCategoria servicioCategoria) {
-		
-		this.sercvicioPyme = sercvicioPyme;
+	public ControladorNavegacion(ServicioPyme servicioPyme,
+						   	     ServicioCategoria servicioCategoria,
+						   	     ServicioHilo servicioHilo) {
+		this.servicioHilo = servicioHilo;
+		this.servicioPyme = servicioPyme;
 		this.servicioCategoria = servicioCategoria;
 	}
 	
@@ -78,11 +82,17 @@ public class ControladorNavegacion {
 	}
 	
 	@GetMapping("/herramientas")
-	public String desplegarEspacioDeTrabajo(HttpSession sesion) {
-		/*if(sesion.getAttribute("idUsuario")==null) {
+	public String desplegarEspacioDeTrabajo(HttpSession sesion,
+											Model modelo) {
+		if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
-		}*/
+		}
 		
+		List<Hilo> listaHilos = servicioHilo.obtenerTodos(); 
+		
+		for(int i=0; i<listaHilos.size();  ) {
+			
+		}
 		return "EspacioDeTrabajo.jsp";
 	}
 	
@@ -113,7 +123,7 @@ public class ControladorNavegacion {
 		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
-		List<Pyme> listaPyme = this.sercvicioPyme.obtenerPymePorUsuarioId(usuario.getId());
+		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId(usuario.getId());
 		
 		return "PerfilUsuario.jsp";
 	}
