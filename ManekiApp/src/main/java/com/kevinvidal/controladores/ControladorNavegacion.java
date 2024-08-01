@@ -90,9 +90,7 @@ public class ControladorNavegacion {
 		
 		List<Hilo> listaHilos = servicioHilo.obtenerTodos(); 
 		
-		for(int i=0; i<listaHilos.size();  ) {
-			
-		}
+		
 		return "EspacioDeTrabajo.jsp";
 	}
 	

@@ -24,11 +24,12 @@
 					<img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
 				</a>
 			</div>
-			<form action="/procesar/logout"><button class="btn btn-outline-warning">Cerrar Sesion</button></form>
-			<form action="/finanzas/opciones"><button class="btn btn-outline-warning">Ir a Finanzas</button></form>
-			<form action="/foro"><button class="btn btn-outline-warning">Ir al Foro</button></form>
-			<form action="/perfil"><button class="btn btn-outline-warning">Ir a tu Perfil/PYME</button></form>
 
+			<form action="/procesar/logout"><button class="btn btn-outline-warning">Cerrar Sesion</button></form>
+			<form action="/finanzas/opciones"><button class="btn btn-outline-warning">Finanzas</button></form>
+			<form action="/foro"><button class="btn btn-outline-warning">Foro</button></form>
+			<form action="/perfil"><button class="btn btn-outline-warning">Info Perfil/PYME</button></form>
+			
 			<img th:src="${user.profileImageUrl}" alt="">
 			<h5>Bienvenido ${nombreUsuario}</h5>
 			 <div class="btn-group" role="group">
@@ -36,8 +37,8 @@
 			      Mi cuenta
 			    </button>
 			    <ul class="dropdown-menu">
-			      <li><a class="dropdown-item" href="/perfil">Mi Perfil</a></li> <!-- Mi Perfil -->
-			      <li><a class="dropdown-item" href="/pymes">Mis Pymes</a></li> <!-- Mis pymes -->
+			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mi Perfil -->
+			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mis pymes -->
 			    </ul>
 			  </div>
 		</div>
@@ -148,17 +149,13 @@
 	
 	<!-- Mensajes Foro -->
 	
-
-			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2">
-			       		<div class="bg-black bg-opacity-25 rounded text-white m-2 p-2">
-				       		<h4>Lista</h4>
-
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
-
 				       		<hr>
-				       		<p></p>
+				       		<div>
+				       			<p class="">Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksj k jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+			       			</div>
 			       		</div>
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
@@ -168,3 +165,79 @@
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
 				       		<hr>
+				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+			       		</div>
+			       	</div>
+	<!-- Final Mensajes Foro -->
+			</div>
+			<!-- Contenido Derecho -->
+			<div class="col-7 text-center bg-black bg-opacity-50 rounded card2 mt-2 ms-4 py-3">
+				<div class="row justify-content-around ">
+					<div class="col-4">
+						<div class="card text-center" style="width: 18rem;">
+							<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card text-center" style="width: 18rem;">
+						 	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-around mt-3">
+					<div class="col-4">	
+						<div class="card text-center" style="width: 18rem;">
+						  <img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+					<div class="col-4">	
+						 <div class="card text-center" style="width: 18rem;">
+						  	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+					</div>
+				</div>
+				<!--FINAL Contenido Derecho -->	
+			</div>
+		</div>
+	</div>
+  <!-- Footer -->
+<div class="footer-position">
+	<ul class="nav justify-content-center bg-dark bg-opacity-50">
+		<li class="nav-item">
+    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link text-white" href="#">Acerca de</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
+  		</li>
+	</ul>
+</div>		
+	<script src="/particles/particles.js"></script>
+	<script src="/particles/data/app.js"></script>
+	<script src="/js/bootstrap.bundle.js"></script>
+</body>
+
+
+</html>
