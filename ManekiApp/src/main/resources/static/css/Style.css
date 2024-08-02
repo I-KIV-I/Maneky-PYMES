@@ -4,25 +4,30 @@
   initial-value: 0deg;
   inherits: false;
 }
-
-
 :root{
 	--color-1: #8FB57D; /*verde pastel*/
 	--color-2: #99C4B2; /*#celeste pastel*/
 	--color-3: #0088A6; /*azul pastel*/
 	--color-4: #00131D; /*azul oscuro*/
 	--color-5: #F1B9B8; /*rosado pastel*/
-  	--clr-1: #052b2f;
-  	--clr-2: #073438;
+  	--clr-1: #0e4b50;
+  	--clr-2: #2d8f85;
   	--clr-3: #0e4b50;
   	--clr-4: #2d8f85;
-  	--clr-5: #637c54;
+  	--clr-5: #0e4b50;
 	--back-1:linear-gradient
 			 (0deg, rgba(0,85,105,1) 0%,
 			 rgba(0,136,166,1) 26%, 
 			 rgba(0,136,166,1) 78%, 
 			 rgba(0,85,105,1) 100%); /*Background*/
 } 
+.contenido-foro{
+	width: 90%;
+}
+.mensaje-preview{
+	width: 380px;
+	height: 150px;
+}
 
 .card2 {
   width: 100%;
@@ -46,7 +51,7 @@
     var(--clr-3)
   );
   border-radius: inherit;
-  animation: rotation 20s linear infinite;
+  animation: rotation 5s linear infinite;
 }
 
 .card2::after {

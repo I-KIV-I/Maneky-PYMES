@@ -45,7 +45,7 @@
 	</nav>
 	<!-- fin navbar -->
 
-	<div class="container mt-3">
+	<div class="container mt-3 position-absolute start-50 translate-middle-x">
 		<div class="row justify-content-center ">
 			<div class="col-4" >
 	<!-- Carrusel -->    	
@@ -150,10 +150,12 @@
 	<!-- Mensajes Foro -->
 	
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
-			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
+			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2 mensaje-preview">
 				       		<h4>Titulo</h4>
 				       		<hr>
-				       		<p>Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+				       		<div>
+				       			<p class="">Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksj k jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
+			       			</div>
 			       		</div>
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4>Titulo</h4>
@@ -169,9 +171,9 @@
 	<!-- Final Mensajes Foro -->
 			</div>
 			<!-- Contenido Derecho -->
-			<div class="col-7 text-center card2 ms-4 py-3">
+			<div class="col-7 text-center bg-black bg-opacity-50 rounded card2 mt-2 ms-4 py-3 ">
 				<div class="row justify-content-around ">
-					<div class="col-4">
+					<div class="col-5">
 						<div class="card text-center" style="width: 18rem;">
 							<img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
@@ -181,7 +183,7 @@
 							  </div>
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-5">
 						<div class="card text-center" style="width: 18rem;">
 						 	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
@@ -192,8 +194,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="row justify-content-around mt-5">
-					<div class="col-4">	
+				<div class="row justify-content-around mt-3">
+					<div class="col-5">	
 						<div class="card text-center" style="width: 18rem;">
 						  <img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
@@ -203,7 +205,7 @@
 							  </div>
 						</div>
 					</div>
-					<div class="col-4">	
+					<div class="col-5">	
 						 <div class="card text-center" style="width: 18rem;">
 						  	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
 							  <div class="card-body">
