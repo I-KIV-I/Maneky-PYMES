@@ -182,13 +182,10 @@
 	<!-- Mensajes Foro -->
 	
 			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
-<<<<<<< HEAD
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2 mensaje-preview">
 				       		<h4>Titulo</h4>
-=======
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4> <a href="/foro/${uno.id}"> ${uno.titulo }</a></h4>
->>>>>>> branch 'main' of https://github.com/I-KIV-I/Maneky-PYMES.git
 				       		<hr>
 
 				       		<p class="">${uno.contenido}</p>	
