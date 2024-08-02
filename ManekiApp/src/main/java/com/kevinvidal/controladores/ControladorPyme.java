@@ -61,4 +61,9 @@ public class ControladorPyme {
 		this.servicioPyme.guardar(nuevaPyme);
 		return "redirect:/herramientas";
 	}
+	@GetMapping("/finanza_pyme/{id}")
+	public String despliegaListaInforme() {
+		return "FinanzaPyme.jsp";
+	}
+	
 }

@@ -36,23 +36,24 @@
                 </div>
               </div>
             </nav>
-            <h5>Bienvenido,${nombreUsuario}</h5>
+            <h5>${nombreUsuario}, Aqui tienes tus informes de finanzas.</h5>
             </div>
           </header>
           <article>
             <ul>
-              <c:forEach var="informes" items="${informes}">
+              <c:forEach var="informes" items="${finanzaDiaria}">
                 <li>
-                  <p>hilo foros</p>
+                  <a href="informe/${informe.id}">${informe.fechaInformeDiario}</a>
+                  </a>
                 </li>
               </c:forEach>
             </ul>
           </article>
           <article>
             <ul>
-              <c:forEach var="informes" items="${informes}">
+              <c:forEach var="informes" items="${finanzaMensual}">
                 <li>
-                  <p>hilo foros</p>
+                  <a href="informe/${informe.id}">${informe.fechaInformeDiario}</a>
                 </li>
               </c:forEach>
             </ul>
