@@ -49,8 +49,16 @@ public class ControladorPyme {
 		return "redirect:/herramientas";
 	}
 	
-	/*@PostMapping("/editar_pyme")
-	public String procesasEdicionPyme(@Valid @ModelAttribute("edicioPyme") Pyme editarPyme){
-		return "FormularioEdicionPyme.jsp";
-	}*/
+	@PostMapping("/edicion/pyme/{id}")
+	public String procesarEditarInfoPyme(@Valid@ModelAttribute("formPyme") Pyme nuevaPyme,
+										     BindingResult validaciones,
+										     HttpSession sesion) {
+		if(validaciones.hasErrors()) {
+			return "FormularioEditarPyme.jsp";
+		}
+		Usuario usuarioActualUsuario = servicioUsuario.obtenerUno((Long) sesion.getAttribute("idUsuario"));
+		nuevaPyme.setUsuario(usuarioActualUsuario);
+		this.servicioPyme.guardar(nuevaPyme);
+		return "redirect:/herramientas";
+	}
 }

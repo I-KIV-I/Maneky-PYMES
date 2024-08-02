@@ -131,6 +131,17 @@ public class Pyme {
 		this.rutCreador = rutCreador;
 	}
 
+	
+	
+	public Date getFechaActualizacion() {
+		return fechaActualizacion;
+	}
+
+
+	public void setFechaActualizacion(Date fechaActualizacion) {
+		this.fechaActualizacion = fechaActualizacion;
+	}
+
 
 	public Date getFechaCreacionEmpresa() {
 		return fechaCreacionEmpresa;

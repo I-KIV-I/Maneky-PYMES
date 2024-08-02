@@ -1,5 +1,6 @@
 package com.kevinvidal.servicios;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,9 @@ public class ServicioPyme{
 	}
 	public List<Pyme> obtenerPymePorUsuarioId(Long idUsuario){
 		return repositorioPyme.findByUsuarioId(idUsuario);
+	}
+	public Pyme actualizar(Pyme Pyme) {
+		Pyme.setFechaActualizacion(null);
+		return repositorioPyme.save(Pyme);
 	}
 }
