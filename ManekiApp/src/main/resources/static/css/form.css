@@ -5,6 +5,9 @@
 .loginBody{
 	height: 800px;
 }
+.temporalBody{
+	height: 900px;
+}
 .bck{
 	background-color:#fff;
 	border-radius: 20px;
@@ -31,6 +34,7 @@
  width: 200px;
  cursor: pointer;
  transition: all 0.3s ease;
+ text-decoration: none;
  }
  
  .ingresarButton:hover {
@@ -66,6 +70,7 @@ p{
  	width: 150px;
  	cursor: pointer;
  	transition: all 0.3s ease;
+ 	text-decoration: none;
  }
  
  .registerButton:hover {
@@ -96,6 +101,7 @@ p{
  	width: 150px;
  	cursor: pointer;
  	transition: all 0.3s ease;
+ 	text-decoration: none;
  }
  
  .backButton:hover {
