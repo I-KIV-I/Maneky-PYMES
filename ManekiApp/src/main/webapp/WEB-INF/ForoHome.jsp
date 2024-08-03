@@ -15,7 +15,6 @@
 <body>
 	<div id="particles-js"></div>
 	<header>
-<<<<<<< HEAD
 		<!-- navbar -->
 		<nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
 	    	<div class="container text-white ">
@@ -68,7 +67,7 @@
 				 </table>
 			</div>
 			<h2>Crea tu Hilo aquí</h2>
-			<form:form method="post"  action="/procesarforo" modelAttribute="formHilo">
+			<form:form method="post"  action="/foro" modelAttribute="formHilo">
 				<div>
 				 	<form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
 				 	<form:input path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
@@ -80,20 +79,6 @@
 					<button>Publicar</button>
 			</form:form>
 		</div>
-
-		</div>
-		</div>
-
-		<h2>Crea tu Hilo aquí</h2>
-		<form:form method="post"  action="/foro" modelAttribute="formHilo">
-			 <form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
-			 <form:input path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
-			
-			 <form:label path="contenido">Agrega el contenido aquí:</form:label>
-			 <form:input type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
-			
-			 <button>Publicar</button>
-		</form:form>
 
 	</main>
 	<footer>

@@ -101,7 +101,7 @@ public class ControladorNavegacion {
 				modelo.addAttribute("uno", servicioHilo.obtenPorId(i+1));
 			}
 		}
-		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
+		//List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
 		return "EspacioDeTrabajo.jsp";
 	}
 	
@@ -132,7 +132,7 @@ public class ControladorNavegacion {
 		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
-		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId(usuario.getId());
+		
 		
 		return "PerfilUsuario.jsp";
 	}
