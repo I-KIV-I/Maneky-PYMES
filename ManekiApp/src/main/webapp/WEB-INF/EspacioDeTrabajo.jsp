@@ -45,38 +45,40 @@
 	</nav>
 	<!-- fin navbar -->
 	<div class="container mt-3">
-	<p>Revisa los reportes diarios o mensuales de tu negocios</p>
-	<c:if test="${condicion == true}">
-	            <article>
-	                <form:form modelAttribute="listaPyme" action="procesar/finanzas" method="get">
-	                    <form:select path="${pyme.id}" class="form-select" aria-label="Default select example">
-	                        <form:option value="">Aqui puedes ver las finanzas de tus negocio, selecciona una para comenzar.</form:option>
-	                        <c:forEach var="pyme" items="${listaPyme}">
-	                            <form:option value="${pyme.id}">${pyme.nombre}</form:option>
-	                        </c:forEach>
-	                    </form:select>
-	                    <button type="submit" class="btn btn-outline-warning">Finanzas Pyme</button>
-	                </form:form>
-	            </article>
-	        </c:if>
-	        <c:if test="${condicion == false}">
-	            <article>
-	                <form:form>
-	                    <form:select path="${pyme.id}" class="form-select" multiple="multiple" aria-label="Multiple select example">
-	                        <form:option value="">No tienes Pymes registradas</form:option>
-	                    </form:select>
-	                </form:form>
-	                <form action="/inscripcion/pyme" method="get">
-	                    <button type="submit">Inscribre tu pyme acá</button>
-	                </form>
-	                <p>o infórmate aca</p>
-	                <form action="/guiaCrearPyme" method="get">
-	                    <button type="submit">Informacion</button>
-	                </form>
-	            </article>
-	        </c:if>
-	</div>
-	<div class="container mt-3">
+    <p>Revisa los reportes diarios o mensuales de tu negocio</p>
+    <c:choose>
+        <c:when test="${condicion}">
+            <article class="navbar">
+                <form:form modelAttribute="listaPyme" action="finanzas/${pyme.id}" method="get">
+                    <form:select path="${pyme.id}" class="form-select" aria-label="Default select example">
+                        <form:option value="">Aquí puedes ver las finanzas de tu negocio, selecciona una para comenzar.</form:option>
+                        <c:forEach var="pyme" items="${listaPyme}">
+                            <form:option value="${pyme.id}">${pyme.nombre}</form:option>
+                        </c:forEach>
+                    </form:select>
+                    <button type="submit" class="btn btn-outline-warning">Finanzas Pyme</button>
+                </form:form>
+            </article>
+        </c:when>
+        <c:otherwise>
+            <article class="navbar">
+                <section>
+                    <div class="form-select" aria-label="Multiple select example">
+                        <p>No tienes PYMES registradas</p>
+                    </div>
+                </section>
+                <form action="/inscripcion/pyme" method="get">
+                    <button type="submit" class="btn btn-outline-info">Inscribre tu pyme acá</button>
+                </form>
+                <p>o infórmate acá</p>
+                <form action="/guiaCrearPyme" method="get">
+                    <button type="submit" class="btn btn-outline-info">Información</button>
+                </form>
+            </article>
+        </c:otherwise>
+    </c:choose>
+</div>
+
 	<div class="container mt-3 position-absolute start-50 translate-middle-x">
 		<div class="row justify-content-center ">
 			<div class="col-4" >
@@ -189,7 +191,6 @@
 				       		<hr>
 
 				       		<p class="">${uno.contenido}</p>	
->>>>>>> branch 'main' of https://github.com/I-KIV-I/Maneky-PYMES.git
 			       		</div>
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4><a href="/foro/${uno.id}">${dos.titulo}</a></h4>

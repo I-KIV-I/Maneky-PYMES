@@ -3,23 +3,23 @@ package com.kevinvidal.controladores;
 
 import java.util.List;
 
-import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import com.kevinvidal.modelos.Categoria;
 import com.kevinvidal.modelos.FormularioTemporal;
 import com.kevinvidal.modelos.Hilo;
+import com.kevinvidal.modelos.Pyme;
 import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioCategoria;
 import com.kevinvidal.servicios.ServicioHilo;
-import com.kevinvidal.modelos.Pyme;
 import com.kevinvidal.servicios.ServicioPyme;
-import com.kevinvidal.servicios.ServicioUsuario;
+
 import jakarta.servlet.http.HttpSession;
 
 
@@ -113,27 +113,36 @@ public class ControladorNavegacion {
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	@GetMapping("/finanzas/opciones")
-	public String seleccionFinanzas(HttpSession sesion) {
-		if(sesion.getId()== null) {
-			return "redirect:/login";
-		} 
-		return "AdministradorDeFinanzas.jsp";
-	}
-	@PostMapping("procesar/finanzas/{id}")
-	public String procesarInfoPyme(HttpSession sesion) {
-		if(sesion.getId()==null) {
-			return "redirect:/login";
-		} 
-		return "redirect:/finanzas/{id}";
-	}
-	@GetMapping("/finanzas/{id}")
-	public String desplegarInformeFinanzas(HttpSession sesion) {
-		if(sesion.getId()==null) {
-			return "redirect:/login";
-		} 
-		return "FinanzasPyme.jsp";
-	}
+	 @GetMapping("/espacioDeTrabajo")
+	    public String mostrarEspacioDeTrabajo(HttpSession session, Model model) {
+	        if (session.getAttribute("usuario") == null) {
+	            return "redirect:/login";
+	        }
+	        
+	        List<Pyme> listaPyme = servicioPyme.obtenerPymePorUsuarioId((Long) session.getAttribute("usuario"));
+	        boolean condicion = !listaPyme.isEmpty();
+	        model.addAttribute("listaPyme", listaPyme);
+	        model.addAttribute("condicion", condicion);
+	        
+	        return "EspacioDeTrabajo.jsp";
+	    }
+
+	    //@PostMapping("/procesar/finanzas/{id}")
+	    //public String procesarInfoPyme(@PathVariable("id") Long id, HttpSession session) {
+	    //   return "redirect:/finanzas/" + id ;
+	    //}
+
+	    @GetMapping("/finanzas/{id}")
+	    public String desplegarInformeFinanzas(@PathVariable("id") Long id, HttpSession session, Model model) {
+	        if (session.getAttribute("usuario") == null) {
+	            return "redirect:/login";
+	        }
+	        
+	        Pyme pyme = servicioPyme.obtenerPorId(id);
+	        model.addAttribute("pyme", pyme);
+	        
+	        return "FinanzasPyme.jsp";
+	    }
 	
 	@GetMapping("/perfil")
 	public String desplegarInformacionUsuario(HttpSession sesion,Usuario usuario,Pyme pyme) {

@@ -24,17 +24,17 @@
 						<form:form action="/procesar/edicion" method="post" modelAttribute="formRegistro">  
 							<div>
 								<form:label class="form-label" path="nombre">Nombre</form:label>
-								<form:input class="form-control mb-4 text-center" placeholder="Nombre" path="nombre" value="${usuario.nombre }" type="text"/>
+								<form:input class="form-control mb-4 text-center" placeholder="Nombre" path="nombre"  type="text"/>
 								<form:errors class="alert alert-danger" path="nombre"/>
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="apellido">Apellido</form:label>
-								<form:input class="form-control mb-4 text-center" placeholder="Apellido" path="apellido" value="${usuario.apellido }" type="text"/>
+								<form:input class="form-control mb-4 text-center" placeholder="Apellido" path="apellido"  type="text"/>
 								<form:errors class="alert alert-danger" path="apellido"/>
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="rut">Rut</form:label>
-								<form:input class="form-control mb-4 text-center" placeholder="Rut" path="rut" value="${usuario.rut }"type="text"/>
+								<form:input class="form-control mb-4 text-center" placeholder="Rut" path="rut" type="text"/>
 								<form:errors class="alert alert-danger" path="rut"/>
 							</div>
 							<div class="mt-4">

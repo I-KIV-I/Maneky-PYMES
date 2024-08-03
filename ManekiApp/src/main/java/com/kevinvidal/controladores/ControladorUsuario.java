@@ -1,24 +1,17 @@
 package com.kevinvidal.controladores;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.kevinvidal.modelos.Login;
 import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioUsuario;
 
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Path;
 import jakarta.validation.Valid;
 
 @Controller
@@ -94,9 +87,15 @@ public class ControladorUsuario{
 	public String despliegaEdicion(@ModelAttribute("usuario") Usuario usuario) {		
 		return "FormularioEditarUsuario.jsp";
 	}
-	
-	
-	
+	@PostMapping("/procesar/edicion")
+	public String procesaEdicion(@ModelAttribute("usuario") Usuario usuario, BindingResult validaciones) {
+		
+		if(validaciones.hasErrors()) {
+			return "FormularioEditarUsuario.jsp";
+		}
+		this.servicioUsuario.actualizar(usuario);
+		return "redirect/perfil";
+	}
 	
 	@GetMapping("/procesar/logout")
 	public String procesarLogout(HttpSession sesion) {
