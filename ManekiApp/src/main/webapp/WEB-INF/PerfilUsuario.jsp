@@ -13,28 +13,40 @@
 
 <body>
     <div>
-        <header>
-            <h3>Perfil, ${nombreUsuario}</h3>
-            <form:form action="/procesar/logout" method="post">
-            <button type="submit">Cerrar sesion</button>
-            </form:form>
-            
-        </header>
+         <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
+              <div class="container">
+                <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
+                  <img src="/img/logoManeki.png" alt="Logo" width="50" height="50"
+                    class="d-inline-block align-text-center iconmaneki">
+                  <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <form action="/procesar/logout">
+                        <button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
         <section>
-            <div th:if="${user.profileImageUrl != null}">
-                <img th:src="${usuario.perfilImagen}" alt="imagen_usuario">
-                <h5>${nombreUsuario}</h5>
-            </div>
-            <div>
-                <p>Cambia tu imagen de perfil</p>
-                <form method="post" enctype="multipart/form-data" th:action="@{/upload}">
-                    <input type="file" name="image">
-                    <input type="hidden" name="userId" th:value="${usuario.id}">
-                    <button type="submit" class="btn btn-primary">Upload</button>
-                </form>
-            </div>
+                <h3>Tu informacion</h3>
+                <h5>${nombreUsuario} ${usuario.apellido}</h5>  
+                <h5>${usuario.rut}</h5>
+                <h5>${usuario.correo}</h5>
         </section>
-
+        <form action="/procesar/edicion" method="get">
+        	<button type="submit">Edita tu perfil</button>
+         </form>
+	<div>
         <section>
             <ul>
             	<c:forEach var="pyme" items="${pymes}">

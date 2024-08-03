@@ -41,8 +41,6 @@ public class Usuario {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 	
-	private String perfilImagen;
-	
 	private String genero;
 	
 	@Size(min=8, message="La contraseña debe ser de al menos 8 caracteres")
@@ -153,14 +151,6 @@ public class Usuario {
 
 	public void setGenero(String genero) {
 		this.genero = genero;
-	}
-
-	public String getPerfilImagen() {
-		return perfilImagen;
-	}
-
-	public void setPerfilImagen(String perfilImagen) {
-		this.perfilImagen = perfilImagen;
 	}
 
 	public List<Pyme> getPymes() {

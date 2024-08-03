@@ -7,9 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/Style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<title>Registro</title>
+<title>Editar Usuario</title>
 </head>
 <body>
 	<div id="particles-js"></div>
@@ -20,31 +18,32 @@
 					<h1>Maneki Pymes</h1>
 					<img src="/img/LogoManeki.png" class="w-25 mb-4" alt="logo maneki pymes">
 					<div>
-						<h2>Registro</h2>
-						<form:form action="/procesar/edicion" method="post" modelAttribute="formRegistro">  
+						<h2>Edicion Perfil</h2>
+						<form:form action="/procesar/edicion" method="post" modelAttribute="usuario"> 
+						<input type="hidden" name="_method" value="PUT"  />
 							<div>
 								<form:label class="form-label" path="nombre">Nombre</form:label>
-								<form:input class="form-control mb-4 text-center" placeholder="Nombre" path="nombre" value="${usuario.nombre }" type="text"/>
+								<form:input class="form-control mb-4 text-center" placeholder="Nombre" path="nombre" type="text" value="${usuario.nombre}" readonly onmousedown="return false;"/>
 								<form:errors class="alert alert-danger" path="nombre"/>
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="apellido">Apellido</form:label>
-								<form:input class="form-control mb-4 text-center" placeholder="Apellido" path="apellido" value="${usuario.apellido }" type="text"/>
+								<form:input class="form-control mb-4 text-center" placeholder="Apellido" path="apellido" type="text" value="${usuario.apellido}" readonly onmousedown="return false;"/>
 								<form:errors class="alert alert-danger" path="apellido"/>
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="rut">Rut</form:label>
-								<form:input class="form-control mb-4 text-center" placeholder="Rut" path="rut" value="${usuario.rut }"type="text"/>
+								<form:input class="form-control mb-4 text-center" placeholder="Rut" path="rut" type="text" value="${usuario.rut}" readonly onmousedown="return false;"/>
 								<form:errors class="alert alert-danger" path="rut"/>
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="fechaNacimiento">Fecha De Nacimiento</form:label>
-								<form:input class="form-control mb-4 text-center" path="fechaNacimiento" type="date"/>
+								<form:input class="form-control mb-4 text-center" path="fechaNacimiento" type="date" value="${usuario.fechaNacimiento}" readonly onmousedown="return false;"/>
 								<form:errors path="fechaNacimiento"/>
 							</div>
 							<div class="mt-4">
 								<form:label class="form-label" path="genero">Sexo</form:label>
-								<form:select class="form-select text-center" path="genero" label="Seleccione">
+								<form:select class="form-select text-center" path="genero" label="Seleccione" value="${usuario.genero}" readonly onmousedown="return false;">
 			                    	<form:option value="" label="Seleccione"/>
 			                    	<form:option value="Masculino" label="Masculino"/>
 			                    	<form:option value="Femenino" label="Femenino"/>
@@ -82,10 +81,10 @@
 				                </div>
 								<form:errors class="alert alert-danger" path="confirmarContrasenia"/>
 							</div>
-							<button class="btn btn-outline-primary mb-4">Registrar</button>
+							<button class="btn btn-outline-primary mb-4">Registrar cambiod</button>
 						</form:form>
-						<form action="/login">
-							<button class="btn btn-outline-secondary">Volver al Login</button>
+						<form action="/herramientas">
+							<button class="btn btn-outline-secondary">Volver</button>
 						</form>
 					</div>
 		

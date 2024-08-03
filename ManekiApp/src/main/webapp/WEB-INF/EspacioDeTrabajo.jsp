@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div>
         <header>
             <div>
@@ -259,6 +260,8 @@
         </article>
 
     </div>
+=======
+>>>>>>> d05d862e85cf64802eed07a6ab04d5db5ee2a839
 	<div id="particles-js"></div>
 	<!-- navbar -->
 	<nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
@@ -273,6 +276,7 @@
 			<form action="/finanzas/opciones"><button class="btn btn-outline-warning">Finanzas</button></form>
 			<form action="/foro"><button class="btn btn-outline-warning">Foro</button></form>
 			<form action="/perfil"><button class="btn btn-outline-warning">Info Perfil/PYME</button></form>
+			<form action="/noticias"><button class="btn btn-outline-warning">Noticias</button></form>
 			
 			<img th:src="${user.profileImageUrl}" alt="">
 			<h5>Bienvenido ${nombreUsuario}</h5>
@@ -282,13 +286,45 @@
 			    </button>
 			    <ul class="dropdown-menu">
 			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mi Perfil -->
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mis pymes -->
+			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mis pymes --><!-- logout -->
 			    </ul>
 			  </div>
 		</div>
 	</nav>
 	<!-- fin navbar -->
-
+	<div class="container mt-3">
+	<p>Revisa los reportes diarios o mensuales de tu negocios</p>
+	<c:if test="${condicion == true}">
+	            <article>
+	                <form:form modelAttribute="listaPyme" action="procesar/finanzas" method="get">
+	                    <form:select path="${pyme.id}" class="form-select" aria-label="Default select example">
+	                        <form:option value="">Aqui puedes ver las finanzas de tus negocio, selecciona una para comenzar.</form:option>
+	                        <c:forEach var="pyme" items="${listaPyme}">
+	                            <form:option value="${pyme.id}">${pyme.nombre}</form:option>
+	                        </c:forEach>
+	                    </form:select>
+	                    <button type="submit" class="btn btn-outline-warning">Finanzas Pyme</button>
+	                </form:form>
+	            </article>
+	        </c:if>
+	        <c:if test="${condicion == false}">
+	            <article>
+	                <form:form>
+	                    <form:select path="${pyme.id}" class="form-select" multiple="multiple" aria-label="Multiple select example">
+	                        <form:option value="">No tienes Pymes registradas</form:option>
+	                    </form:select>
+	                </form:form>
+	                <form action="/inscripcion/pyme" method="get">
+	                    <button type="submit">Inscribre tu pyme acá</button>
+	                </form>
+	                <p>o infórmate aca</p>
+	                <form action="/guiaCrearPyme" method="get">
+	                    <button type="submit">Informacion</button>
+	                </form>
+	            </article>
+	        </c:if>
+	</div>
+	<div class="container mt-3">
 	<div class="container mt-3 position-absolute start-50 translate-middle-x">
 		<div class="row justify-content-center ">
 			<div class="col-4" >
@@ -392,12 +428,23 @@
 	<!-- fin Carrusel -->
 	
 	<!-- Mensajes Foro -->
+<<<<<<< HEAD
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
 				       		<h4> <a href="/foro/${uno.id}"> ${uno.titulo }</a></h4>
 				       		<hr>
 				       		<div>
 				       			<p class="">Mensaje desde el foro jskjsksjskj skjsksjksj ksjskjsksj k jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj jskjsksjskj skjsksjksj ksjskjsksjksj ksjskjsksjksjskjsksjksj ...................</p>
 			       			</div>
+=======
+	
+			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
+			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2 mensaje-preview">
+				       		<h4>Titulo</h4>
+			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
+				       		<h4> <a href="/foro/${uno.id}"> ${uno.titulo }</a></h4>
+				       		<hr>
+
+>>>>>>> d05d862e85cf64802eed07a6ab04d5db5ee2a839
 				       		<p class="">${uno.contenido}</p>	
 			       		</div>
 			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
@@ -414,7 +461,12 @@
 	<!-- Final Mensajes Foro -->
 			</div>
 			<!-- Contenido Derecho -->
+<<<<<<< HEAD
 			<div class="col-7 text-center bg-black bg-opacity-50 rounded card2 mt-2 ms-4 py-3">
+=======
+			<div class="col-7 text-center bg-black bg-opacity-50 rounded card2 mt-2 ms-4 py-3 ">
+
+>>>>>>> d05d862e85cf64802eed07a6ab04d5db5ee2a839
 				<div class="row justify-content-around ">
 					<div class="col-5">
 						<div class="card text-center" style="width: 18rem;">

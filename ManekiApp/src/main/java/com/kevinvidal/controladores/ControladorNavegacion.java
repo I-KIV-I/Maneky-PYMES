@@ -101,6 +101,14 @@ public class ControladorNavegacion {
 			}
 		}
 		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
+		boolean condicion = false;
+	    if (listaPyme == null || listaPyme.isEmpty()) {
+	        modelo.addAttribute("condicion", condicion);
+	    } else {
+	    	modelo.addAttribute("condicion", condicion = true);
+	    	modelo.addAttribute("listaPyme", listaPyme);
+	    }
+	    
 		return "EspacioDeTrabajo.jsp";
 	}
 	
