@@ -3,7 +3,7 @@ package com.kevinvidal.controladores;
 
 import java.util.List;
 
-import org.springframework.beans.factory.ListableBeanFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ import com.kevinvidal.servicios.ServicioCategoria;
 import com.kevinvidal.servicios.ServicioHilo;
 import com.kevinvidal.modelos.Pyme;
 import com.kevinvidal.servicios.ServicioPyme;
-import com.kevinvidal.servicios.ServicioUsuario;
+
 import jakarta.servlet.http.HttpSession;
 
 
@@ -38,11 +38,10 @@ public class ControladorNavegacion {
 		this.servicioPyme = servicioPyme;
 		this.servicioCategoria = servicioCategoria;
 	}
-	
 
-	@GetMapping({"/maneki_pyme/inicio", "/"})
+	@GetMapping("/")
 	public String desplegarPaginaInicial() {
-		return "PaginaInicial.jsp";
+		return "home2.jsp";
 	}
 	
 	@GetMapping("/existenciaPyme")
@@ -88,7 +87,7 @@ public class ControladorNavegacion {
 			return "redirect:/login";
 
 		}
-		
+		//LOGICA FORO PREVISUALIZACION 
 		List<Hilo> todosHilos = servicioHilo.obtenerTodos(); 
 		for (Long i=(long)0; i<todosHilos.size(); i++) {
 			if(i == todosHilos.size()-3) {		 
@@ -101,7 +100,19 @@ public class ControladorNavegacion {
 				modelo.addAttribute("uno", servicioHilo.obtenPorId(i+1));
 			}
 		}
-		//List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
+		//FIN LOGICA FORO
+
+		//INICIO LISTA PYMES DISPONIBLES PARA FINANZA
+		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
+		boolean condicion = false;
+	    if (listaPyme == null || listaPyme.isEmpty()) {
+	        modelo.addAttribute("condicion", condicion);
+	    } else {
+	    	modelo.addAttribute("condicion", condicion = true);
+	    	modelo.addAttribute("listaPyme", listaPyme);
+	    }
+	    //FIN LISTA PYMES
+
 		return "EspacioDeTrabajo.jsp";
 	}
 	

@@ -1,7 +1,0 @@
-@charset "ISO-8859-1";
-.imgcarrusel{
-	height: 50%;
-}
-.backblack{
-	background-color: black;
-}

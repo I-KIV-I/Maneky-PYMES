@@ -88,6 +88,11 @@ public class ControladorUsuario{
 
 	        return "redirect:/perfil";
 	    }*/
+	@GetMapping("/procesar/edicion")
+	public String despliegaEdicion(@ModelAttribute("usuario") Usuario usuario) {		
+		return "FormularioEditarUsuario.jsp";
+	}
+	
 	
 	
 	@GetMapping("/procesar/logout")

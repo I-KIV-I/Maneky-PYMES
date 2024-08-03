@@ -16,7 +16,7 @@
 <body>
 <div id="particles-js"></div>
 <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbbarback" 
+  <nav class="navbar navbar-expand-lg navbbarback bg-black bg-opacity-50" 
   data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
@@ -42,7 +42,7 @@
 
 
 <!-- Cartas -->
-<div class="d-block">
+<div class="d-block bkground">
 	<div class="textContainer">
 		<div class='console-container'>
 			<span id='text'></span>
@@ -186,7 +186,7 @@
 	</div>
 	<div class="textContainer">
 		 <form action="/inscripcion/pyme">
-			<button class="btn btn-success btn-lg">Inscribir mi PYME</button>
+			<button class="btn btn-lg">Inscribir mi PYME</button>
 		 </form>
 	</div>
 </div>
@@ -211,8 +211,10 @@
   		</li>
 	</ul>
 </div>
+
+
 <script src="/particles/particles.js"></script>
-<script src="/particles/data/app.js"></script>
+<script src="/particles/data/app.js"></script>	
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/tramites.js"></script>
 </body>
