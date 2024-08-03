@@ -38,11 +38,11 @@ public class ControladorNavegacion {
 		this.servicioPyme = servicioPyme;
 		this.servicioCategoria = servicioCategoria;
 	}
-	
 
-	@GetMapping({"/maneki_pyme/inicio", "/"})
+
+	@GetMapping("/")
 	public String desplegarPaginaInicial() {
-		return "PaginaInicial.jsp";
+		return "home2.jsp";
 	}
 	
 	@GetMapping("/existenciaPyme")
@@ -88,7 +88,7 @@ public class ControladorNavegacion {
 			return "redirect:/login";
 
 		}
-		
+		//LOGICA FORO PREVISUALIZACION 
 		List<Hilo> todosHilos = servicioHilo.obtenerTodos(); 
 		for (Long i=(long)0; i<todosHilos.size(); i++) {
 			if(i == todosHilos.size()-3) {		 
@@ -101,6 +101,9 @@ public class ControladorNavegacion {
 				modelo.addAttribute("uno", servicioHilo.obtenPorId(i+1));
 			}
 		}
+		//FIN LOGICA FORO
+
+		//INICIO LISTA PYMES DISPONIBLES PARA FINANZA
 		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId((Long) sesion.getAttribute("idUsuario"));
 		boolean condicion = false;
 	    if (listaPyme == null || listaPyme.isEmpty()) {
@@ -109,7 +112,8 @@ public class ControladorNavegacion {
 	    	modelo.addAttribute("condicion", condicion = true);
 	    	modelo.addAttribute("listaPyme", listaPyme);
 	    }
-	    
+	    //FIN LISTA PYMES
+
 		return "EspacioDeTrabajo.jsp";
 	}
 	
@@ -149,7 +153,7 @@ public class ControladorNavegacion {
 		if(sesion.getId()==null) {
 			return "redirect:/login";
 		} 
-		List<Pyme> listaPyme = this.servicioPyme.obtenerPymePorUsuarioId(usuario.getId());
+		
 		
 		return "PerfilUsuario.jsp";
 	}

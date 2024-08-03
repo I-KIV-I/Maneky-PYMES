@@ -7,19 +7,21 @@
 <html>
 <head>
 <link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/finanzas.css">
 <link rel="stylesheet" href="/css/style.css">
 <meta charset="UTF-8">
 <title>Finanzas</title>
 </head>
 <body>
+
+
 <div class="main">
-	<div id="particles-js"></div>
+<div id="particles-js"></div>
+
 	
 
 <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-black bg-opacity-50" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
 	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
@@ -31,9 +33,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <form action="/procesar/logout">
-          <button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
-          </form>
+        	<form action="/procesar/logout">
+          		<button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
+        	</form>
+        </li>
+        <li>
+        	<form action="/herramientas">
+          		<button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Volver</button>
+        	</form>
+        </li>
+        <li>
+        	<form action="/finanzas/opciones" method="POST">
+        		<label for="opciones"></label>
+        			<select id="opciones" name="opciones">
+        				<option value="opcion1">Empresa 1 </option>
+        				<option value="opcion2">Empresa 2 </option>
+        				<option value="opcion3">Empresa 3 </option>
+        			</select>
+          		<button type="submit" class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Ver Finanzas</button>
+        	</form>
         </li>
       </ul>
     </div>
@@ -44,10 +62,10 @@
 	<!-- barra perfil y titulo -->
 	<div class="topbar">
 		<div class="title">
-			<h1>Hola username, ¿quieres saber tus numeros? </h1>
+			<h1>Hablemos de números </h1>
 		</div>
 		<div class="user">
-			<img src="/img/LogoManeki.png">
+			<img src="/img/LogoManeki.png" alt="img usuario">
 		</div>
 	</div>
 	
@@ -82,7 +100,7 @@
 		<div class="cardcss">
 			<div>
 				<div class="numbers">$73.842</div>
-				<div class="cardName">Ganancia</div>
+				<div class="cardName">Ganancias</div>
 			</div>
 			<div class="iconBx">
 				<img src="/img/coinsMoney.svg">
@@ -230,6 +248,5 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>       
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/finanzas.js"></script>
->>>>>>> d9c7414f54562a6c49e3f73b3567dea862592d26
 </body>
 </html>

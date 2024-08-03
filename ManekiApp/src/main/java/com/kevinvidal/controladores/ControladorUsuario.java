@@ -6,7 +6,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.kevinvidal.modelos.Login;
 import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioUsuario;
@@ -19,7 +18,7 @@ public class ControladorUsuario{
 	@Autowired
 	private final ServicioUsuario servicioUsuario;
 	
-	private static final String UPLOAD_DIR = "uploads/";
+	//private static final String UPLOAD_DIR = "uploads/";
 	
 	public ControladorUsuario(ServicioUsuario servicioUsuario) {
 		this.servicioUsuario = servicioUsuario;
@@ -64,6 +63,7 @@ public class ControladorUsuario{
 		sesion.setAttribute("apellidoUsuario", nuevoUsuario.getApellido());
 		return "redirect:/existenciaPyme";
 	}
+	
 	/* @PostMapping("/upload")
 	    public String uploadImage(@RequestParam("image") MultipartFile file, @RequestParam("userId") Long userId) {
 	        if (file.isEmpty()) {
@@ -83,10 +83,7 @@ public class ControladorUsuario{
 
 	        return "redirect:/perfil";
 	    }*/
-	@GetMapping("/procesar/edicion")
-	public String despliegaEdicion(@ModelAttribute("usuario") Usuario usuario) {		
-		return "FormularioEditarUsuario.jsp";
-	}
+	
 	@PostMapping("/procesar/edicion")
 	public String procesaEdicion(@ModelAttribute("usuario") Usuario usuario, BindingResult validaciones) {
 		

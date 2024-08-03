@@ -33,6 +33,8 @@ public class FormularioFinanzaMensual {
 	
 	private Integer iva;
 	
+	private Integer impuestos;
+	
 	private Integer aaa;
 	
 	private Integer gananciaNeta;

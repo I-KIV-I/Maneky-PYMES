@@ -1,5 +1,4 @@
 INDEX VERSION 1.4+C:\ManekiPymes\Maneky-PYMES\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3379572884.index
 2019247186.index
 4137931116.index
 3530393456.index

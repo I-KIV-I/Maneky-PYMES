@@ -1,0 +1,341 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	min-height:1500px;
+}
+
+section{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section:before{
+	content:'';
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	height: 100px;
+	background:linear-gradient(to top,  #00131D, transparent);
+	z-index:10000;
+}
+
+section:after{
+	content:'';
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+	z-index:10000;
+}
+
+section img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+#logo{
+	position: absolute;
+	object-fit: cover;
+	pointer-events: none;
+	width: 300px;
+	height: 350px;
+	z-index:2;
+	top: 100px; 
+}
+#montana{
+	z-index:3; 
+}
+#camino{
+	z-index:4; 
+}
+#text{
+	position:relative;
+	color: #fff;
+	font-size:10em;
+	z-index:3;
+}
+
+
+
+
+.base{
+	background-color:#00131D;
+}
+
+.header{
+	padding: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.titulo{
+ 	color:#fff;
+ 	font-size: 5em;
+ }
+ 
+ .subtitulo{
+ 	color:lightblue;
+ 	font-size: 3em;
+ }
+ 
+ .button{
+ background-color: lightblue;
+ padding: 10px 20px;
+ text-align: center;
+ color: #00131D;
+ border-radius:20px;
+ border: 2px solid #00131D;
+ box-shadow: 5px 5px 0px #000;
+ font-size: 1.2em;
+ height: 60px;
+ width: 200px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+ 
+ .button:hover {
+  background-color: #fff;
+  color: #00131D;
+  border: 2px solid #00131D;
+  box-shadow: 5px 5px 0px #00131D;
+}
+
+.button:active {
+  background-color: #00131D;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+.tituloBox{
+ margin-top: 60px;
+ display: flex;
+ justify-content: center;
+ }
+  
+.tituloBox h3{
+ text-align: center;
+ font-size:2.5em;
+ color: #fff;
+ }
+ 
+ .tituloBox.white{
+ margin-top: 20px;
+ display: flex;
+ justify-content: center;
+ }
+ 
+ .tituloBox.white h3{
+ text-align: center;
+ font-size:2.5em;
+ color: #00131D;
+ }
+  
+.tarjetaBox{
+	position:relative;
+	padding: 40px;
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr;
+	grid-gap:30px;
+	min-height: 200px;
+}
+
+.tarjetaBox .tarjeta{
+	position: relative;
+	background: #00131D;
+	color: #fff;
+	padding: 20px;
+	display: block;
+	border-radius:20px;
+}
+
+.tarjeta .header{
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+.tarjeta img{
+	width: 100px;
+}
+
+.content{
+	text-align: center;
+}
+
+.content h3{
+	font-size: 1.8em;
+}
+.content p{
+	margin-top: 20px;
+	font-size: 1.2em;
+}
+
+
+
+
+
+:root{
+	--cb: cubic-bezier(.05, .61, .41, .95);
+} 
+
+.cartasBody{
+	display:block;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height: 120vh;
+	font-family: "Roboto", sans-serif;
+	transition: 0.25s;
+	background: #fff;
+}
+
+.cartas{
+	margin: 40px;
+	margin-top:80px;
+	display: flex;
+	max-width: 1200px;
+	width: calc(100%-100px);
+	height: 400px;
+}
+
+.cartas .carta .info .titulo{
+	font-weight: bold;
+	font-size:1.2rem;
+}
+
+.cartas .carta .label .icon{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	background-color:#fff;
+	border-radius: 50%;
+}
+
+.cartas .carta .label .icon img{
+	width: 42px;
+	height:42px;
+	object-fit: cover;
+}
+.cartas .carta .label .info{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 10px;
+	white-space: pre;
+	transition: 1s var(--cb);
+	color: #fff;
+}
+
+.cartas .carta{
+	position: relative;
+	min-width: 60px;
+	background:var(--bg);
+	overflow: hidden;
+	margin: 5px;
+	background-size: auto 150%;
+	background-position: center;
+	cursor: pointer;
+	transition: 0.5s var(--cb);
+	border-radius: 30px;
+}
+
+.cartas .carta .label{
+	display: flex;
+	position: absolute;
+	right:0;
+	height: 40px;
+	transition: 0.5s var(--cb);
+}
+
+.cartas .carta.activa .label{
+	bottom: 20px;
+	left: 20px;
+}
+
+.cartas .carta.activa{
+	flex-grow: 10000;
+	background-size: auto 100%;
+}
+
+.cartas .carta:not(.activa) .label{
+	bottom: 10px;
+	left: 10px;
+}
+
+.cartas .carta .sombra{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	background: linear-gradient(0, #000, transparent);
+}
+
+.tarjetaBox .tarjeta2{
+	position: relative;
+	background: #fff;
+	color: #00131D;
+	display: grid;
+	grid-template-columns:40px 3fr;
+	border-radius:20px;
+}
+
+.colorBar{
+	background-color: lightblue;
+	height: 100%;
+}
+
+.tarjeta2 .content{
+	padding: 20px;
+	text-align: start;
+	display: block;
+}
+
+.content h3{
+	font-size: 1.8em;
+}
+.content p{
+	margin-top: 20px;
+	font-size: 1.2em;
+}
+
+.footer{
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav-item{
+	width: 120px;
+	text-align: center;
+}
+.nav-link{
+	font-size: 1.2em;
+	text-decoration: none;
+	color: #fff;	
+}
