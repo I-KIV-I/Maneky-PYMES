@@ -38,11 +38,10 @@ public class ControladorNavegacion {
 		this.servicioPyme = servicioPyme;
 		this.servicioCategoria = servicioCategoria;
 	}
-	
 
-	@GetMapping({"/maneki_pyme/inicio", "/"})
+	@GetMapping("/")
 	public String desplegarPaginaInicial() {
-		return "PaginaInicial.jsp";
+		return "home2.jsp";
 	}
 	
 	@GetMapping("/existenciaPyme")
