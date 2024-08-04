@@ -7,48 +7,70 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/Style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/workbench.css">
     <title>Espacio De Trabajo</title>
 </head>
 
 <body>
-	<div id="particles-js"></div>
-	<!-- navbar -->
-	<nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
-    	<div class="container text-white ">
-	    	<div>
-				<a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
-					<img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
+<div class="barContainer">
+	<div class="navigation">
+		<ul>
+			<li>
+				<a href="/herramientas">
+					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
+					<span class="title"><strong>Maneki Pymes</strong></span>
 				</a>
-			</div>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
+					<span class="title">Perfil</span>
+				</a>
+			</li>
+			<li>
+				<a href="/finanzas/opciones">
+					<span class="icon"><img src="/img/finances.svg" alt="icono"></span>
+					<span class="title">Finanzas</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
+					<span class="title">Noticias</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
+					<span class="title">Foro</span>
+				</a>
+			</li>
+			<li>
+				<a href="/procesar/logout">
+					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
+					<span class="title">Cerrar Sesión</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
 
-			<form action="/procesar/logout"><button class="btn btn-outline-warning">Cerrar Sesion</button></form>
-			<form action="/foro"><button class="btn btn-outline-warning">Foro</button></form>
-			<form action="/noticias"><button class="btn btn-outline-warning">Noticias</button></form>
-			<!-- boton desplegable -->
-			<div class="btn-group" role="group">
-				<button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-				      Finanzas
-				</button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="/inscripcion/pyme">Crear Nueva Pyme</a></li>
-					<c:forEach var="pyme" items="${listaPyme}">
-					<li><a class="dropdown-item" href="/finanzas/${pyme.id}">${pyme.nombre }</a></li>			      
-				    </c:forEach>
-				</ul>
-			</div>
-			<!-- fin boton desplegable -->
-			 
-			
-			<img th:src="${user.profileImageUrl}" alt="">
-			<h5>Bienvenido ${nombreUsuario}</h5>
-			<form action="/perfil"><button class="btn btn btn-outline-info">Perfil/PYME</button></form>
+<<<<<<< HEAD
+<div class="main">
+	<div class="topbar">
+		<div class="toggle">
+			<img src="/img/toggle.svg" alt="toggle">
 		</div>
-	</nav>
-	<!-- fin navbar -->
-	<!-- <div class="container mt-3">
+		<div class="search">
+			<h1>Bienvenido username</h1>
+		</div>
+		<div class="user">
+			<img src="/img/pfp5.jpg" alt="profile pic">
+		</div>
+	</div>	
+
+	  <%-- <div class="container mt-3">
     <p>Revisa los reportes diarios o mensuales de tu negocio</p>
     <c:choose>
         <c:when test="${condicion}">
@@ -81,176 +103,128 @@
             </article>
         </c:otherwise>
     </c:choose>
-	</div> -->
+</div> --%>
 
-	<div class="container mt-3 position-absolute start-50 translate-middle-x">
-		<div class="row justify-content-center ">
-			<div class="col-4" >
-	<!-- Carrusel -->    	
-			            <div id="carouselExampleAutoplaying" class="carousel slide mt-2 card2" data-bs-ride="carousel">
-			                <div class="carousel-inner c-noticias">
-			                    <!-- Primera -->
-			                    <div class="carousel-item active">
-			                        <img src="/img/empezar.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway">¿Por dónde empiezo?</h5>
-			                            <p class="raleway">Registrate para poder recibir ayuda gratuita sobre cómo iniciar tu PYME
-			                            </p>
-			                        </div>
-			                    </div>
-			
-			
-			                    <!-- Segunda -->
-			                    <div class="carousel-item">
-			                        <img src="/img/foro.jpg" class="d-block w-100 imgcarrusel" alt="Foro">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway px-2">¡Comparte y recibe ayuda!</h5>
-			                            <p class="raleway px-2">Nuestro foro está dedicado para que todos los emprendedores</p>
-			                        </div>
-			                    </div>
-			
-			
-			                    <!-- Tercera -->
-			                    <div class="carousel-item">
-			                        <img src="/img/finanzas.jpg" class="d-block w-100 imgcarrusel" alt="Empezar pyme">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway px-4">Usa nuestras herramientas de contabilidad</h5>
-			                            <p class="raleway px-4">Aprende a menajar tu negocio</p>
-			                        </div>
-			                    </div>
-			
-			
-			
-			                    <!-- Cuarta -->
-			                    <div class="carousel-item">
-			                        <img src="/img/ley.jpg" class="d-block w-100 imgcarrusel" alt="Eventos">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway px-4">Recibe las noticias relacionadas a tu rubro</h5>
-			                            <p class="raleway px-4">Echale un ojo a las nuevas normativas vigentes para tu negocio</p>
-			                        </div>
-			                    </div>
-			
-			                    <!-- Quinta -->
-			                    <div class="carousel-item">
-			                        <img src="/img/cursos.jpg" class="d-block w-100 imgcarrusel" alt="Proveedores">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway px-4">¡Accede a cursos gratuitos!</h5>
-			                            <p class="raleway px-4">Te ofrecemos una lista de cursos gratuitos</p>
-			                        </div>
-			                    </div>
-			
-			
-			
-			                    <!-- Sexta -->
-			                    <div class="carousel-item">
-			                        <img src="/img/feria.jpg" class="d-block w-100 imgcarrusel" alt="Proveedores">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway px-4">Asiste a eventos para pequeños emprendedores</h5>
-			                            <p class="raleway px-4">Accede a una lista de los eventos</p>
-			                        </div>
-			                    </div>
-			
-			
-			
-			                    <!-- Septima -->
-			                    <div class="carousel-item">
-			                        <img src="/img/proveedores.jpg" class="d-block w-100 imgcarrusel" alt="Cursos">
-			                        
-			                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
-			                            <h5 class="raleway px-4">Obten una lista de proveedores de tu área</h5>
-			                            <p class="raleway px-4">Te ofrecemos una lista de los mejores proveedores</p>
-			                        </div>
-			                    </div>
-			
-			
-			
-			                    <!--Botones Carrusel -->
-			                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-			                        data-bs-slide="prev">
-			                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			                        <span class="visually-hidden">Previous</span>
-			                    </button>
-			                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-			                        data-bs-slide="next">
-			                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			                        <span class="visually-hidden">Next</span>
-			                    </button>
-			                </div>
+
+
+		<div class="row justify-content-center">
+			<div class="col-5" >
+				<!-- Carrusel -->    	
+			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 card2" data-bs-ride="carousel">
+			    	<div class="carousel-inner c-noticias">
+			        	
+			        	<div class="carousel-item active">
+			            	<img src="/img/noticia1.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
 			            </div>
-	<!-- fin Carrusel -->
+			            <div class="carousel-item">
+			            	<img src="/img/noticia2.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
+			            </div>
+			            <div class="carousel-item">
+			            	<img src="/img/noticia3.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
+			            </div>
+			            <div class="carousel-item">
+			            	<img src="/img/noticia4.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
+			            </div>
+			            <div class="carousel-item">
+			            	<img src="/img/noticia5.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
+			            </div>
+			            
+			            <!--Botones Carrusel -->
+			            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+			            data-bs-slide="prev">
+			            	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			                <span class="visually-hidden">Previous</span>
+			            </button>
+			           	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+			            data-bs-slide="next">
+			                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			                <span class="visually-hidden">Next</span>
+			            </button>
+			    	</div>
+				</div>
+				<!-- fin Carrusel -->
 	
 	<!-- Mensajes Foro -->
-			       	<div class="bg-black bg-opacity-50 rounded text-white mt-5 p-2 card2">
-			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
-				       		<h4> <a href="/foro/${uno.id}"> ${uno.titulo }</a></h4>
-				       		<hr>
-				       		<p class="">${uno.contenido}</p>	
-			       		</div>
-			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
-				       		<h4><a href="/foro/${dos.id}">${dos.titulo}</a></h4>
-				       		<hr>
-				       		<p>${dos.contenido}</p>
-			       		</div>
-			       		<div class="bg-black bg-opacity-50 rounded text-white m-2 p-2">
-				       		<h4><a href="/foro/${tres.id}">${tres.titulo }</a></h4>
-				       		<hr>
-				       		<p>${tres.contenido}</p>
-			       		</div>
-			       	</div>
+		<div class="recentChat">
+			<div class="Header">
+				<h2>Últimas conversaciones</h2>
+			</div>
+			<table>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/pfp1.jpg">
+							</div>
+						</td>
+						<td>
+							<h4><a href="/foro/${uno.id}"> ${uno.titulo} Cómo consiguieron más clientes</a></h4>
+							<p>${uno.contenido} Estoy teniendo un problema con conseguir más clientes...</p>
+						</td>
+					</tr>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/pfp2.jpg">
+							</div>
+						</td>
+						<td>
+							<h4><a href="/foro/${dos.id}"> ${dos.titulo} Vendedor de Sopaipillas</a></h4>
+							<p>${dos.contenido} Estoy buscando donde ganarme ¿alguna sugerencia?...</p>
+						</td>
+					</tr>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/pfp4.jpg">
+							</div>
+						</td>
+						<td>
+							<h4><a href="/foro/${tres.id}"> ${tres.titulo} ¿Que piensan de los impuestos?</a></h4>
+							<p>${tres.contenido} No sé si ya vieron las últimas noticias sobre la alza...</p>
+						</td>
+					</tr>
+					<tr>
+						<td width="60px">
+							<div class="imgBx">
+								<img src="/img/pfp6.jpg">
+							</div>
+						</td>
+						<td>
+							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo} ¡No te rindas!</a></h4>
+							<p>${cuatro.contenido} Un mensajito para todos los nuevos emprendedores, no te...</p>
+						</td>
+					</tr>
+				</table>
+			</div>
 	<!-- Final Mensajes Foro -->
+	
+	
 			</div>
 			<!-- Contenido Derecho -->
-			<div class="col-7 text-center bg-black bg-opacity-50 rounded card2 mt-2 ms-4 py-3">
-				<div class="row justify-content-around ">
-					<div class="col-5">
-						<div class="card text-center" style="width: 18rem;">
-							<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+			<div class="col-5 text-center mt-2 ms-4">
+					<div class="col-3 mb-4">
+						<div class="card text-center" style="width: 30rem; height: 24rem;">
+							<img src="/img/forge.jpg" class="card-img-top" alt="..." style="height: 55%;">
 							  <div class="card-body">
-								    <h5 class="card-title">Card title</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    <a href="#" class="btn btn-primary">Go somewhere</a>
+								    <h5 class="card-title">¡Curso nuevo!</h5>
+								    <p class="card-text">Aprovecha esta oportunidad que ofrece la Fundación
+								    Forge para especializarte en programación</p>
+								    <a href="#" class="backButton">Ir a Forge</a>
 							  </div>
 						</div>
 					</div>
-					<div class="col-5">
-						<div class="card text-center" style="width: 18rem;">
-						 	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
+					
+					<div class="col-1">
+						<div class="card text-center" style="width: 30rem; height: 24rem;">
+						 	<img src="/img/santander.jpg" class="card-img-top" alt="..." style="height: 55%;">
 							  <div class="card-body">
-								    <h5 class="card-title">Card title</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    <a href="#" class="btn btn-primary">Go somewhere</a>
+								    <h5 class="card-title">Postulación a Fondos</h5>
+								    <p class="card-text">Banco Santander ofrece una inversion para pequeñas Pymes
+								    que hayan iniciado actividades hace menos de 5 meses</p>
+								    <a href="#" class="backButton">Ir a Santander</a>
 							  </div>
 						</div>
 					</div>
-				</div>
-				<div class="row justify-content-around mt-3">
-					<div class="col-5">	
-						<div class="card text-center" style="width: 18rem;">
-						  <img src="/img/cursos.jpg" class="card-img-top" alt="...">
-							  <div class="card-body">
-								    <h5 class="card-title">Card title</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    <a href="#" class="btn btn-primary">Go somewhere</a>
-							  </div>
-						</div>
-					</div>
-					<div class="col-5">	
-						 <div class="card text-center" style="width: 18rem;">
-						  	<img src="/img/cursos.jpg" class="card-img-top" alt="...">
-							  <div class="card-body">
-								    <h5 class="card-title">Card title</h5>
-								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								    <a href="#" class="btn btn-primary">Go somewhere</a>
-							  </div>
-						</div>
-					</div>
-				</div>
 				<!--FINAL Contenido Derecho -->	
 			</div>
 		</div>
@@ -269,10 +243,7 @@
   		</li>
 	</ul>
 </div>		
-	<script src="/particles/particles.js"></script>
-	<script src="/particles/data/app.js"></script>
-	<script src="/js/bootstrap.bundle.js"></script>
+<script src="/js/workbench.js"></script>
+<script src="/js/bootstrap.bundle.js"></script>
 </body>
-
-
 </html>
