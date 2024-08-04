@@ -72,7 +72,7 @@
 	<div class="cardbox">
 		<div class="cardcss">
 			<div>
-				<div class="numbers">$105.504</div>
+				<div class="numbers">$15.504</div>
 				<div class="cardName">Gastos</div>
 			</div>
 			<div class="iconBx">
@@ -128,14 +128,16 @@
 				<thead>
 					<tr>
 						<td>Mes</td>
+						<td>Ganancia</td>
 						<td>Gastos</td>
-						<td>Ganancias</td>
+						<td>Ganancia Neta</td>
 						<td>Estado</td>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>Enero</td>
+						<td>$420.000</td>
 						<td>$120.000</td>
 						<td>$300.000</td>
 						<td><span class="status bien">Bien!</span></td>
@@ -143,23 +145,27 @@
 					<tr>
 						<td>Febrero</td>
 						<td>$120.000</td>
+						<td>$120.000</td>
 						<td>$150.000</td>
 						<td><span class="status regular">Regular</span></td>
 					</tr>
 					<tr>
 						<td>Marzo</td>
+						<td>$240.000</td>
 						<td>$120.000</td>
 						<td>$100.000</td>
 						<td><span class="status mal">Mejorable</span></td>
 					</tr>
 					<tr>
 						<td>Abril</td>
+						<td>$240.000</td>
 						<td>$120.000</td>
 						<td>$120.000</td>
 						<td><span class="status regular">Regular</span></td>
 					</tr>
 					<tr>
 						<td>Mayo</td>
+						<td>$320.000</td>
 						<td>$120.000</td>
 						<td>$200.000</td>
 						<td><span class="status bien">Bien!</span></td>

@@ -1,6 +1,6 @@
-const grafico1 = document.getElementById('grafico1');
+const graficoGastos = document.getElementById('grafico1');
 
-  new Chart(grafico1, {
+  new Chart(graficoGastos, {
     type: 'bar',
     data: {
       labels: ['IVA', 'Reinvercion', 'Ahorros', 'Gastos', 'Ganancia'],
@@ -30,9 +30,9 @@ const grafico1 = document.getElementById('grafico1');
   });
   
   
-  const grafico2 = document.getElementById('grafico2');
+  const graficomensual = document.getElementById('grafico2');
 
-  new Chart(grafico2, {
+  new Chart(graficomensual, {
     type: 'line',
     data: {
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],

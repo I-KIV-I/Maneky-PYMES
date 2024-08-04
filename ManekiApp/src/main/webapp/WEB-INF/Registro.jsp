@@ -105,7 +105,6 @@
 				</div>
 			</div>
 		</div>
-		
 	<script src="/particles/particles.js"></script>
 	<script src="/particles/data/app.js"></script>
 	<script src="/js/Test.js"></script>
