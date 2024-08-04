@@ -127,9 +127,7 @@ public class ControladorNavegacion {
 		if (session.getAttribute("idUsuario") == null) {
 			return "redirect:/login";
 		}
-	        
-		Pyme pyme = servicioPyme.obtenerPorId(id);
-		model.addAttribute("pyme", pyme);
+		model.addAttribute("pyme", servicioPyme.obtenerPorId(id));
 	        
 		return "AdministradorDeFinanzas.jsp";
 	}

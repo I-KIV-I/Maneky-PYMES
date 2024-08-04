@@ -46,13 +46,19 @@
         <!--<form action="/procesar/edicion" method="get">
         	<button type="submit">Edita tu perfil</button>
          </form>-->
+	</div>
 	<div>
         <section>
             <h2>Tus Pymes</h2>
             <c:forEach var="pyme" items="${listaPymes}">
-	        	<a href="/finanzas/${pyme.id}">${pyme.nombre}</a>
+	        	<h3><a href="/finanzas/${pyme.id}">${pyme.nombre}</a></h3>
+				<p>Rol: ${pyme.rol }</p>				
+				<p>Rut Creador: ${pyme.rutCreador }</p>
+				<p>Ubicación:${pyme.ubicacion }</p>
 			</c:forEach>
-            
+			<form action="/inscripcion/pyme">
+				<input type="submit" value="Agregar Nueva Pyme">
+			</form>
         </section>
     </div>
 </body>
