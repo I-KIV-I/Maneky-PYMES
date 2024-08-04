@@ -58,7 +58,7 @@
 							<button class="registerButton">Regístrate</button> 
 						</form>
 						<form action="/">
-							<button class="btn btn-outline-secondary">Volver a la pagina principal</button> 
+							<button class="backButton">Volver atrás</button> 
 
 						</form>
 					

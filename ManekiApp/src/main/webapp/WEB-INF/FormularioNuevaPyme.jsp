@@ -27,27 +27,37 @@
 							<div class="flex form">
 								<form:label class="form-label" path="nombre"><strong>Nombre Pyme:</strong></form:label>
 								<form:input class="form-control mb-4 text-center" path="nombre" type="text"/>
-								<form:errors class="alert alert-danger" path="nombre"/>
+								<div>
+									<form:errors class="alert alert-danger" path="nombre"/>
+								</div>
 							</div>
 							<div class="flex form">
 								<form:label class="form-label" path="rol"><strong>Rol:</strong></form:label>
 								<form:input class="form-control mb-4 text-center" path="rol" type="text"/>
-								<form:errors class="alert alert-danger" path="rol"/>
+								<div>
+									<form:errors class="alert alert-danger" path="rol"/>
+								</div>
 							</div>
 							<div class="flex form">
 								<form:label class="form-label" path="ubicacion"><strong>Ubicación:</strong></form:label>
 								<form:input class="form-control mb-4 text-center" path="ubicacion" type="text"/>
-								<form:errors class="alert alert-danger" path="ubicacion"/>
+								<div>
+									<form:errors class="alert alert-danger" path="ubicacion"/>
+								</div>
 							</div>
 							<div class="flex form">
 								<form:label class="form-label" path="rutCreador"><strong>Rut Creador:</strong></form:label>
 								<form:input class="form-control mb-4 text-center" path="rutCreador" type="text"/>
-								<form:errors class="alert alert-danger" path="rutCreador"/>
+								<div>
+									<form:errors class="alert alert-danger" path="rutCreador"/>
+								</div>
 							</div>
 							<div class="flex form">
 								<form:label class="form-label" path="fechaCreacionEmpresa"><strong>Fecha Creacion:</strong></form:label>
 								<form:input class="form-control mb-4 text-center" path="fechaCreacionEmpresa" type="date"/>
-								<form:errors class="alert alert-danger" path="fechaCreacionEmpresa"/>
+								<div>
+									<form:errors class="alert alert-danger" path="fechaCreacionEmpresa"/>
+								</div>
 							</div>
 							
 							<button class="ingresarButton">Registrar</button>
@@ -55,11 +65,9 @@
 						<form action="/guiaCrearPyme">
 							<button class="backButton">Volver atrás</button>
 						</form> 
-				</main>
 			</div>
 		</div>
 	</div>
-
 	<script src="/particles/particles.js"></script>
 	<script src="/particles/data/app.js"></script>
 </body>

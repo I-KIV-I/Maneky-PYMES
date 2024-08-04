@@ -65,7 +65,7 @@
 			<h1>Hablemos de números </h1>
 		</div>
 		<div class="user">
-			<img src="/img/LogoManeki.png" alt="img usuario">
+			<img src="/img/pfp5.jpg" alt="img usuario">
 		</div>
 	</div>
 	
