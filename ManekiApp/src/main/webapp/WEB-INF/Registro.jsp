@@ -21,7 +21,7 @@
 					<img src="/img/LogoManeki.png" class="w-25 mb-4" alt="logo maneki pymes">
 					<div>
 						<h2>Registro</h2>
-						<form:form action="/procesar/edicion" method="post" modelAttribute="formRegistro">  
+						<form:form action="/procesar_registro" method="post" modelAttribute="formRegistro">  
 							<div>
 								<form:label class="form-label" path="nombre">Nombre</form:label>
 								<form:input class="form-control mb-4 text-center" placeholder="Nombre" path="nombre"  type="text"/>

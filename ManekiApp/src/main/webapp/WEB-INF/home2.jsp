@@ -28,7 +28,9 @@
 			<h1 class="titulo">Comienza tu viaje</h1>
 			<h3 class="subtitulo">Comienza tu Pyme de cero</h3>
 		</div>
-			<button type="button" class="button">Ingresar</button>
+			<form action="/login">
+			<button type="submit" class="button">Ingresar</button>
+			</form>
 	</header>
 	
 	<div class="tituloBox">
