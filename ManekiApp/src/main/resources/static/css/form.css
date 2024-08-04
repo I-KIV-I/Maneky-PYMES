@@ -1,16 +1,4 @@
 @charset "ISO-8859-1";
-.registerBody{
-	height: 1250px;
-}
-.loginBody{
-	height: 800px;
-}
-.temporalBody{
-	height: 900px;
-}
-.ingresarPymeBody{
-	height: 1020px;
-}
 .bck{
 	background-color:#fff;
 	border-radius: 20px;
