@@ -24,6 +24,12 @@
 			</li>
 			<li>
 				<a href="#">
+					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="title">DashBoard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
 					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
 					<span class="title">Perfil</span>
 				</a>
