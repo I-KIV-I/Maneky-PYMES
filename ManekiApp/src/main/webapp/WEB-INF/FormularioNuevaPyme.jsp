@@ -63,7 +63,9 @@
 							<button class="ingresarButton">Registrar</button>
 						</form:form>
 							<input class="backButton" type="button" value="Volver Atrás" onClick="history.go(-1);">
-						
+							<div>
+							<a href="/herramientas">Saltar</a>
+							</div>
 				</div>
 			</div>
 		</div>
