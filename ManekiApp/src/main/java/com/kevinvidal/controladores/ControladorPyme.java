@@ -30,7 +30,7 @@ public class ControladorPyme {
 	@GetMapping("/inscripcion/pyme")
 	public String desplegarFormularioInscripcionEmpresa(@ModelAttribute("formPyme") Pyme nuevaPyme,
 			  											HttpSession sesion) {
-		if(sesion.getId()==null) {
+		if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
 		}
 		
@@ -49,7 +49,7 @@ public class ControladorPyme {
 		return "redirect:/herramientas";
 	}
 	
-	@PostMapping("/edicion/pyme/{id}")
+	/*@PostMapping("/edicion/pyme/{id}")
 	public String procesarEditarInfoPyme(@Valid@ModelAttribute("formPyme") Pyme nuevaPyme,
 										     BindingResult validaciones,
 										     HttpSession sesion) {
@@ -60,9 +60,13 @@ public class ControladorPyme {
 		nuevaPyme.setUsuario(usuarioActualUsuario);
 		this.servicioPyme.guardar(nuevaPyme);
 		return "redirect:/herramientas";
-	}
+	}*/
+	
 	@GetMapping("/finanza_pyme/{id}")
-	public String despliegaListaInforme() {
+	public String despliegaListaInforme(HttpSession sesion) {
+		if(sesion.getAttribute("idUsuario")==null) {
+			return "redirect:/login";
+		}
 		return "FinanzaPyme.jsp";
 	}
 	
