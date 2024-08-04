@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/css/Style.css">
+<link rel="stylesheet" href="/css/form.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <title>Makeni Pymes</title>
@@ -17,24 +18,20 @@
 <div id="particles-js"></div>
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-4 px-5 py-4 my-5 text-center bg-black bg-opacity-50 rounded text-white position-absolute " >
+			<div class="col-4 px-5 py-4 my-5 text-center position-absolute bck" >
 				<header>
 					<h1>Maneki Pymes</h1> 
-					<img src="/img/LogoManeki.png" class="w-25 mb-4" alt="logo maneki pymes">
+					<img src="/img/LogoManeki.png" class="w-25 mb-4 mt-2" alt="logo maneki pymes">
 				</header>
-				<main class="p-5 rounded bg-black bg-opacity-50">
-					<h2>¿Ya Tienes una Pyme?</h2>
-					<div class="row my-5 justify-content-center ">
-						<div class="col-4">
-							<a class="btn btn-outline-success" href="/inscripcion/pyme">Si</a>
-						</div>
-						<div class="col-4">
-							<a class="btn btn-outline-danger" href="/solicitud/informacion">No</a>
-						</div>
+				<main>
+					<h2 class="my-4">¿Tienes ya una PYME?</h2>
+					<div class="row my-5 justify-content-center eleccion">
+							<a class="ingresarButton" href="/inscripcion/pyme">Si</a>
+							<a class="backButton" href="/solicitud/informacion">No</a>
 					</div>
 				</main>
-				<div class="mt-5">
-					<a class="btn btn-outline-secondary" href="/maneki_pyme/inicio">Volver</a>
+				<div class="mt-5 mb-2">
+					<a class="backButton" href="/">Volver atrás</a>
 				</div>
 			</div>
 		</div>

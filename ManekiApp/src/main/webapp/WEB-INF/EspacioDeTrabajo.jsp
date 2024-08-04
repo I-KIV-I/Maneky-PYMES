@@ -19,32 +19,36 @@
 	<nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
     	<div class="container text-white ">
 	    	<div>
-				<a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
+				<a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
 					<img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
 				</a>
 			</div>
 
 			<form action="/procesar/logout"><button class="btn btn-outline-warning">Cerrar Sesion</button></form>
-			<form action="/finanzas/opciones"><button class="btn btn-outline-warning">Finanzas</button></form>
 			<form action="/foro"><button class="btn btn-outline-warning">Foro</button></form>
-			<form action="/perfil"><button class="btn btn-outline-warning">Info Perfil/PYME</button></form>
 			<form action="/noticias"><button class="btn btn-outline-warning">Noticias</button></form>
+			<!-- boton desplegable -->
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				      Finanzas
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="/inscripcion/pyme">Crear Nueva Pyme</a></li>
+					<c:forEach var="pyme" items="${listaPyme}">
+					<li><a class="dropdown-item" href="/finanzas/${pyme.id}">${pyme.nombre }</a></li>			      
+				    </c:forEach>
+				</ul>
+			</div>
+			<!-- fin boton desplegable -->
+			 
 			
 			<img th:src="${user.profileImageUrl}" alt="">
 			<h5>Bienvenido ${nombreUsuario}</h5>
-			 <div class="btn-group" role="group">
-			    <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-			      Mi cuenta
-			    </button>
-			    <ul class="dropdown-menu">
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mi Perfil -->
-			      <li><a class="dropdown-item" href="#">Dropdown link</a></li> <!-- Mis pymes --><!-- logout -->
-			    </ul>
-			  </div>
+			<form action="/perfil"><button class="btn btn btn-outline-info">Perfil/PYME</button></form>
 		</div>
 	</nav>
 	<!-- fin navbar -->
-	<div class="container mt-3">
+	<!-- <div class="container mt-3">
     <p>Revisa los reportes diarios o mensuales de tu negocio</p>
     <c:choose>
         <c:when test="${condicion}">
@@ -77,7 +81,7 @@
             </article>
         </c:otherwise>
     </c:choose>
-</div>
+	</div> -->
 
 	<div class="container mt-3 position-absolute start-50 translate-middle-x">
 		<div class="row justify-content-center ">

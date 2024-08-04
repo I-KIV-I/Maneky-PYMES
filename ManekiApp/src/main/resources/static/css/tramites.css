@@ -1,8 +1,45 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Khula:700);
 
-body{
+.tramitesNavbar{
 	background-color: #00131D;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.tramitesNavbar a{
+	color:#fff;
+}
+
+ .logoutButton{
+ background-color: #00131D;
+ padding: 10px 20px;
+ text-align: center;
+ color: #fff;
+ border-radius:20px;
+ border: 2px solid #00131D;
+ box-shadow: 5px 5px 0px #000;
+ font-size: 1.2em;
+ font-weight: 500;
+ height: 50px;
+ width: 170px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+ 
+ .logoutButton:hover {
+  background-color: #fff;
+  color: #00131D;
+  border: 2px solid #00131D;
+  box-shadow: 5px 5px 0px #00131D;
+}
+
+.logoutButton:active {
+  background-color: #00131D;
+  box-shadow: none;
+  transform: translateY(4px);
 }
 
 .hidden {
@@ -24,27 +61,36 @@ body{
   left:10px;
 }
 
-.textContainer{
-	display:flex;
-	align-items: center;
-	justify-content:space-evenly;
-	margin: 20px;
+.bkground{
+	background-color: #00131D;
 }
+
+.cartasBox{
+	display:flex;
+	justify-content: center;
+	background-color: #00131D;
+}
+
 .cartasContainer{
 	position:relative;
-	display:flex;
-	justify-content:space-evenly;
-	margin: 20px;
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap:50px;;
 }
 
 .cartasContainer .card{
 	position:relative;
-	width: 300px;
-	height: 200px;
+	width: 350px;
+	height: 300px;
+	border: 1px dashed #fff;
+	border-radius: 20px;
+	
 }
 
 .cartasContainer .card .face{
 	position: absolute;
+	border: 1px solid #fff;
+	border-radius: 20px;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -54,6 +100,9 @@ body{
 
 .cartasContainer .card .face.face1{
 	background: #00131D;
+	position: absolute;
+	border: 1px solid #fff;
+	border-radius:20px;
 	display: flex;
 	justify-content:center;
 	align-items: center;
@@ -75,10 +124,14 @@ body{
 .cartasContainer .card:hover .face.face1{
 	transform: translateY(-100%) rotateX(90deg);
 	background:lightblue;
+	border: 1px solid #fff;
+	border-radius: 20px;
 }
 
 .cartasContainer .card .face.face2{
 	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 20px;
 	display: flex;
 	justify-content:center;
 	align-items:center;
@@ -86,11 +139,67 @@ body{
 	transform-origin:top;
 	transform: translateY(100%) rotateX(90deg);
 }
+
 .cartasContainer .card:hover .face.face2{
 	transform: translateY(0) rotateX(0deg);
-	
+	border: 1px solid #fff;
+	border-radius: 20px;
 }
 
-.textContainer .btn{
-	background-color:lightblue;
+.button{
+	 background-color: lightblue;
+	 padding: 10px 20px;
+	 text-align: center;
+	 color: #00131D;
+	 border-radius:20px;
+	 border: 2px solid #00131D;
+	 box-shadow: 5px 5px 0px #000;
+	 font-size: 1.2em;
+	 font-weight: 500;
+	 height: 60px;
+	 width: 200px;
+	 cursor: pointer;
+	 transition: all 0.3s ease;
+	 margin-bottom: 30px;
+ }
+ 
+.textContainer{
+	display:flex;
+	align-items: center;
+	justify-content:space-evenly;
+	margin: 20px;
+}
+.textBox{
+	display:block;
+	background-color:#00131D;
+}
+.textContainer2{
+	background-color: #fff;
+	color:#00131D;
+	display:flex;
+	justify-content:space-evenly;
+	margin: 20px;
+	margin-top: 80px;
+	padding: 20px;
+	border-radius:20px;
+}
+
+.textContainer3{
+	display:flex;
+	align-items: center;
+	justify-content:space-evenly;
+	margin: 20px;
+}
+ 
+.button:hover {
+  background-color: #fff;
+  color: #00131D;
+  border: 2px solid #00131D;
+  box-shadow: 5px 5px 0px #00131D;
+}
+
+.button:active {
+  background-color: #00131D;
+  box-shadow: none;
+  transform: translateY(4px);
 }

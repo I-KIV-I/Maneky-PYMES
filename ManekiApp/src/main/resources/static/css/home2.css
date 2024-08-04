@@ -100,6 +100,7 @@ section img{
  border: 2px solid #00131D;
  box-shadow: 5px 5px 0px #000;
  font-size: 1.2em;
+ font-weight: 500;
  height: 60px;
  width: 200px;
  cursor: pointer;
@@ -184,6 +185,14 @@ section img{
 	font-size: 1.2em;
 }
 
+.tarjetaBox .tarjeta:hover{
+	background:#fff;
+}
+
+.tarjetaBox .tarjeta:hover h3,
+.tarjetaBox .tarjeta:hover p{
+	color: #00131D;
+}
 
 
 

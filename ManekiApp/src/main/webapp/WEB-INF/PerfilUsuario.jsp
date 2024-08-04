@@ -16,7 +16,7 @@
          <!-- navbar -->
             <nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
               <div class="container">
-                <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
+                <a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
                   <img src="/img/logoManeki.png" alt="Logo" width="50" height="50"
                     class="d-inline-block align-text-center iconmaneki">
                   <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
@@ -38,21 +38,27 @@
               </div>
             </nav>
         <section>
-                <h3>Tu informacion</h3>
-                <h5>${nombreUsuario} ${usuario.apellido}</h5>  
+                <h2>Tu informacion</h2>
+                <h5>${usuario.nombre} ${usuario.apellido}</h5>  
                 <h5>${usuario.rut}</h5>
                 <h5>${usuario.correo}</h5>
         </section>
-        <form action="/procesar/edicion" method="get">
+        <!--<form action="/procesar/edicion" method="get">
         	<button type="submit">Edita tu perfil</button>
-         </form>
+         </form>-->
+	</div>
 	<div>
         <section>
-            <ul>
-            	<c:forEach var="pyme" items="${pymes}">
-	                <li><div><a href="/finanzas/pyme/${pyme.id}"></a>${pyme.nombre}</div></li>
-                </c:forEach>
-            </ul>
+            <h2>Tus Pymes</h2>
+            <c:forEach var="pyme" items="${listaPymes}">
+	        	<h3><a href="/finanzas/${pyme.id}">${pyme.nombre}</a></h3>
+				<p>Rol: ${pyme.rol }</p>				
+				<p>Rut Creador: ${pyme.rutCreador }</p>
+				<p>Ubicación:${pyme.ubicacion }</p>
+			</c:forEach>
+			<form action="/inscripcion/pyme">
+				<input type="submit" value="Agregar Nueva Pyme">
+			</form>
         </section>
     </div>
 </body>

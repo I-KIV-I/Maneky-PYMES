@@ -19,6 +19,7 @@ import com.kevinvidal.modelos.Usuario;
 import com.kevinvidal.servicios.ServicioCategoria;
 import com.kevinvidal.servicios.ServicioHilo;
 import com.kevinvidal.servicios.ServicioPyme;
+import com.kevinvidal.servicios.ServicioUsuario;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -30,13 +31,17 @@ public class ControladorNavegacion {
 	private final ServicioCategoria servicioCategoria;
 	private final ServicioPyme servicioPyme;
 	private final ServicioHilo servicioHilo;
+	private final ServicioUsuario servicioUsuario;
+	
 	
 	public ControladorNavegacion(ServicioPyme servicioPyme,
 						   	     ServicioCategoria servicioCategoria,
-						   	     ServicioHilo servicioHilo) {
+						   	     ServicioHilo servicioHilo,
+						   	     ServicioUsuario servicioUsuario) {
 		this.servicioHilo = servicioHilo;
 		this.servicioPyme = servicioPyme;
 		this.servicioCategoria = servicioCategoria;
+		this.servicioUsuario = servicioUsuario;
 	}
 
 
@@ -47,7 +52,7 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/existenciaPyme")
 	public String desplegarConsultaExistenciaPyme(HttpSession sesion) {
-		if(sesion.getId()==null) {
+		if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
 		}
 		return "EleccionExistenciaEmpresa.jsp";	
@@ -56,7 +61,7 @@ public class ControladorNavegacion {
 	@GetMapping("/solicitud/informacion")
 	public String desplegarFormularioTemporal(Model model, HttpSession sesion,
 											  @ModelAttribute("formTemp")FormularioTemporal formTemp) {
-		if(sesion.getId()==null) {
+		if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
 		}
 		List<Categoria> todasCategorias = servicioCategoria.obtenerTodos();
@@ -73,7 +78,7 @@ public class ControladorNavegacion {
 	
 	@GetMapping("/guiaCrearPyme")
 	public String desplegarInformacionTramites(HttpSession sesion) {
-		if(sesion.getId()==null) {
+		if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
 		}
 		
@@ -117,44 +122,23 @@ public class ControladorNavegacion {
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	 @GetMapping("/espacioDeTrabajo")
-	    public String mostrarEspacioDeTrabajo(HttpSession session, Model model) {
-	        if (session.getAttribute("usuario") == null) {
-	            return "redirect:/login";
-	        }
+	@GetMapping("/finanzas/{id}")
+	public String desplegarInformeFinanzas(@PathVariable("id") Long id, HttpSession session, Model model) {
+		if (session.getAttribute("idUsuario") == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("pyme", servicioPyme.obtenerPorId(id));
 	        
-	        List<Pyme> listaPyme = servicioPyme.obtenerPymePorUsuarioId((Long) session.getAttribute("usuario"));
-	        boolean condicion = !listaPyme.isEmpty();
-	        model.addAttribute("listaPyme", listaPyme);
-	        model.addAttribute("condicion", condicion);
-	        
-	        return "EspacioDeTrabajo.jsp";
-	    }
-
-	    //@PostMapping("/procesar/finanzas/{id}")
-	    //public String procesarInfoPyme(@PathVariable("id") Long id, HttpSession session) {
-	    //   return "redirect:/finanzas/" + id ;
-	    //}
-
-	    @GetMapping("/finanzas/{id}")
-	    public String desplegarInformeFinanzas(@PathVariable("id") Long id, HttpSession session, Model model) {
-	        if (session.getAttribute("usuario") == null) {
-	            return "redirect:/login";
-	        }
-	        
-	        Pyme pyme = servicioPyme.obtenerPorId(id);
-	        model.addAttribute("pyme", pyme);
-	        
-	        return "FinanzasPyme.jsp";
-	    }
+		return "AdministradorDeFinanzas.jsp";
+	}
 	
 	@GetMapping("/perfil")
-	public String desplegarInformacionUsuario(HttpSession sesion,Usuario usuario,Pyme pyme) {
-		if(sesion.getId()==null) {
+	public String desplegarInformacionUsuario(HttpSession sesion, Model modelo) {
+		if(sesion.getAttribute("idUsuario")==null) {
 			return "redirect:/login";
 		} 
-		
-		
+		modelo.addAttribute("usuario", servicioUsuario.obtenerUno((Long) sesion.getAttribute("idUsuario"))); 
+		modelo.addAttribute("listaPymes", servicioPyme.obtenerPymePorUsuarioId((Long)sesion.getAttribute("idUsuario")));
 		return "PerfilUsuario.jsp";
 	}
 	
