@@ -7,7 +7,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/tramites.css">
 <link rel="stylesheet" href="/css/Style.css">
 <meta charset="UTF-8">
@@ -15,14 +14,12 @@
 </head>
 <body>
 <div id="particles-js"></div>
-<!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbbarback bg-black bg-opacity-50" 
-  data-bs-theme="dark">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
+<nav class="navbar navbar-expand-lg tramitesNavbar" data-bs-theme="dark">
+    <div class="container justify-content-between">
+      <a class="navbar-brand d-flex align-items-center mx-auto" href="/">
 	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" 
 	      class="d-inline-block align-text-center iconmaneki"> 
-	      <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
+	      <span class="ms-4 fs-2">Maneki Pymes</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,29 +27,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <form action="/procesar/logout">
-          <button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
-          </form>
         </li>
       </ul>
+      <div>
+      	<span class="navbar-text">
+        	<form action="/procesar/logout">
+          		<button class="logoutButton" aria-current="page">Cerrar Sesión</button>
+          	</form>
+      	</span>
+      </div>
     </div>
     </div>
   </nav>
 <!-- fin navbar -->
 
-
-<!-- Cartas -->
-<div class="d-block bkground">
-	<div class="textContainer">
+<div class="textContainer">
 		<div class='console-container'>
 			<span id='text'></span>
 			<div class='console-underscore' id='console'>&#95;</div>
 		</div>
 		<img src="/img/LogoManeki.png" class="w-20 mb-4 imgLogo" alt="logo maneki pymes">
 	</div>
-	
+	<div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #00131D;"></path></svg></div>
+<!-- Cartas -->
+<div class="d-block bkground">
 	<!-- Fila 1 -->
-	<div class="cartasContainer">
+	<div class="cartasBox">
+		<div class="cartasContainer">
 	
 		<!-- Carta 1 -->
 		<div class="card">
@@ -64,6 +65,7 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
+					<h3>hola uwu</h3>
 					<p>info tramite 1: tienes que hacer esto!</p>
 				</div>
 			</div>
@@ -79,6 +81,7 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
+					<h3>hola uwu</h3>
 					<p>info tramite 2: tienes que hacer esto!</p>
 				</div>
 			</div>
@@ -94,6 +97,7 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
+					<h3>hola uwu</h3>
 					<p>info tramite 3: tienes que hacer esto!</p>
 				</div>
 			</div>
@@ -109,14 +113,12 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
+					<h3>hola uwu</h3>
 					<p>info tramite 3: tienes que hacer esto!</p>
 				</div>
 			</div>
 		</div>
-	</div>
 	
-	<!-- Fila 2 -->
-	<div class="cartasContainer">
 		
 		<!-- Carta 1 -->
 		<div class="card">
@@ -128,6 +130,7 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
+					<h3>hola uwu</h3>
 					<p>info tramite 1: tienes que hacer esto!</p>
 				</div>
 			</div>
@@ -143,73 +146,41 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
+					<h3>hola uwu</h3>
 					<p>info tramite 2: tienes que hacer esto!</p>
 				</div>
 			</div>
 		</div>
-		
-		<!-- Carta 3 -->
-		<div class="card">
-			<div class="face face1">
-				<div class="content">
-					<img src="/img/business.svg">
-					<h3>Tramite 3</h3>
-				</div>
-			</div>
-			<div class="face face2">
-				<div class="content">
-					<p>info tramite 3: tienes que hacer esto!</p>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Carta 4 -->
-		<div class="card">
-			<div class="face face1">
-				<div class="content">
-					<img src="/img/creativity.svg">
-					<h3>Tramite 4</h3>
-				</div>
-			</div>
-			<div class="face face2">
-				<div class="content">
-					<p>info tramite 3: tienes que hacer esto!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Texto -->
-	<div class="textContainer">
-		<h3 class="text-white bg-black bg-opacity-50 rounded p-3 hoverme">Cuando hayas completado
-		 los trámites para iniciar tu Pyme, ¡Inscribela!</h3>
-	</div>
-	<div class="textContainer">
-		 <form action="/inscripcion/pyme">
-			<button class="btn btn-lg">Inscribir mi PYME</button>
-		 </form>
 	</div>
 </div>
-
-
-
-
-
-
-
-<!-- Footer -->
+	
+	<!-- Texto -->
+	<div class="textBox">
+	<div class="textContainer2">
+		<h3>Cuando hayas completado
+		 los trámites para iniciar tu Pyme, ¡Inscribela!</h3>
+	</div>
+	<div class="textContainer3">
+		 <form action="/inscripcion/pyme">
+			<button class="button">Inscribir mi PYME</button>
+		 </form>
+	</div>
+	</div>
+	
+	<!-- Footer -->
 <div>
-	<ul class="nav justify-content-center bg-dark bg-opacity-50">
+	<ul class="nav justify-content-center bg-dark bg-opacity-50 mt-0">
 		<li class="nav-item">
-    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
+    		<a class="nav-link active text-white" aria-current="page" href="#">Contáctanos</a>
   		</li>
   		<li class="nav-item">
-    		<a class="nav-link text-white" href="#">Acerca de</a>
+    		<a class="nav-link text-white" href="#">Saber más</a>
   		</li>
   		<li class="nav-item">
-    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
+    		<a class="nav-link text-white" href="#">Donaciones</a>
   		</li>
 	</ul>
+</div>
 </div>
 
 

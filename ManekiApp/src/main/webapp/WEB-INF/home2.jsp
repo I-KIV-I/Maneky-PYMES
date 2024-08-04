@@ -26,11 +26,13 @@
 	<header class="header">
 		<div>
 			<h1 class="titulo">Comienza tu viaje</h1>
-			<h3 class="subtitulo">Comienza tu Pyme de cero</h3>
+			<h3 class="subtitulo">Comienza tu Pyme desde cero</h3>
 		</div>
-			<form action="/login">
+
+		<form action="/login"">
 			<button type="submit" class="button">Ingresar</button>
-			</form>
+		</form>
+
 	</header>
 	
 	<div class="tituloBox">
