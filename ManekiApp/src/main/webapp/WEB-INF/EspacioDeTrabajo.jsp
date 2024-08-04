@@ -56,6 +56,7 @@
 	</div>
 </div>
 
+<<<<<<< HEAD
 <div class="main">
 	<div class="topbar">
 		<div class="toggle">
@@ -70,7 +71,6 @@
 	</div>	
 
 	  <%-- <div class="container mt-3">
-	
     <p>Revisa los reportes diarios o mensuales de tu negocio</p>
     <c:choose>
         <c:when test="${condicion}">
@@ -104,6 +104,7 @@
         </c:otherwise>
     </c:choose>
 </div> --%>
+
 
 
 		<div class="row justify-content-center">

@@ -23,7 +23,7 @@
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-black bg-opacity-50" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
+      <a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
 	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
 	      <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
       </a>
@@ -39,7 +39,7 @@
         </li>
         <li>
         	<form action="/herramientas">
-          		<button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Volver</button>
+        		<input class="btn btn-secondary ms-5 p-2 raleway" aria-current="page" type="button" value="Volver" onClick="history.go(-1);">
         	</form>
         </li>
         <li>
@@ -62,7 +62,7 @@
 	<!-- barra perfil y titulo -->
 	<div class="topbar">
 		<div class="title">
-			<h1>Hablemos de números </h1>
+			<h1>Hablemos de números ${pyme.nombre }</h1>
 		</div>
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="img usuario">

@@ -62,12 +62,11 @@
 							
 							<button class="ingresarButton">Registrar</button>
 						</form:form>
-						<form action="/guiaCrearPyme">
-							<button class="backButton">Volver atrás</button>
-						</form> 
+							<input class="backButton" type="button" value="Volver Atrás" onClick="history.go(-1);">
+						
+				</div>
 			</div>
 		</div>
-	</div>
 	<script src="/particles/particles.js"></script>
 	<script src="/particles/data/app.js"></script>
 </body>
