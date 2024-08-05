@@ -23,31 +23,32 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/herramientas">
 					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
 					<span class="title">DashBoard</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/perfil">
 					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
 					<span class="title">Perfil</span>
 				</a>
 			</li>
 			<li>
-				<a href="/finanzas/opciones">
+				<a href="*">
 					<span class="icon"><img src="/img/finances.svg" alt="icono"></span>
 					<span class="title">Finanzas</span>
+					
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/noticias">
 					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
 					<span class="title">Noticias</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/foro">
 					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
 					<span class="title">Foro</span>
 				</a>
@@ -69,49 +70,12 @@
 			<img src="/img/toggle.svg" alt="toggle">
 		</div>
 		<div class="search">
-			<h1>Bienvenido username</h1>
+			<h1>Bienvenido ${nombreUsuario }</h1>
 		</div>
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="profile pic">
 		</div>
 	</div>	
-
-	  <%-- <div class="container mt-3">
-    <p>Revisa los reportes diarios o mensuales de tu negocio</p>
-    <c:choose>
-        <c:when test="${condicion}">
-            <article class="navbar">
-                <form:form modelAttribute="listaPyme" action="finanzas/${pyme.id}" method="get">
-                    <form:select path="${pyme.id}" class="form-select" aria-label="Default select example">
-                        <form:option value="">Aquí puedes ver las finanzas de tu negocio, selecciona una para comenzar.</form:option>
-                        <c:forEach var="pyme" items="${listaPyme}">
-                            <form:option value="${pyme.id}">${pyme.nombre}</form:option>
-                        </c:forEach>
-                    </form:select>
-                    <button type="submit" class="btn btn-outline-warning">Finanzas Pyme</button>
-                </form:form>
-            </article>
-        </c:when>
-        <c:otherwise>
-            <article class="navbar">
-                <section>
-                    <div class="form-select" aria-label="Multiple select example">
-                        <p>No tienes PYMES registradas</p>
-                    </div>
-                </section>
-                <form action="/inscripcion/pyme" method="get">
-                    <button type="submit" class="btn btn-outline-info">Inscribre tu pyme acá</button>
-                </form>
-                <p>o infórmate acá</p>
-                <form action="/guiaCrearPyme" method="get">
-                    <button type="submit" class="btn btn-outline-info">Información</button>
-                </form>
-            </article>
-        </c:otherwise>
-    </c:choose>
-</div> --%>
-
-
 
 		<div class="row justify-content-center">
 			<div class="col-5" >
@@ -163,8 +127,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${uno.id}"> ${uno.titulo} Cómo consiguieron más clientes</a></h4>
-							<p>${uno.contenido} Estoy teniendo un problema con conseguir más clientes...</p>
+							<h4><a href="/foro/${uno.id}"> ${uno.titulo}</a></h4>
+							<p>${uno.contenido}</p>
 						</td>
 					</tr>
 					<tr>
@@ -174,8 +138,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${dos.id}"> ${dos.titulo} Vendedor de Sopaipillas</a></h4>
-							<p>${dos.contenido} Estoy buscando donde ganarme ¿alguna sugerencia?...</p>
+							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
+							<p>${dos.contenido}</p>
 						</td>
 					</tr>
 					<tr>
@@ -185,8 +149,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${tres.id}"> ${tres.titulo} ¿Que piensan de los impuestos?</a></h4>
-							<p>${tres.contenido} No sé si ya vieron las últimas noticias sobre la alza...</p>
+							<h4><a href="/foro/${tres.id}"> ${tres.titulo}</a></h4>
+							<p>${tres.contenido}</p>
 						</td>
 					</tr>
 					<tr>
@@ -196,8 +160,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo} ¡No te rindas!</a></h4>
-							<p>${cuatro.contenido} Un mensajito para todos los nuevos emprendedores, no te...</p>
+							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo}</a></h4>
+							<p>${cuatro.contenido}</p>
 						</td>
 					</tr>
 				</table>

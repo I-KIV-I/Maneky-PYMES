@@ -96,6 +96,9 @@ public class ControladorNavegacion {
 		//LOGICA FORO PREVISUALIZACION 
 		List<Hilo> todosHilos = servicioHilo.obtenerTodos(); 
 		for (Long i=(long)0; i<todosHilos.size(); i++) {
+			if(i==todosHilos.size()-4) {
+				modelo.addAttribute("cuatro", servicioHilo.obtenPorId(i+1));
+			}
 			if(i == todosHilos.size()-3) {		 
 				modelo.addAttribute("tres", servicioHilo.obtenPorId(i+1)); 
 			}
@@ -122,15 +125,7 @@ public class ControladorNavegacion {
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	@GetMapping("/finanzas/{id}")
-	public String desplegarInformeFinanzas(@PathVariable("id") Long id, HttpSession session, Model model) {
-		if (session.getAttribute("idUsuario") == null) {
-			return "redirect:/login";
-		}
-		model.addAttribute("pyme", servicioPyme.obtenerPorId(id));
-	        
-		return "AdministradorDeFinanzas.jsp";
-	}
+	
 	
 	@GetMapping("/perfil")
 	public String desplegarInformacionUsuario(HttpSession sesion, Model modelo) {

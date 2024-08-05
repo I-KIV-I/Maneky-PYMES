@@ -19,7 +19,7 @@
 		<nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
 	    	<div class="container text-white ">
 		    	<div>
-					<a class="navbar-brand d-flex align-items-center mx-auto" href="/maneki_pyme/inicio">
+					<a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
 						<img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
 					</a>
 				</div>

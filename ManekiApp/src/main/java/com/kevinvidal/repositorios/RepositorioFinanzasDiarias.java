@@ -8,5 +8,6 @@ import com.kevinvidal.modelos.FormularioFinanzaDiario;
 
 public interface RepositorioFinanzasDiarias extends CrudRepository<FormularioFinanzaDiario, Long>{
 	
-	List<FormularioFinanzaDiario> findAll();	
+	List<FormularioFinanzaDiario> findAll();
+	List<FormularioFinanzaDiario> findByPymeId(Long id);
 }
