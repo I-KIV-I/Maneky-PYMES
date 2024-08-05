@@ -1,6 +1,7 @@
 package com.kevinvidal.modelos;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -39,10 +40,11 @@ public class FormularioFinanzaDiario {
     @JoinColumn(name="pymeId")
     private Pyme pyme;
 	
+	
 	@PrePersist
     public void calcularValores() {
         if (ingresoTotalDiario != null) {
-            impuestos = (int) (ingresoTotalDiario * 0.27) + (int) (ingresoTotalDiario * 0.19);
+            impuestos = (int) (ingresoTotalDiario * 0.19);
         }
         if (ingresoTotalDiario != null && CPV != null && gastosDeOperacion != null) {
             gananciaNeta = ingresoTotalDiario - (CPV + gastosDeOperacion + impuestos);
@@ -56,48 +58,63 @@ public class FormularioFinanzaDiario {
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public Date getFechaInformeDiario() {
 		return fechaInformeDiario;
 	}
+
 	public void setFechaInformeDiario(Date fechaInformeDiario) {
 		this.fechaInformeDiario = fechaInformeDiario;
 	}
+
 	public Integer getIngresoTotalDiario() {
 		return ingresoTotalDiario;
 	}
+
 	public void setIngresoTotalDiario(Integer ingresoTotalDiario) {
 		this.ingresoTotalDiario = ingresoTotalDiario;
 	}
+
 	public Integer getCPV() {
 		return CPV;
 	}
-	public void setCPV(Integer CPV) {
-		this.CPV = CPV;
+
+	public void setCPV(Integer cPV) {
+		CPV = cPV;
 	}
+
 	public Integer getGastosDeOperacion() {
 		return gastosDeOperacion;
 	}
+
 	public void setGastosDeOperacion(Integer gastosDeOperacion) {
 		this.gastosDeOperacion = gastosDeOperacion;
 	}
+
 	public Integer getImpuestos() {
 		return impuestos;
 	}
+
 	public void setImpuestos(Integer impuestos) {
 		this.impuestos = impuestos;
 	}
+
 	public Integer getGananciaNeta() {
 		return gananciaNeta;
 	}
+
 	public void setGananciaNeta(Integer gananciaNeta) {
 		this.gananciaNeta = gananciaNeta;
 	}
+
 	public Pyme getPyme() {
 		return pyme;
 	}
+
 	public void setPyme(Pyme pyme) {
 		this.pyme = pyme;
 	}

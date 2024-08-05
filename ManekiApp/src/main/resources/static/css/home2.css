@@ -56,9 +56,11 @@ section img{
 #montana{
 	z-index:3; 
 }
+
 #camino{
 	z-index:4; 
 }
+
 #text{
 	position:relative;
 	color: #fff;
@@ -213,7 +215,7 @@ section img{
 }
 
 .cartas{
-	margin: 40px;
+	margin: 0 auto;
 	margin-top:80px;
 	display: flex;
 	max-width: 1200px;

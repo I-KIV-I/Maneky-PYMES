@@ -16,45 +16,56 @@
 <body>
 <div class="barContainer">
 	<div class="navigation">
-		<ul>
-			<li>
-				<a href="/herramientas">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
 					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
 					<span class="title"><strong>Maneki Pymes</strong></span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/herramientas" class="seleccion">
 					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
 					<span class="title">DashBoard</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/perfil" class="seleccion">
 					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
 					<span class="title">Perfil</span>
 				</a>
 			</li>
 			<li>
-				<a href="/finanzas/opciones">
-					<span class="icon"><img src="/img/finances.svg" alt="icono"></span>
-					<span class="title">Finanzas</span>
-				</a>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme }">
+							<li><a href="/finanzas/${pyme.id }" class="pyme">${pyme.nombre }</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/noticias" class="seleccion">
 					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
 					<span class="title">Noticias</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/foro" class="seleccion">
 					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
 					<span class="title">Foro</span>
 				</a>
 			</li>
 			<li>
-				<a href="/procesar/logout">
+				<a href="/procesar/logout" class="seleccion">
 					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
 					<span class="title">Cerrar Sesión</span>
 				</a>
@@ -70,52 +81,15 @@
 			<img src="/img/toggle.svg" alt="toggle">
 		</div>
 		<div class="search">
-			<h1>Bienvenido username</h1>
+			<h1>Bienvenido ${nombreUsuario }</h1>
 		</div>
 		<div class="user">
-			<img src="/img/pfp5.jpg" alt="profile pic">
+			<a href="/perfil"><img src="/img/pfp5.jpg" alt="profile pic"></a>
 		</div>
 	</div>	
 
-	  <%-- <div class="container mt-3">
-    <p>Revisa los reportes diarios o mensuales de tu negocio</p>
-    <c:choose>
-        <c:when test="${condicion}">
-            <article class="navbar">
-                <form:form modelAttribute="listaPyme" action="finanzas/${pyme.id}" method="get">
-                    <form:select path="${pyme.id}" class="form-select" aria-label="Default select example">
-                        <form:option value="">Aquí puedes ver las finanzas de tu negocio, selecciona una para comenzar.</form:option>
-                        <c:forEach var="pyme" items="${listaPyme}">
-                            <form:option value="${pyme.id}">${pyme.nombre}</form:option>
-                        </c:forEach>
-                    </form:select>
-                    <button type="submit" class="btn btn-outline-warning">Finanzas Pyme</button>
-                </form:form>
-            </article>
-        </c:when>
-        <c:otherwise>
-            <article class="navbar">
-                <section>
-                    <div class="form-select" aria-label="Multiple select example">
-                        <p>No tienes PYMES registradas</p>
-                    </div>
-                </section>
-                <form action="/inscripcion/pyme" method="get">
-                    <button type="submit" class="btn btn-outline-info">Inscribre tu pyme acá</button>
-                </form>
-                <p>o infórmate acá</p>
-                <form action="/guiaCrearPyme" method="get">
-                    <button type="submit" class="btn btn-outline-info">Información</button>
-                </form>
-            </article>
-        </c:otherwise>
-    </c:choose>
-</div> --%>
-
-
-
 		<div class="row justify-content-center">
-			<div class="col-5" >
+			<div class="col-5 mx-2 my-2" >
 				<!-- Carrusel -->    	
 			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 " data-bs-ride="carousel">
 			    	<div class="carousel-inner c-noticias rounded">
@@ -164,8 +138,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${uno.id}"> ${uno.titulo} Cómo consiguieron más clientes</a></h4>
-							<p>${uno.contenido} Estoy teniendo un problema con conseguir más clientes...</p>
+							<h4><a href="/foro/${uno.id}"> ${uno.titulo}</a></h4>
+							<p>${uno.contenido}</p>
 						</td>
 					</tr>
 					<tr>
@@ -175,8 +149,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${dos.id}"> ${dos.titulo} Vendedor de Sopaipillas</a></h4>
-							<p>${dos.contenido} Estoy buscando donde ganarme ¿alguna sugerencia?...</p>
+							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
+							<p>${dos.contenido}</p>
 						</td>
 					</tr>
 					<tr>
@@ -186,8 +160,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${tres.id}"> ${tres.titulo} ¿Que piensan de los impuestos?</a></h4>
-							<p>${tres.contenido} No sé si ya vieron las últimas noticias sobre la alza...</p>
+							<h4><a href="/foro/${tres.id}"> ${tres.titulo}</a></h4>
+							<p>${tres.contenido}</p>
 						</td>
 					</tr>
 					<tr>
@@ -197,8 +171,8 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo} ¡No te rindas!</a></h4>
-							<p>${cuatro.contenido} Un mensajito para todos los nuevos emprendedores, no te...</p>
+							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo}</a></h4>
+							<p>${cuatro.contenido}</p>
 						</td>
 					</tr>
 				</table>
@@ -206,50 +180,51 @@
 	<!-- Final Mensajes Foro -->
 	
 	
+		</div>
+		<!-- Contenido Derecho -->
+		<div class="col-5 text-center mx-2 my-2">
+			<div class="card text-center my-2" style="width: 30rem; height: 24rem;">
+				<img src="/img/forge.jpg" class="card-img-top" alt="foto forge" style="height: 55%;">
+				<div class="card-body">
+					<h5 class="card-title">¡Curso nuevo!</h5>
+					<p class="card-text">Aprovecha esta oportunidad que ofrece la Fundación
+					Forge para especializarte en programación</p>
+					<a href="#" class="backButton">Ir a Forge</a>
+				</div>
 			</div>
-			<!-- Contenido Derecho -->
-			<div class="col-5 text-center mt-2 ms-4">
-					<div class="col-3 mb-4">
-						<div class="card text-center" style="width: 30rem; height: 24rem;">
-							<img src="/img/forge.jpg" class="card-img-top" alt="..." style="height: 55%;">
-							  <div class="card-body">
-								    <h5 class="card-title">¡Curso nuevo!</h5>
-								    <p class="card-text">Aprovecha esta oportunidad que ofrece la Fundación
-								    Forge para especializarte en programación</p>
-								    <a href="#" class="backButton">Ir a Forge</a>
-							  </div>
-						</div>
-					</div>
 					
-					<div class="col-1">
-						<div class="card text-center" style="width: 30rem; height: 24rem;">
-						 	<img src="/img/santander.jpg" class="card-img-top" alt="..." style="height: 55%;">
-							  <div class="card-body">
-								    <h5 class="card-title">Postulación a Fondos</h5>
-								    <p class="card-text">Banco Santander ofrece una inversion para pequeñas Pymes
-								    que hayan iniciado actividades hace menos de 5 meses</p>
-								    <a href="#" class="backButton">Ir a Santander</a>
-							  </div>
-						</div>
-					</div>
-				<!--FINAL Contenido Derecho -->	
+			<div class="card text-center my-2" style="width: 30rem; height: 24rem;">
+				<img src="/img/santander.jpg" class="card-img-top" alt="foto santader" style="height: 55%;">
+				<div class="card-body">
+					<h5 class="card-title">Postulación a Fondos</h5>
+					<p class="card-text">Banco Santander ofrece una inversion para pequeñas Pymes
+					que hayan iniciado actividades hace menos de 5 meses</p>
+					<a href="#" class="backButton">Ir a Santander</a>
+				</div>
 			</div>
+			<!--FINAL Contenido Derecho -->	
 		</div>
 	</div>
-  <!-- Footer -->
-<div class="footer-position">
-	<ul class="nav justify-content-center bg-dark bg-opacity-50">
-		<li class="nav-item">
-    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link text-white" href="#">Acerca de</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
-  		</li>
-	</ul>
-</div>		
+		
+		
+	<!-- Footer -->
+	<div class="footer-position mt-4">
+		<ul class="nav justify-content-center bg-dark bg-opacity-50">
+			<li class="nav-item">
+    			<a class="nav-link active text-white" aria-current="page" href="#">Contáctanos</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link text-white" href="#">Saber más</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link text-white" aria-disabled="true">Donaciones</a>
+  			</li>
+		</ul>
+	</div>	
+</div>
+ 
+ 
+ 
 <script src="/js/workbench.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 </body>

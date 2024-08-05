@@ -39,14 +39,14 @@ body{
 	width: 100px;
 }
 
-.navigation ul{
+.navigation .mainUl{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 }
 
-.navigation ul li{
+.navigation .mainUl li{
 	position: relative;
 	width: 100%;
 	list-style: none;
@@ -57,34 +57,74 @@ body{
 	align-items: center;
 }
 
-.navigation ul li:hover,
-.navigation ul li.hovered{
+
+
+.navigation .mainUl li:hover,
+.navigation .mainUl li.hovered{
 	background: var(--white);
 }
 
 
-.navigation ul li:nth-child(1){
+.navigation .mainUl .first{
 	margin-top: 20px;
 	margin-bottom: 40px;
 	pointer-events: none;
 	font-size: 1em;
 }
 
-.navigation ul li a{
+.navigation .mainUl li .seleccion{
 	position: relative;
-	display: block;
 	width: 100%;
 	display: flex;
 	text-decoration: none;
 	color: var(--white);	
 }
 
-.navigation ul li:hover a,
-.navigation ul li.hovered a{
+.navigation .mainUl .finanzas{
+	min-height: 75px;
+	align-items: start;
+}
+
+.titleBox{
+	position:relative;
+	display:flex;
+}
+
+.pymeBox{
+	position: relative;
+	width: calc(100%-100px);
+	list-style-type: circle;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pymeBox .pyme{
+	text-decoration: none;
+	font-size:1.1em;
+	width: 100%;
+	color: white;
+	margin-bottom:20px;
+}
+
+.navigation .mainUl li:hover .pyme,
+.navigation .mainUl li.hovered .pyme{
 	color: var(--blue);
 }
 
-.navigation ul li a .icon{
+.navigation .mainUl .finanzas .pyme{
+	width: 100%;
+	height:20px;
+}
+
+.navigation .mainUl li:hover .seleccion,
+.navigation .mainUl li.hovered .seleccion{
+	color: var(--blue);
+}
+
+.navigation .mainUl li .seleccion .icon{
 	position: relative;
 	display: block;
 	min-width: 60px;
@@ -93,15 +133,15 @@ body{
 	text-align: center;
 }
 
-.navigation ul li a .icon img{
+.navigation .mainUl li .seleccion .icon img{
 	width: 30px;
 }
 
-.navigation ul li a .icon .logo{
+.navigation .mainUl li .seleccion .icon .logo{
 	width: 60px;
 }
 
-.navigation ul li a .title{
+.navigation .mainUl li .seleccion .title{
 	position: relative;
 	display: block;
 	padding: 7px 10px;
@@ -111,8 +151,8 @@ body{
 	font-size: 1.5em;
 }
 
-.navigation ul li:hover a::before,
-.navigation ul li.hovered a::before{
+.navigation .mainUl li:hover .seleccion::before,
+.navigation .mainUl li.hovered .seleccion::before{
 	content:'';
 	position: absolute;
 	right: 0;
@@ -125,8 +165,8 @@ body{
 	pointer-events: none;
 }
 
-.navigation ul li:hover a::after,
-.navigation ul li.hovered a::after{
+.navigation .mainUl li:hover .seleccion::after,
+.navigation .mainUl li.hovered .seleccion::after{
 	content:'';
 	position: absolute;
 	right: 0;
