@@ -72,6 +72,16 @@
 		<div class="search">
 			<h1>Bienvenido ${nombreUsuario }</h1>
 		</div>
+		<div class="btn-group dropsdown">
+	  		<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+	    		Finanzas
+	  		</button>
+	  		<ul class="dropdown-menu">
+	   			<c:forEach var="pyme" items="${listaPyme }">
+	   				<li><a href="/finanzas/${pyme.id }">${pyme.nombre }</a></li>
+	   			</c:forEach>
+	  		</ul>
+		</div>
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="profile pic">
 		</div>
