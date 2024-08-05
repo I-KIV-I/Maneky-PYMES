@@ -68,3 +68,4 @@ new Chart(graficomensual, {
     responsive: true,
   }
 });
+

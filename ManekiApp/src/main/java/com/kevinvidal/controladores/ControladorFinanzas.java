@@ -66,6 +66,7 @@ public class ControladorFinanzas {
         	formulario_diario.setGananciaNeta(formulario_diario.getIngresoTotalDiario() - (formulario_diario.getCPV() + formulario_diario.getGastosDeOperacion() + formulario_diario.getImpuestos()));
         }
         Pyme pyme = this.servicioPyme.obtenerPorId(id);
+        formulario_diario.setId(null);
         this.servicioFinanzas.save(formulario_diario, pyme);
         return "redirect:/finanzas/" + id;
     }

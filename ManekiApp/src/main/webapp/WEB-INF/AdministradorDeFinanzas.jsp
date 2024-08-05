@@ -102,6 +102,23 @@
                 <img src="/img/coinsCash.svg" alt="Gastos Operacionales">
             </div>
         </div>
+			<div>
+				<div class="numbers">$ ${form.ingresoTotalDiario}</div>
+				<div class="cardName">Ganancia</div>
+			</div>
+			<div class="iconBx">
+				<img src="/img/coinsCash.svg">
+			</div>
+		</div>
+		<div class="cardcss">
+			<div>
+				<div class="numbers">$15.504</div>
+				<div class="cardName">Gastos</div>
+			</div>
+			<div class="iconBx">
+				<img src="/img/coinsMoney.svg">
+			</div>
+		</div>
 		<div class="cardcss">
 			<div>
 				<div class="numbers">$32.988</div>
@@ -118,6 +135,15 @@
 			</div>
 			<div class="iconBx">
 				<img src="/img/piggy.svg">
+			</div>
+		</div>
+		<div class="cardcss">
+			<div>
+				<div class="numbers">$73.842</div>
+				<div class="cardName">Ganancias</div>
+			</div>
+			<div class="iconBx">
+				<img src="/img/coinsCash.svg">
 			</div>
 		</div>
 	</div>
