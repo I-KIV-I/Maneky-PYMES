@@ -24,6 +24,12 @@
 			</li>
 			<li>
 				<a href="#">
+					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="title">DashBoard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
 					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
 					<span class="title">Perfil</span>
 				</a>
@@ -56,7 +62,7 @@
 	</div>
 </div>
 
-<<<<<<< HEAD
+
 <div class="main">
 	<div class="topbar">
 		<div class="toggle">
