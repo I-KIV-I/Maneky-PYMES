@@ -1,19 +1,13 @@
 const graficoGastos = document.getElementById('grafico1');
 
-	var datosJson = '${datos}';
-	var datos = JSON.parse(datos); 
-	var ingresoTotalDiario = datos.ingresoTotalDiario;
-	var CPV = datos.CPV;
-	var gastosDeOperacion = datos.gastosDeOperacion;
-	var impuestos = datos.impuestos;
-	var gananciaNeta = datos.gananciaNeta;
+	
   new Chart(graficoGastos, {
     type: 'bar',
     data: {
       labels: ['Ingresos', 'Costos de Productos Vendidos (CPV)', 'Ahorros', 'Gastos operativos', 'impuestos', 'Ganancia neta'],
       datasets: [{
-        label: 'Este mes',
-        data: [ingresoTotalDiario, 43000, 20000, 120000, 240000,20000],
+        label: 'Julio',
+        data: [20000, 43000, 20000, 120000, 240000,20000],
         borderWidth: 1,
         backgroundColor: [
 			'rgba(0, 0, 139, 0.7)',
@@ -33,6 +27,19 @@ const graficoGastos = document.getElementById('grafico1');
     },
     options: {
      responsive: true,
+     plugins:{
+		title:{
+			display: true,
+			text: 'Finanzas mes anterior',
+			padding: {
+				top: 10,
+				bottom: 30
+			},
+			font:{
+				size: 20
+			}
+		}
+	 }
     }
   });
   
@@ -45,7 +52,7 @@ const graficoGastos = document.getElementById('grafico1');
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
       datasets: [{
         label: 'Ganancias Neta',
-        data: [dato1, 100000, 80000, 45000, 300000, 157000],
+        data: [20000, 100000, 80000, 45000, 300000, 157000],
         borderWidth: 1,
         backgroundColor: [
 			'#00131D',
@@ -59,5 +66,41 @@ const graficoGastos = document.getElementById('grafico1');
     },
     options: {
      responsive: true,
+      plugins:{
+		title:{
+			display: true,
+			text: 'Historial',
+			padding: {
+				top: 10,
+				bottom: 30
+			},
+			font:{
+				size: 20
+			}
+		}
+	 }
     }
   });
+  
+  
+  
+let list = document.querySelectorAll('.mainUl li');
+
+function activeLink(){
+	list.forEach((item)=>
+	item.classList.remove('hovered'));
+	this.classList.add('hovered');
+}
+
+list.forEach((item)=>
+item.addEventListener('mouseover', activeLink));
+
+
+let toggle = document.querySelector('.toggle');
+let navigation = document.querySelector('.navigation');
+let main = document.querySelector('.main');
+
+toggle.onclick = function(){
+	navigation.classList.toggle('active');
+	main.classList.toggle('active');
+}

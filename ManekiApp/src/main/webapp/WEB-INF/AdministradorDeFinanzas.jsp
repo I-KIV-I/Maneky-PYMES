@@ -6,60 +6,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="/css/finanzas.css">
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
 <meta charset="UTF-8">
 <title>Finanzas</title>
 </head>
 <body>
+<div class="barContainer">
+	<div class="navigation">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
+					<span class="title"><strong>Maneki Pymes</strong></span>
+				</a>
+			</li>
+			<li>
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="title">DashBoard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/perfil" class="seleccion">
+					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
+					<span class="title">Perfil</span>
+				</a>
+			</li>
+			<li>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme }">
+							<li><a href="/finanzas/${pyme.id }" class="pyme">${pyme.nombre }</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
+			</li>
+			<li>
+				<a href="/noticias" class="seleccion">
+					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
+					<span class="title">Noticias</span>
+				</a>
+			</li>
+			<li>
+				<a href="/foro" class="seleccion">
+					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
+					<span class="title">Foro</span>
+				</a>
+			</li>
+			<li>
+				<a href="/procesar/logout" class="seleccion">
+					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
+					<span class="title">Cerrar Sesión</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
 
 
 <div class="main">
 <div id="particles-js"></div>
+	<div class="topbar">
+		<div class="toggle">
+			<img src="/img/whiteToggle.svg" alt="toggle">
+		</div>
+		<div class="search">
+			<h1>Finanzas "${pyme.nombre}"</h1>
+		</div>
+		<div class="user">
+			<a href="/perfil"><img src="/img/pfp5.jpg" alt="profile pic"></a>
+		</div>
+	</div>	
 
 	
-
-<!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-black bg-opacity-50" data-bs-theme="dark">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
-	      <img src="/img/logoManeki.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center iconmaneki"> 
-	      <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        	<form action="/procesar/logout">
-          		<button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
-        	</form>
-        </li>
-        <li>
-        	<form action="/herramientas">
-        		<input class="btn btn-secondary ms-5 p-2 raleway" aria-current="page" type="button" value="Volver" onClick="history.go(-1);">
-        	</form>
-        </li>
-        <li>
-        	<form action="/finanzas/opciones" method="POST">
-        		<label for="opciones"></label>
-        			<select id="opciones" name="opciones">
-        				<option value="opcion1">Empresa 1 </option>
-        				<option value="opcion2">Empresa 2 </option>
-        				<option value="opcion3">Empresa 3 </option>
-        			</select>
-          		<button type="submit" class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Ver Finanzas</button>
-        	</form>
-        </li>
-      </ul>
-    </div>
-    </div>
-  </nav>
-<!-- fin navbar -->
-	
-	<!-- barra perfil y titulo -->
+	<!-- barra perfil y titulo 
 	<div class="topbar">
 		<div class="title">
 			<h1>Hablemos de números ${pyme.nombre}</h1>
@@ -67,7 +97,7 @@
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="img usuario">
 		</div>
-	</div>
+	</div> -->
 	
 	<div class="cardbox">
 		<div class="cardcss">
@@ -85,7 +115,7 @@
 				<div class="cardName">Gastos</div>
 			</div>
 			<div class="iconBx">
-				<img src="/img/coinsCash.svg">
+				<img src="/img/coinsMoney.svg">
 			</div>
 		</div>
 		<div class="cardcss">
@@ -97,7 +127,7 @@
 				<img src="/img/money.svg">
 			</div>
 		</div>
-		<div class="cardcss">
+		<%--<div class="cardcss">
 			<div>
 				<div class="numbers">$284.000</div>
 				<div class="cardName">Margen</div>
@@ -105,7 +135,7 @@
 			<div class="iconBx">
 				<img src="/img/piggy.svg">
 			</div>
-		</div>
+		</div> --%>
 	</div>
 	
 	<div class="graphBox">
@@ -252,7 +282,6 @@
 <script src="/particles/particles.js"></script>
 <script src="/particles/data/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>       
-<script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/finanzas.js"></script>
 </body>
 </html>

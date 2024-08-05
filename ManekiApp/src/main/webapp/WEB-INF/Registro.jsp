@@ -16,7 +16,7 @@
 	<div id="particles-js"></div>
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-4 px-5 py-4 my-5 text-center position-absolute bck" >
+				<div class="col-4 px-5 py-4 my-2 text-center position-absolute bck" >
 				
 					<h1>Maneki Pymes</h1>
 					<img src="/img/LogoManeki.png" class="w-25 mb-4" alt="logo maneki pymes">
