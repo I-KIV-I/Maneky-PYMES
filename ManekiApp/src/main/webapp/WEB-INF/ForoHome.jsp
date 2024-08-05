@@ -13,48 +13,58 @@
 	<title>Foro!</title>
 </head>
 <body>
-	<div class="barContainer">
+<div class="barContainer">
 	<div class="navigation">
-		<ul>
-			<li>
-				<a href="/herramientas">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
 					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
 					<span class="title"><strong>Maneki Pymes</strong></span>
 				</a>
 			</li>
 			<li>
-				<a href="/herramientas">
+				<a href="/herramientas" class="seleccion">
 					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
 					<span class="title">DashBoard</span>
 				</a>
 			</li>
 			<li>
-				<a href="/perfil">
+				<a href="/perfil" class="seleccion">
 					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
 					<span class="title">Perfil</span>
 				</a>
 			</li>
 			<li>
-				<a href="*">
-					<span class="icon"><img src="/img/finances.svg" alt="icono"></span>
-					<span class="title">Finanzas</span>
-					
-				</a>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme }">
+							<li><a href="/finanzas/${pyme.id }" class="pyme">${pyme.nombre }</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
 			</li>
 			<li>
-				<a href="/noticias">
+				<a href="/noticias" class="seleccion">
 					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
 					<span class="title">Noticias</span>
 				</a>
 			</li>
 			<li>
-				<a href="/foro">
+				<a href="/foro" class="seleccion">
 					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
 					<span class="title">Foro</span>
 				</a>
 			</li>
 			<li>
-				<a href="/procesar/logout">
+				<a href="/procesar/logout" class="seleccion">
 					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
 					<span class="title">Cerrar Sesión</span>
 				</a>
@@ -76,33 +86,33 @@
 		</div>
 	</div>	
 	<!-- final navbar -->
-<div>
-				 <table>
-				 		<tr>
-				 			<th>
-				 				<h2>Hilos Activos</h2>
-				 			</th>
-				 		</tr>
-						<c:forEach var="hilo" items="${listaHilos }">
-				 			<tr>
-				 				<td><a href="/foro/${hilo.id }">${hilo.titulo}</a></td>			 	
-				 			</tr>
-				 		</c:forEach>
-				 </table>
-			</div>
-			<h2>Crea tu Hilo aquí</h2>
-			<form:form method="post"  action="/foro" modelAttribute="formHilo">
-				<div>
-				 	<form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
-				 	<form:input path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
-				</div>
-				<div>
-				 	<form:label path="contenido">Agrega el contenido aquí:</form:label>
-				 	<form:input type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
-				</div>
-					<button>Publicar</button>
-			</form:form>
+<div class="contenedor">
+	<table>
+			<tr>
+				 <th>
+					<h2>Hilos Activos</h2>
+				</th>
+			</tr>
+		<c:forEach var="hilo" items="${listaHilos }">
+			<tr>
+				<td><a href="/foro/${hilo.id }">${hilo.titulo}</a></td>			 	
+			</tr>
+		</c:forEach>
+	</table>
+</div>
+	<h2>Crea tu Hilo aquí</h2>
+	<form:form method="post"  action="/foro" modelAttribute="formHilo">
+		<div>
+			<form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
+			<form:input path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
 		</div>
+		<div>
+			<form:label path="contenido">Agrega el contenido aquí:</form:label>
+			<form:input type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
+		</div>
+			<button>Publicar</button>
+	</form:form>
+</div>
 
   <!-- Footer -->
 <div class="footer-position">
