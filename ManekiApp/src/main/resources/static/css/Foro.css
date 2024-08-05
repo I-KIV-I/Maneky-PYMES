@@ -1,1 +1,10 @@
 @charset "ISO-8859-1";
+.contenedor{
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+.contenedor table th{
+	border: solid black;
+	width: 1500px;
+}
