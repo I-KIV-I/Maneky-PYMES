@@ -7,6 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/Style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/workbench.css">
     <title>Espacio De Trabajo</title>
@@ -116,8 +117,8 @@
 		<div class="row justify-content-center">
 			<div class="col-5" >
 				<!-- Carrusel -->    	
-			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 card2" data-bs-ride="carousel">
-			    	<div class="carousel-inner c-noticias">
+			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 " data-bs-ride="carousel">
+			    	<div class="carousel-inner c-noticias rounded">
 			        	
 			        	<div class="carousel-item active">
 			            	<img src="/img/noticia1.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
