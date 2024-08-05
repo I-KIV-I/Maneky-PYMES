@@ -81,6 +81,15 @@
 		</div>
 		<div class="cardcss">
 			<div>
+				<div class="numbers">$15.504</div>
+				<div class="cardName">Gastos</div>
+			</div>
+			<div class="iconBx">
+				<img src="/img/coinsCash.svg">
+			</div>
+		</div>
+		<div class="cardcss">
+			<div>
 				<div class="numbers">$32.988</div>
 				<div class="cardName">IVA</div>
 			</div>

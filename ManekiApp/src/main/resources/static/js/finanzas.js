@@ -3,10 +3,10 @@ const graficoGastos = document.getElementById('grafico1');
   new Chart(graficoGastos, {
     type: 'bar',
     data: {
-      labels: ['IVA', 'Reinvercion', 'Ahorros', 'Gastos', 'Ganancia'],
+      labels: ['Ingresos', 'Costos de Productos Vendidos (CPV)', 'Ahorros', 'Gastos operativos', 'impuestos', 'Ganancia neta'],
       datasets: [{
         label: 'Este mes',
-        data: [32000, 43000, 20000, 120000, 240000],
+        data: [32000, 43000, 20000, 120000, 240000,20000],
         borderWidth: 1,
         backgroundColor: [
 			'rgba(0, 0, 139, 0.7)',

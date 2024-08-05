@@ -19,8 +19,9 @@
 		<div class="row justify-content-center">
 			<div class="col-4 px-5 py-4 my-5 text-center position-absolute bck" >
 				<header>
-					<h2 class="mb-4">Inscibe tu pyme</h2>
+					<h2 class="mb-4">Te Ayudamos con tus finanzas</h2>
 				</header>
+				
 				<form:form action="/inscripcion/pyme" method="post" modelAttribute="formPyme">  
 							<div class="flex form">
 								<form:label class="form-label" path="nombre"><strong>Nombre Pyme:</strong></form:label>
