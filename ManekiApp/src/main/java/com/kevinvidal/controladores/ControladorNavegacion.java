@@ -96,6 +96,9 @@ public class ControladorNavegacion {
 		//LOGICA FORO PREVISUALIZACION 
 		List<Hilo> todosHilos = servicioHilo.obtenerTodos(); 
 		for (Long i=(long)0; i<todosHilos.size(); i++) {
+			if(i==todosHilos.size()-4) {
+				modelo.addAttribute("cuatro", servicioHilo.obtenPorId(i+1));
+			}
 			if(i == todosHilos.size()-3) {		 
 				modelo.addAttribute("tres", servicioHilo.obtenPorId(i+1)); 
 			}

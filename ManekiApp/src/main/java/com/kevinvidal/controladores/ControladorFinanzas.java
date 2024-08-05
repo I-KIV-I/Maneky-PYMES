@@ -37,11 +37,6 @@ public class ControladorFinanzas {
 
 	ObjectMapper objectMapper = new ObjectMapper();
 	
-	@GetMapping("/finanzas/informe/diario")
-	public String despliegaFormularioInforme(@ModelAttribute("form")FormularioFinanzaDiario form) {
-		
-		return "FormularioFinanzasDiarias.jsp";
-	}
 	
 	//@GetMapping("/finanzas/{id}")
 	//public String desplegarInformeFinanzas(@PathVariable("id") Long id, HttpSession session, Model model) throws JsonProcessingException {
@@ -68,6 +63,12 @@ public class ControladorFinanzas {
 	    modelAndView.addObject(datos);
 	    
 	    return "AdministradorDeFinanzas.jsp";
+	}
+	
+	@GetMapping("/finanzas/informe/diario")
+	public String despliegaFormularioInforme(@ModelAttribute("form")FormularioFinanzaDiario form) {
+		
+		return "FormularioFinanzasDiarias.jsp";
 	}
 	
 	@PostMapping("/finanzas/informe/diario")

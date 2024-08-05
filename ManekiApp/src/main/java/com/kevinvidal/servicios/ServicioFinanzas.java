@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.kevinvidal.modelos.FormularioFinanzaDiario;
 import com.kevinvidal.repositorios.RepositorioFinanzasDiarias;
-
 @Service
 public class ServicioFinanzas {
 	 @Autowired
@@ -34,5 +33,8 @@ public class ServicioFinanzas {
 
 	    public void deleteById(Long id) {
 	        repository.deleteById(id);
+	    }
+	    public List<FormularioFinanzaDiario> obtenerPorPyme(Long idPyme){
+	    	return repository.findByPymeId(idPyme);
 	    }
 }
