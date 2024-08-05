@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kevinvidal.modelos.FormularioFinanzaDiario;
+import com.kevinvidal.modelos.Pyme;
 import com.kevinvidal.repositorios.RepositorioFinanzasDiarias;
 @Service
 public class ServicioFinanzas {
@@ -27,7 +28,11 @@ public class ServicioFinanzas {
 	    public List<FormularioFinanzaDiario> findByPyme(Long pymeid){
 	    	return repository.findByPymeId(pymeid);
 	    }
-	    public FormularioFinanzaDiario save(FormularioFinanzaDiario entity) {
+	    public FormularioFinanzaDiario save(FormularioFinanzaDiario entity,Pyme pyme) {
+	    	List<FormularioFinanzaDiario> listaInforme = repository.findByPymeId(pyme.getId());
+	    	listaInforme.add(entity);
+	    	entity.setPyme(pyme);
+	        pyme.setFinanzaDiaria(listaInforme);
 	        return repository.save(entity);
 	    }
 

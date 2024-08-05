@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -51,6 +53,7 @@ public class Usuario {
 
 	
 	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
+	@JsonIgnore
 	private List<Pyme> pymes;
 
 	@OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)

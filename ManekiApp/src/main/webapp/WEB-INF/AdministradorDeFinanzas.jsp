@@ -52,6 +52,11 @@
         			</select>
           		<button type="submit" class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Ver Finanzas</button>
         	</form>
+        	<li class="nav-item">
+        	<form action="/finanzas/informe/diario/${pyme.id}">
+          		<button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Ingresa Informe</button>
+        	</form>
+        </li>
         </li>
       </ul>
     </div>
@@ -71,23 +76,32 @@
 	
 	<div class="cardbox">
 		<div class="cardcss">
-			<div>
-				<div class="numbers">$ ${form.ingresoTotalDiario}</div>
-				<div class="cardName">Ganancia</div>
-			</div>
-			<div class="iconBx">
-				<img src="/img/coinsCash.svg">
-			</div>
-		</div>
-		<div class="cardcss">
-			<div>
-				<div class="numbers">$15.504</div>
-				<div class="cardName">Gastos</div>
-			</div>
-			<div class="iconBx">
-				<img src="/img/coinsCash.svg">
-			</div>
-		</div>
+            <div>
+                <div class="numbers">$ ${formulario_diario.ingresoTotalDiario}</div>
+                <div class="cardName">Ingreso Diario</div>
+            </div>
+            <div class="iconBx">
+                <img src="/img/coinsCash.svg" alt="Ingreso Diario">
+            </div>
+        </div>
+        <div class="cardcss">
+            <div>
+                <div class="numbers">$ ${formulario_diario.CPV}</div>
+                <div class="cardName">CPV</div>
+            </div>
+            <div class="iconBx">
+                <img src="/img/coinsCash.svg" alt="CPV">
+            </div>
+        </div>
+        <div class="cardcss">
+            <div>
+                <div class="numbers">$ ${formulario_diario.gastosDeOperacion}</div>
+                <div class="cardName">Gastos Operacionales</div>
+            </div>
+            <div class="iconBx">
+                <img src="/img/coinsCash.svg" alt="Gastos Operacionales">
+            </div>
+        </div>
 		<div class="cardcss">
 			<div>
 				<div class="numbers">$32.988</div>
@@ -106,23 +120,14 @@
 				<img src="/img/piggy.svg">
 			</div>
 		</div>
-		<div class="cardcss">
-			<div>
-				<div class="numbers">$73.842</div>
-				<div class="cardName">Ganancias</div>
-			</div>
-			<div class="iconBx">
-				<img src="/img/coinsMoney.svg">
-			</div>
-		</div>
 	</div>
 	
 	<div class="graphBox">
 		<div class="box">
-			<canvas id="grafico1"></canvas>
+			<canvas id="graficoGastos"></canvas>
 		</div>
 		<div class="box">
-			<canvas id="grafico2"></canvas>
+			<canvas id="graficoMensual"></canvas>
 		</div>
 	</div>
 	
@@ -260,8 +265,76 @@
 
 <script src="/particles/particles.js"></script>
 <script src="/particles/data/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>       
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/finanzas.js"></script>
+<script>
+    // Datos pasados desde el backend al frontend
+    var datosJson = '${datos}';
+    var datos = JSON.parse(datosJson); 
+
+    // Inicializar gráficos
+    const graficoGastos = document.getElementById('graficoGastos');
+    new Chart(graficoGastos, {
+        type: 'bar',
+        data: {
+            labels: ['Ingresos', 'Costos de Productos Vendidos (CPV)', 'Gastos operativos', 'Impuestos', 'Ganancia neta'],
+            datasets: [{
+                label: 'Este mes',
+                data: [
+                    datos.ingresoTotalDiario,
+                    datos.CPV,
+                    datos.gastosDeOperacion,
+                    datos.impuestos,
+                    datos.gananciaNeta
+                ],
+                borderWidth: 1,
+                backgroundColor: [
+                    'rgba(0, 0, 139, 0.7)',
+                    'rgba(65, 105, 225, 0.7)',
+                    'rgba(135, 206, 235, 0.7)',
+                    'rgba(173, 216, 230, 0.7)',
+                    'rgba(0, 0, 128, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+        }
+    });
+
+    const graficoMensual = document.getElementById('graficoMensual');
+    new Chart(graficoMensual, {
+        type: 'line',
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+            datasets: [{
+                label: 'Ganancia Neta',
+                data: [
+                    datos.gananciasEnero,
+                    datos.gananciasFebrero,
+                    datos.gananciasMarzo,
+                    datos.gananciasAbril,
+                    datos.gananciasMayo,
+                    datos.gananciasJunio
+                ],
+                borderWidth: 1,
+                backgroundColor: '#00131D',
+                borderColor: '#00131D',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+        }
+    });
+</script>
 </body>
 </html>

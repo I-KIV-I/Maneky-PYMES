@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +25,7 @@ public class FormularioFinanzaDiario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	@DateTimeFormat(pattern = "MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaInformeDiario; 
 	
 	private Integer ingresoTotalDiario;
@@ -37,19 +39,20 @@ public class FormularioFinanzaDiario {
 	private Integer gananciaNeta;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
     @JoinColumn(name="pymeId")
     private Pyme pyme;
-	
 	
 	@PrePersist
     public void calcularValores() {
         if (ingresoTotalDiario != null) {
-            impuestos = (int) (ingresoTotalDiario * 0.19);
+            impuestos = (int) (ingresoTotalDiario * 0.27) + (int) (ingresoTotalDiario * 0.19);
         }
         if (ingresoTotalDiario != null && CPV != null && gastosDeOperacion != null) {
             gananciaNeta = ingresoTotalDiario - (CPV + gastosDeOperacion + impuestos);
         }
     }
+	
 	
 	public FormularioFinanzaDiario() {
 		super();

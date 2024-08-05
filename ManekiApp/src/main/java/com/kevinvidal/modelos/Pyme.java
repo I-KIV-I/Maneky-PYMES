@@ -6,6 +6,8 @@ import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -58,14 +60,15 @@ public class Pyme {
 	private List<Categoria> categorias;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnore
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
 	@OneToMany(mappedBy = "pyme")
-	private Set<FormularioFinanzaDiario> finanzaDiaria;
+	private List<FormularioFinanzaDiario> finanzaDiaria;
 	
 	@OneToMany(mappedBy = "pyme")
-	private Set<FormularioFinanzaMensual> finanzaMensual;
+	private List<FormularioFinanzaMensual> finanzaMensual;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_creacion")
@@ -152,19 +155,19 @@ public class Pyme {
 		this.usuario = usuario;
 	}
 
-	public Set<FormularioFinanzaDiario> getFinanzaDiaria() {
+	public List<FormularioFinanzaDiario> getFinanzaDiaria() {
 		return finanzaDiaria;
 	}
 
-	public void setFinanzaDiaria(Set<FormularioFinanzaDiario> finanzaDiaria) {
+	public void setFinanzaDiaria(List<FormularioFinanzaDiario> finanzaDiaria) {
 		this.finanzaDiaria = finanzaDiaria;
 	}
 
-	public Set<FormularioFinanzaMensual> getFinanzaMensual() {
+	public List<FormularioFinanzaMensual> getFinanzaMensual() {
 		return finanzaMensual;
 	}
 
-	public void setFinanzaMensual(Set<FormularioFinanzaMensual> finanzaMensual) {
+	public void setFinanzaMensual(List<FormularioFinanzaMensual> finanzaMensual) {
 		this.finanzaMensual = finanzaMensual;
 	}
 
