@@ -32,7 +32,7 @@
       <div>
       	<span class="navbar-text">
         	<form action="/procesar/logout">
-          		<button class="logoutButton" aria-current="page">Cerrar Sesión</button>
+          		<button class="logoutButton2" aria-current="page">Cerrar Sesión</button>
           	</form>
       	</span>
       </div>

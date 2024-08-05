@@ -85,7 +85,7 @@
 				<div class="cardName">Gastos</div>
 			</div>
 			<div class="iconBx">
-				<img src="/img/coinsCash.svg">
+				<img src="/img/coinsMoney.svg">
 			</div>
 		</div>
 		<div class="cardcss">
@@ -112,7 +112,7 @@
 				<div class="cardName">Ganancias</div>
 			</div>
 			<div class="iconBx">
-				<img src="/img/coinsMoney.svg">
+				<img src="/img/coinsCash.svg">
 			</div>
 		</div>
 	</div>

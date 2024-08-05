@@ -203,3 +203,31 @@
   box-shadow: none;
   transform: translateY(4px);
 }
+.logoutButton2{
+ background-color: #00131D;
+ padding: 10px 20px;
+ text-align: center;
+ color: #fff;
+ border-radius:20px;
+ border: 2px solid #fff;
+ box-shadow: 5px 5px 0px #000;
+ font-size: 1.2em;
+ font-weight: 500;
+ height: 50px;
+ width: 170px;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+ 
+ .logoutButton2:hover {
+  background-color: #fff;
+  color: #00131D;
+  border: 2px solid #00131D;
+  box-shadow: 5px 5px 0px #00131D;
+}
+
+.logoutButton2:active {
+  background-color: #00131D;
+  box-shadow: none;
+  transform: translateY(4px);
+}
