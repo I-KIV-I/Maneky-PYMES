@@ -15,46 +15,56 @@
 <body>
 <div class="barContainer">
 	<div class="navigation">
-		<ul>
-			<li>
-				<a href="/herramientas">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
 					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
 					<span class="title"><strong>Maneki Pymes</strong></span>
 				</a>
 			</li>
 			<li>
-				<a href="/herramientas">
+				<a href="/herramientas" class="seleccion">
 					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
 					<span class="title">DashBoard</span>
 				</a>
 			</li>
 			<li>
-				<a href="/perfil">
+				<a href="/perfil" class="seleccion">
 					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
 					<span class="title">Perfil</span>
 				</a>
 			</li>
 			<li>
-				<a href="*">
-					<span class="icon"><img src="/img/finances.svg" alt="icono"></span>
-					<span class="title">Finanzas</span>
-					
-				</a>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme }">
+							<li><a href="/finanzas/${pyme.id }" class="pyme">${pyme.nombre }</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
 			</li>
 			<li>
-				<a href="/noticias">
+				<a href="/noticias" class="seleccion">
 					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
 					<span class="title">Noticias</span>
 				</a>
 			</li>
 			<li>
-				<a href="/foro">
+				<a href="/foro" class="seleccion">
 					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
 					<span class="title">Foro</span>
 				</a>
 			</li>
 			<li>
-				<a href="/procesar/logout">
+				<a href="/procesar/logout" class="seleccion">
 					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
 					<span class="title">Cerrar Sesión</span>
 				</a>
@@ -72,23 +82,25 @@
 		<div class="search">
 			<h1>Bienvenido ${nombreUsuario }</h1>
 		</div>
-		<div class="btn-group dropsdown">
+		<%-- <div class="btn-group dropsdown">
 	  		<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 	    		Finanzas
 	  		</button>
+	  		
 	  		<ul class="dropdown-menu">
 	   			<c:forEach var="pyme" items="${listaPyme }">
 	   				<li><a href="/finanzas/${pyme.id }">${pyme.nombre }</a></li>
 	   			</c:forEach>
 	  		</ul>
-		</div>
+	  		
+		</div>--%>
 		<div class="user">
-			<img src="/img/pfp5.jpg" alt="profile pic">
+			<a href="/perfil"><img src="/img/pfp5.jpg" alt="profile pic"></a>
 		</div>
 	</div>	
 
 		<div class="row justify-content-center">
-			<div class="col-5" >
+			<div class="col-5 mx-2 my-2" >
 				<!-- Carrusel -->    	
 			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 card2" data-bs-ride="carousel">
 			    	<div class="carousel-inner c-noticias">
@@ -179,50 +191,51 @@
 	<!-- Final Mensajes Foro -->
 	
 	
+		</div>
+		<!-- Contenido Derecho -->
+		<div class="col-5 text-center mx-2 my-2">
+			<div class="card text-center my-2" style="width: 30rem; height: 24rem;">
+				<img src="/img/forge.jpg" class="card-img-top" alt="foto forge" style="height: 55%;">
+				<div class="card-body">
+					<h5 class="card-title">¡Curso nuevo!</h5>
+					<p class="card-text">Aprovecha esta oportunidad que ofrece la Fundación
+					Forge para especializarte en programación</p>
+					<a href="#" class="backButton">Ir a Forge</a>
+				</div>
 			</div>
-			<!-- Contenido Derecho -->
-			<div class="col-5 text-center mt-2 ms-4">
-					<div class="col-3 mb-4">
-						<div class="card text-center" style="width: 30rem; height: 24rem;">
-							<img src="/img/forge.jpg" class="card-img-top" alt="..." style="height: 55%;">
-							  <div class="card-body">
-								    <h5 class="card-title">¡Curso nuevo!</h5>
-								    <p class="card-text">Aprovecha esta oportunidad que ofrece la Fundación
-								    Forge para especializarte en programación</p>
-								    <a href="#" class="backButton">Ir a Forge</a>
-							  </div>
-						</div>
-					</div>
 					
-					<div class="col-1">
-						<div class="card text-center" style="width: 30rem; height: 24rem;">
-						 	<img src="/img/santander.jpg" class="card-img-top" alt="..." style="height: 55%;">
-							  <div class="card-body">
-								    <h5 class="card-title">Postulación a Fondos</h5>
-								    <p class="card-text">Banco Santander ofrece una inversion para pequeñas Pymes
-								    que hayan iniciado actividades hace menos de 5 meses</p>
-								    <a href="#" class="backButton">Ir a Santander</a>
-							  </div>
-						</div>
-					</div>
-				<!--FINAL Contenido Derecho -->	
+			<div class="card text-center my-2" style="width: 30rem; height: 24rem;">
+				<img src="/img/santander.jpg" class="card-img-top" alt="foto santader" style="height: 55%;">
+				<div class="card-body">
+					<h5 class="card-title">Postulación a Fondos</h5>
+					<p class="card-text">Banco Santander ofrece una inversion para pequeñas Pymes
+					que hayan iniciado actividades hace menos de 5 meses</p>
+					<a href="#" class="backButton">Ir a Santander</a>
+				</div>
 			</div>
+			<!--FINAL Contenido Derecho -->	
 		</div>
 	</div>
-  <!-- Footer -->
-<div class="footer-position">
-	<ul class="nav justify-content-center bg-dark bg-opacity-50">
-		<li class="nav-item">
-    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link text-white" href="#">Acerca de</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
-  		</li>
-	</ul>
-</div>		
+		
+		
+	<!-- Footer -->
+	<div class="footer-position mt-4">
+		<ul class="nav justify-content-center bg-dark bg-opacity-50">
+			<li class="nav-item">
+    			<a class="nav-link active text-white" aria-current="page" href="#">Contáctanos</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link text-white" href="#">Saber más</a>
+  			</li>
+  			<li class="nav-item">
+    			<a class="nav-link text-white" aria-disabled="true">Donaciones</a>
+  			</li>
+		</ul>
+	</div>	
+</div>
+ 
+ 
+ 
 <script src="/js/workbench.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 </body>

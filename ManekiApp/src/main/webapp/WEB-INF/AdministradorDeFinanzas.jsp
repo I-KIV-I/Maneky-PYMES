@@ -106,15 +106,6 @@
 				<img src="/img/piggy.svg">
 			</div>
 		</div>
-		<div class="cardcss">
-			<div>
-				<div class="numbers">$73.842</div>
-				<div class="cardName">Ganancias</div>
-			</div>
-			<div class="iconBx">
-				<img src="/img/coinsMoney.svg">
-			</div>
-		</div>
 	</div>
 	
 	<div class="graphBox">
@@ -182,7 +173,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div>
+		<%--<div>
             <section>
 					<ul>
 						<c:forEach var="informes" items="${informes}">
@@ -190,7 +181,7 @@
 						</c:forEach>
 					</ul>
             </section>
-        </div>
+        </div> --%>
 		<div class="recentCustomers">
 			<div class="cardHeader">
 				<h2>Consejos</h2>

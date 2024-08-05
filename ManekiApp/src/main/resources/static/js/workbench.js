@@ -1,4 +1,4 @@
-let list = document.querySelectorAll('.navigation li');
+let list = document.querySelectorAll('.mainUl li');
 
 function activeLink(){
 	list.forEach((item)=>
