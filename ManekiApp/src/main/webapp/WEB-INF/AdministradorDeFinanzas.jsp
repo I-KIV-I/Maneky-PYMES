@@ -62,7 +62,7 @@
 	<!-- barra perfil y titulo -->
 	<div class="topbar">
 		<div class="title">
-			<h1>Hablemos de números ${pyme.nombre }</h1>
+			<h1>Hablemos de números ${pyme.nombre}</h1>
 		</div>
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="img usuario">
@@ -72,8 +72,8 @@
 	<div class="cardbox">
 		<div class="cardcss">
 			<div>
-				<div class="numbers">$15.504</div>
-				<div class="cardName">Gastos</div>
+				<div class="numbers">$ ${form.ingresoTotalDiario}</div>
+				<div class="cardName">Ganancia</div>
 			</div>
 			<div class="iconBx">
 				<img src="/img/coinsCash.svg">
@@ -138,7 +138,7 @@
 					<tr>
 						<td>Mes</td>
 						<td>Ganancia</td>
-						<td>Gastos</td>
+						<td>Gastos(IVA)</td>
 						<td>Ganancia Neta</td>
 						<td>Estado</td>
 					</tr>

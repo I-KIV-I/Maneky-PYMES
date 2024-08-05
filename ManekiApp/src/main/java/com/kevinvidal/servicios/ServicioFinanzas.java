@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.kevinvidal.modelos.FormularioFinanzaDiario;
 import com.kevinvidal.repositorios.RepositorioFinanzasDiarias;
 
+@Service
 public class ServicioFinanzas {
 	 @Autowired
 	    private RepositorioFinanzasDiarias repository;
@@ -22,7 +24,10 @@ public class ServicioFinanzas {
 	    public Optional<FormularioFinanzaDiario> findById(Long id) {
 	        return repository.findById(id);
 	    }
-
+	    
+	    public List<FormularioFinanzaDiario> findByPyme(Long pymeid){
+	    	return repository.findByPymeId(pymeid);
+	    }
 	    public FormularioFinanzaDiario save(FormularioFinanzaDiario entity) {
 	        return repository.save(entity);
 	    }

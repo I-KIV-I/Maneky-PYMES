@@ -1,12 +1,19 @@
 const graficoGastos = document.getElementById('grafico1');
 
+	var datosJson = '${datos}';
+	var datos = JSON.parse(datos); 
+	var ingresoTotalDiario = datos.ingresoTotalDiario;
+	var CPV = datos.CPV;
+	var gastosDeOperacion = datos.gastosDeOperacion;
+	var impuestos = datos.impuestos;
+	var gananciaNeta = datos.gananciaNeta;
   new Chart(graficoGastos, {
     type: 'bar',
     data: {
       labels: ['Ingresos', 'Costos de Productos Vendidos (CPV)', 'Ahorros', 'Gastos operativos', 'impuestos', 'Ganancia neta'],
       datasets: [{
         label: 'Este mes',
-        data: [32000, 43000, 20000, 120000, 240000,20000],
+        data: [ingresoTotalDiario, 43000, 20000, 120000, 240000,20000],
         borderWidth: 1,
         backgroundColor: [
 			'rgba(0, 0, 139, 0.7)',
@@ -37,8 +44,8 @@ const graficoGastos = document.getElementById('grafico1');
     data: {
       labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
       datasets: [{
-        label: 'Ganancias Totales',
-        data: [120000, 100000, 80000, 45000, 300000, 157000],
+        label: 'Ganancias Neta',
+        data: [dato1, 100000, 80000, 45000, 300000, 157000],
         borderWidth: 1,
         backgroundColor: [
 			'#00131D',

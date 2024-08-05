@@ -22,34 +22,39 @@
 					<h2 class="mb-4">Te Ayudamos con tus finanzas</h2>
 				</header>
 				
-				<form:form action="/inscripcion/pyme" method="post" modelAttribute="formPyme">  
+				<form:form action="/finanzas/informe/diario" method="post" modelAttribute="form">
 							<div class="flex form">
-								<form:label class="form-label" path="nombre"><strong>Nombre Pyme:</strong></form:label>
-								<form:input class="form-control mb-4 text-center" path="nombre" type="text"/>
-								<form:errors class="alert alert-danger" path="nombre"/>
+								<form:label class="form-label" path="fechaInformeDiario"><strong>Fecha Informe:</strong></form:label>
+								<form:input class="form-control mb-4 text-center" path="fechaInformeDiario" type="date"/>
+								<form:errors class="alert alert-danger" path="fechaInformeDiario"/>
+							</div>  
+							<div class="flex form">
+								<form:label class="form-label" path="ingresoTotalDiario"><strong>Ingreso iario:</strong></form:label>
+								<form:input class="form-control mb-4 text-center" path="ingresoTotalDiario" type="number"/>
+								<form:errors class="alert alert-danger" path="ingresoTotalDiario"/>
 							</div>
 							<div class="flex form">
-								<form:label class="form-label" path="rol"><strong>Rol:</strong></form:label>
-								<form:input class="form-control mb-4 text-center" path="rol" type="text"/>
-								<form:errors class="alert alert-danger" path="rol"/>
+								<form:label class="form-label" path="CPV"><strong>Costo Productos Vendidos:</strong></form:label>
+								<form:input class="form-control mb-4 text-center" path="CPV" type="number"/>
+								<form:errors class="alert alert-danger" path="CPV"/>
 							</div>
 							<div class="flex form">
-								<form:label class="form-label" path="ubicacion"><strong>Ubicación:</strong></form:label>
-								<form:input class="form-control mb-4 text-center" path="ubicacion" type="text"/>
-								<form:errors class="alert alert-danger" path="ubicacion"/>
+								<form:label class="form-label" path="gastosDeOperacion"><strong>Gastos Operacionales:</strong></form:label>
+								<form:input class="form-control mb-4 text-center" path="gastosDeOperacion" type="number"/>
+								<form:errors class="alert alert-danger" path="gastosDeOperacion"/>
 							</div>
 							<div class="flex form">
-								<form:label class="form-label" path="rutCreador"><strong>Rut Creador:</strong></form:label>
-								<form:input class="form-control mb-4 text-center" path="rutCreador" type="text"/>
-								<form:errors class="alert alert-danger" path="rutCreador"/>
+								<form:label class="form-label" path="impuestos"><strong>Impuestos:</strong></form:label>
+								<form:input class="form-control mb-4 text-center" path="impuestos" type="number" value="${form.impuestos}"/>
+								<form:errors class="alert alert-danger" path="impuestos"/>
 							</div>
 							<div class="flex form">
-								<form:label class="form-label" path="fechaCreacionEmpresa"><strong>Fecha Creacion:</strong></form:label>
-								<form:input class="form-control mb-4 text-center" path="fechaCreacionEmpresa" type="date"/>
-								<form:errors class="alert alert-danger" path="fechaCreacionEmpresa"/>
+								<form:label class="form-label" path="gananciaNeta"><strong>Ganancia Neta:</strong></form:label>
+								<form:input class="form-control mb-4 text-center" path="gananciaNeta" type="number" value="${form.gananciaNeta}"/>
+								<form:errors class="alert alert-danger" path="gananciaNeta"/>
 							</div>
 							
-							<button class="ingresarButton">Registrar</button>
+							<button class="ingresarButton">ingresar Datos</button>
 						</form:form>
 							<input class="backButton" type="button" value="Volver Atrás" onClick="history.go(-1);">
 						

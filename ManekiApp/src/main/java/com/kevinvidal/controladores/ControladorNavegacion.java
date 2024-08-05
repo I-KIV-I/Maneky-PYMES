@@ -122,15 +122,7 @@ public class ControladorNavegacion {
 		return "EspacioDeTrabajo.jsp";
 	}
 	
-	@GetMapping("/finanzas/{id}")
-	public String desplegarInformeFinanzas(@PathVariable("id") Long id, HttpSession session, Model model) {
-		if (session.getAttribute("idUsuario") == null) {
-			return "redirect:/login";
-		}
-		model.addAttribute("pyme", servicioPyme.obtenerPorId(id));
-	        
-		return "AdministradorDeFinanzas.jsp";
-	}
+	
 	
 	@GetMapping("/perfil")
 	public String desplegarInformacionUsuario(HttpSession sesion, Model modelo) {
