@@ -6,19 +6,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="/css/finanzas.css">
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
 <meta charset="UTF-8">
 <title>Finanzas</title>
 </head>
 <body>
+<div class="barContainer">
+	<div class="navigation">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
+					<span class="title"><strong>Maneki Pymes</strong></span>
+				</a>
+			</li>
+			<li>
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="title">DashBoard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/perfil" class="seleccion">
+					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
+					<span class="title">Perfil</span>
+				</a>
+			</li>
+			<li>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme}">
+							<li><a href="/finanzas/${pyme.id}" class="pyme">${pyme.nombre}</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
+			</li>
+			<li>
+				<div class="seleccion">
+					<form action="/finanzas/informe/diario/${pyme.id}">
+          				<button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Ingresa Informe</button>
+        			</form>
+        		</div>
+			</li>
+			<li>
+				<div class="seleccion">
+					<a href="/noticias" class="seleccion">
+						<span class="icon"><img src="/img/news.svg" alt="icono"></span>
+						<span class="title">Noticias</span>
+					</a>
+				<div class="seleccion">
+			</li>
+			<li>
+				<a href="/foro" class="seleccion">
+					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
+					<span class="title">Foro</span>
+				</a>
+			</li>
+			<li>
+				<a href="/procesar/logout" class="seleccion">
+					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
+					<span class="title">Cerrar Sesión</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
 
 
 <div class="main">
 <div id="particles-js"></div>
+	<div class="topbar">
+		<div class="toggle">
+			<img src="/img/whiteToggle.svg" alt="toggle">
+		</div>
+		<div class="search">
+			<h1>Finanzas "${pyme.nombre}"</h1>
+		</div>
+		<div class="user">
+			<a href="/perfil"><img src="/img/pfp5.jpg" alt="profile pic"></a>
+		</div>
+	</div>	
 
 	
+<<<<<<< HEAD
 
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-black bg-opacity-50" data-bs-theme="dark">
@@ -65,6 +145,9 @@
 <!-- fin navbar -->
 	
 	<!-- barra perfil y titulo -->
+=======
+	<!-- barra perfil y titulo 
+>>>>>>> 37904b6bae324663249a4939ab81203ca0120207
 	<div class="topbar">
 		<div class="title">
 			<h1>Hablemos de números ${pyme.nombre}</h1>
@@ -72,7 +155,7 @@
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="img usuario">
 		</div>
-	</div>
+	</div> -->
 	
 	<div class="cardbox">
 		<div class="cardcss">
@@ -135,15 +218,6 @@
 			</div>
 			<div class="iconBx">
 				<img src="/img/piggy.svg">
-			</div>
-		</div>
-		<div class="cardcss">
-			<div>
-				<div class="numbers">$73.842</div>
-				<div class="cardName">Ganancias</div>
-			</div>
-			<div class="iconBx">
-				<img src="/img/coinsCash.svg">
 			</div>
 		</div>
 	</div>
@@ -213,15 +287,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div>
-            <section>
-					<ul>
-						<c:forEach var="informes" items="${informes}">
-							<li><div><a href="/finanzas/pyme/${pyme.id}"></a>${informes}</div></li>
-						</c:forEach>
-					</ul>
-            </section>
-        </div>
+		
 		<div class="recentCustomers">
 			<div class="cardHeader">
 				<h2>Consejos</h2>
@@ -293,6 +359,7 @@
 <script src="/particles/data/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/js/finanzas.js"></script>
 <script>
     // Datos pasados desde el backend al frontend

@@ -56,9 +56,11 @@ section img{
 #montana{
 	z-index:3; 
 }
+
 #camino{
 	z-index:4; 
 }
+
 #text{
 	position:relative;
 	color: #fff;
