@@ -30,13 +30,13 @@ public class Mensaje {
 	@Size(min = 1, max = 500, message = "El contenido debe tener entre 1 y 500 caracteres")
 	private String contenido;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="fecha_creacion")
 	private Date createdAt;
 			
 			
 			
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="fecha_actualizacion")
 	private Date updatedAt;
 	

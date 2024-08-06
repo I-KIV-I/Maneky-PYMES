@@ -3,8 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page isErrorPage="true" %>
-<!DOCTYPE html>
-<html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="/css/Foro.css">
@@ -73,48 +72,82 @@
 	</div>
 </div>
 
-<div class="main">
+<div class="main-foro px-4">
+	<!-- navbar -->
 	<div class="topbar">
 		<div class="toggle">
 			<img src="/img/toggle.svg" alt="toggle">
 		</div>
 		<div class="search">
-			<h1>Foro</h1>
+			<h1 class="text-white text-center">Foro</h1>
 		</div>
 		<div class="user">
 			<img src="/img/pfp5.jpg" alt="profile pic">
 		</div>
 	</div>	
 	<!-- final navbar -->
-		<h2>Crea tu Hilo aquí</h2>
-	<form:form method="post"  action="/foro" modelAttribute="formHilo">
-		<div>
-			<form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
-			<form:input path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
-		</div>
-		<div>
-			<form:label path="contenido">Agrega el contenido aquí:</form:label>
-			<form:input type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
-		</div>
-			<button>Publicar</button>
-	</form:form>
-	<div class="contenedor">
-		<table>
-			<tr>
-				 <th>
-					<h2>Hilos Activos</h2>
-				</th>
-			</tr>
-		<c:forEach var="hilo" items="${listaHilos }">
-			<tr>
-				<td><a href="/foro/${hilo.id }">${hilo.titulo}</a></td>			 	
-			</tr>
-		</c:forEach>
-		</table>
-	</div>
-</div>
 
-  <!-- Footer -->
+	
+	<!-- Contenido Principal -->
+	<!-- Publicacion Principal -->
+<div class="fondo-hilos p-2 bg-opacity-50 rounded text-white">
+	<div>
+		<h2 class="text-center mb-2">Hilos Activos</h2>
+	</div>
+	<div class="overflow-y-auto publicaciones-size ">
+		<c:forEach var="hilo" items="${listaHilos }">
+			<div class="bg-dark bg-gradient my-2 p-2 bg-opacity-50 rounded me-2">
+				<a class="link-a text-white" href="/foro/${hilo.id }">
+					<div class="d-flex justify-content-between">
+						<div class="d-flex">
+							<img class="user" src="/img/pfp5.jpg" alt="profile pic">
+							<h3 class="ms-3">${hilo.usuario.nombre}</h3>
+						</div>
+						<br>
+						<div>
+							<h2>${hilo.titulo}</h2>	 	
+						</div>
+						<div>
+							<h5 class="fw-lighter"><em><fmt:formatDate value="${hilo.fechaActualizacion}" pattern="yyyy-MM-dd"/> / <fmt:formatDate value="${hilo.fechaActualizacion}" pattern="HH:mm"/></em></h5>
+						</div>
+					</div>
+				<hr>
+				<div class="overflow-y-auto contenido-size">
+					<h4>${hilo.contenido}</h4>	 	
+				</div>
+			</div>
+				</a>
+		</c:forEach>
+	</div>
+	
+</div>
+	<!-- FINAL Publicacion Principal -->
+	<!-- Nueva Publicacion -->
+	<div class="fondo-crear-hilos p-2 my-2 mt-3 bg-opacity-50 rounded text-white ">
+		<h2 class="ms-5">Crea tu Hilo aquí</h2>
+		<hr>
+		<form:form method="post"  action="/foro" modelAttribute="formHilo">
+			<div>
+				<div class="d-flex justify-content-between ">
+					<form:label class="form-label" path="titulo">Agrega un titulo para tu Hilo</form:label>
+					<button class="btn btn-success">Publicar</button>
+				</div>
+				<div class="input-size">
+				<form:input class="form-control" path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
+				</div>
+			</div>
+			<div class="mt-4">
+				<form:label class="form-label" path="contenido">Agrega el contenido aquí:</form:label>
+				<form:textarea class="form-control overflow-y-scroll" type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
+			</div>
+				
+		</form:form>
+	</div>
+	<!-- FINAL Nueva Publicacion -->
+
+</div>
+	<!-- Final Contenido Principal -->
+    <!-- Footer -->
 <div class="footer-position">
 	<ul class="nav justify-content-center bg-dark bg-opacity-50">
 		<li class="nav-item">
@@ -128,6 +161,7 @@
   		</li>
 	</ul>
 </div>		
+	<!-- FINAL Footer -->
 <script src="/js/workbench.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 <!--  
