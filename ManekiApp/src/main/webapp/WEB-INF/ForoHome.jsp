@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="/css/Foro.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
- 
+ 	
 	<title>Foro!</title>
 </head>
 <body>
@@ -17,19 +17,19 @@
 		<ul class="mainUl">
 			<li class= "first">
 				<a href="/herramientas" class="seleccion">
-					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
+					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo" ></span>
 					<span class="title"><strong>Maneki Pymes</strong></span>
 				</a>
 			</li>
 			<li>
 				<a href="/herramientas" class="seleccion">
-					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="icon"><img src="/img/interface.svg" alt="icono" style="height:75px;"></span>
 					<span class="title">DashBoard</span>
 				</a>
 			</li>
 			<li>
 				<a href="/perfil" class="seleccion">
-					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
+					<span class="icon"><img src="/img/profile.svg" alt="icono profile" style="height:75px;"></span>
 					<span class="title">Perfil</span>
 				</a>
 			</li>
@@ -52,19 +52,19 @@
 			</li>
 			<li>
 				<a href="/noticias" class="seleccion">
-					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
+					<span class="icon"><img src="/img/news.svg" alt="icono" style="height:75px;"></span>
 					<span class="title">Noticias</span>
 				</a>
 			</li>
 			<li>
 				<a href="/foro" class="seleccion">
-					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
+					<span class="icon"><img src="/img/people.svg" alt="icono" style="height:75px;"></span>
 					<span class="title">Foro</span>
 				</a>
 			</li>
 			<li>
 				<a href="/procesar/logout" class="seleccion">
-					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
+					<span class="icon"><img src="/img/logout.svg" alt="icono" style="height:75px;"></span>
 					<span class="title">Cerrar Sesión</span>
 				</a>
 			</li>
@@ -141,7 +141,7 @@
 			</div>
 			<div class="mt-4">
 				<form:label class="form-label" path="contenido">Agrega el contenido aquí:</form:label>
-				<form:textarea class="form-control overflow-y-scroll" type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
+				<form:textarea class="form-control overflow-y-auto" type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
 			    <form:errors class="alert alert-danger" path="contenido"/>
 			</div>
 				
