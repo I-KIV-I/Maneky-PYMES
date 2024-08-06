@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +18,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name="formulario_mensual")
@@ -23,9 +28,6 @@ public class FormularioFinanzaMensual {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fechaInformeMensual;
 	
 	private Integer ingresoTotalDiario;
 	
@@ -45,10 +47,24 @@ public class FormularioFinanzaMensual {
     @JoinColumn(name="pyme_id")
     private Pyme pyme;
 	
-
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+    @JoinColumn(name="finanzas_id")
+    private FinanzasTotales finanzasTotales;
+	
 	@OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="Formularios_Id")
     private List<FormularioFinanzaDiario> informesdelmes;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fecha_creacion")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date fechaCreacion;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fecha_actualizacion")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date fechaActualizacion;
 	
 	@PrePersist
     public void calcularValores() {
@@ -68,12 +84,28 @@ public class FormularioFinanzaMensual {
 		this.id = id;
 	}
 
-	public Date getFechaInformeMensual() {
-		return fechaInformeMensual;
+	public List<FormularioFinanzaDiario> getInformesdelmes() {
+		return informesdelmes;
 	}
 
-	public void setFechaInformeMensual(Date fechaInformeMensual) {
-		this.fechaInformeMensual = fechaInformeMensual;
+	public void setInformesdelmes(List<FormularioFinanzaDiario> informesdelmes) {
+		this.informesdelmes = informesdelmes;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public Date getFechaActualizacion() {
+		return fechaActualizacion;
+	}
+
+	public void setFechaActualizacion(Date fechaActualizacion) {
+		this.fechaActualizacion = fechaActualizacion;
 	}
 
 	public Integer getIngresoTotalDiario() {

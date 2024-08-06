@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.kevinvidal.modelos.Mensaje;
 
+@Repository
 public interface RepositorioMensaje extends CrudRepository<Mensaje, Long> {
 	
 	List<Mensaje> findAll();

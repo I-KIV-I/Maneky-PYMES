@@ -14,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
@@ -43,16 +44,10 @@ public class FormularioFinanzaDiario {
     @JoinColumn(name="pymeId")
     private Pyme pyme;
 	
-	@PrePersist
-    public void calcularValores() {
-        if (ingresoTotalDiario != null) {
-            impuestos = (int) (ingresoTotalDiario * 0.27) + (int) (ingresoTotalDiario * 0.19);
-        }
-        if (ingresoTotalDiario != null && CPV != null && gastosDeOperacion != null) {
-            gananciaNeta = ingresoTotalDiario - (CPV + gastosDeOperacion + impuestos);
-        }
-    }
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+    @JoinColumn(name="finanzas_id")
+    private FinanzasTotales finanzasTotales;
 	
 	public FormularioFinanzaDiario() {
 		super();
@@ -121,4 +116,5 @@ public class FormularioFinanzaDiario {
 	public void setPyme(Pyme pyme) {
 		this.pyme = pyme;
 	}
+	
 }

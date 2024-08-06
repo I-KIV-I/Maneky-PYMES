@@ -14,7 +14,7 @@ import com.kevinvidal.repositorios.RepositorioFinanzasDiarias;
 public class ServicioFinanzas {
 	 @Autowired
 	    private RepositorioFinanzasDiarias repository;
-
+	 	private ServicioFinanzaTotales servicioFinanzas;
 	    public List<FormularioFinanzaDiario> findAll() {
 	        List<FormularioFinanzaDiario> lista = new ArrayList<>();
 	        repository.findAll().forEach(lista::add);
@@ -32,7 +32,7 @@ public class ServicioFinanzas {
 	    	List<FormularioFinanzaDiario> listaInforme = repository.findByPymeId(pyme.getId());
 	    	listaInforme.add(entity);
 	    	entity.setPyme(pyme);
-	        pyme.setFinanzaDiaria(listaInforme);
+	        pyme.setInformesDiarios(listaInforme);
 	        return repository.save(entity);
 	    }
 

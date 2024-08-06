@@ -65,10 +65,13 @@ public class Pyme {
 	private Usuario usuario;
 	
 	@OneToMany(mappedBy = "pyme")
-	private List<FormularioFinanzaDiario> finanzaDiaria;
+	private List<FormularioFinanzaDiario> informesDiarios;
 	
 	@OneToMany(mappedBy = "pyme")
-	private List<FormularioFinanzaMensual> finanzaMensual;
+	private List<FormularioFinanzaMensual> informesMensuales;
+	
+	@OneToMany(mappedBy = "pyme")
+	private List<FinanzasTotales> finanzaTotal;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_creacion")
@@ -154,21 +157,29 @@ public class Pyme {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-	public List<FormularioFinanzaDiario> getFinanzaDiaria() {
-		return finanzaDiaria;
+	
+	public List<FormularioFinanzaDiario> getInformesDiarios() {
+		return informesDiarios;
 	}
 
-	public void setFinanzaDiaria(List<FormularioFinanzaDiario> finanzaDiaria) {
-		this.finanzaDiaria = finanzaDiaria;
+	public void setInformesDiarios(List<FormularioFinanzaDiario> informesDiarios) {
+		this.informesDiarios = informesDiarios;
 	}
 
-	public List<FormularioFinanzaMensual> getFinanzaMensual() {
-		return finanzaMensual;
+	public List<FormularioFinanzaMensual> getInformesMensuales() {
+		return informesMensuales;
 	}
 
-	public void setFinanzaMensual(List<FormularioFinanzaMensual> finanzaMensual) {
-		this.finanzaMensual = finanzaMensual;
+	public void setInformesMensuales(List<FormularioFinanzaMensual> informesMensuales) {
+		this.informesMensuales = informesMensuales;
+	}
+
+	public List<FinanzasTotales> getFinanzaTotal() {
+		return finanzaTotal;
+	}
+
+	public void setFinanzaTotal(List<FinanzasTotales> finanzaTotal) {
+		this.finanzaTotal = finanzaTotal;
 	}
 
 	public Date getFechaCreacion() {

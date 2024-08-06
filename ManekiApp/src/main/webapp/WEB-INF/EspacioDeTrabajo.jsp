@@ -7,6 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/Style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/workbench.css">
     <title>Espacio De Trabajo</title>
@@ -80,7 +81,7 @@
 			<img src="/img/toggle.svg" alt="toggle">
 		</div>
 		<div class="search">
-			<h1>Bienvenido ${nombreUsuario }</h1>
+			<h1 class="text-center">Bienvenido ${nombreUsuario }</h1>
 		</div>
 		<div class="user">
 			<a href="/perfil"><img src="/img/pfp5.jpg" alt="profile pic"></a>
@@ -88,10 +89,10 @@
 	</div>	
 
 		<div class="row justify-content-center">
-			<div class="col-5 mx-2 my-2" >
+			<div class="col-5 mx-2 " >
 				<!-- Carrusel -->    	
-			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 card2" data-bs-ride="carousel">
-			    	<div class="carousel-inner c-noticias">
+			    <div id="carouselExampleAutoplaying" class="carousel slide mt-2 " data-bs-ride="carousel">
+			    	<div class="carousel-inner c-noticias rounded">
 			        	
 			        	<div class="carousel-item active">
 			            	<img src="/img/noticia1.jpg" class="d-block w-100 imgcarrusel" alt="Finanzas">
@@ -125,11 +126,11 @@
 				<!-- fin Carrusel -->
 	
 	<!-- Mensajes Foro -->
-		<div class="recentChat">
-			<div class="Header">
-				<h2>Últimas conversaciones</h2>
+		<div class="recentChat pre-foro-size overflow-y-auto rounded">
+			<div class="Header ">
+				<h2 class="text-center">Últimas conversaciones</h2>
 			</div>
-			<table>
+			<table class="rounded">
 					<tr>
 						<td width="60px">
 							<div class="imgBx">
@@ -137,8 +138,10 @@
 							</div>
 						</td>
 						<td>
+							<a class="link-a text-white " href="/foro/${hilo.id }">
 							<h4><a href="/foro/${uno.id}"> ${uno.titulo}</a></h4>
-							<p>${uno.contenido}</p>
+							<p class="overflow-y-hidden pre-contenido-size">${uno.contenido}</p>
+							</a>
 						</td>
 					</tr>
 					<tr>
@@ -148,8 +151,11 @@
 							</div>
 						</td>
 						<td>
+							<hr>
+							<a class="link-a text-white" href="/foro/${hilo.id }">
 							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
-							<p>${dos.contenido}</p>
+							<p class="overflow-y-hidden pre-contenido-size">${dos.contenido}</p>
+							</a>
 						</td>
 					</tr>
 					<tr>
@@ -159,8 +165,11 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${tres.id}"> ${tres.titulo}</a></h4>
-							<p>${tres.contenido}</p>
+							<hr>
+							<a class="link-a text-white" href="/foro/${hilo.id }">
+							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
+							<p class="overflow-y-hidden pre-contenido-size">${tres.contenido}</p>
+							</a>
 						</td>
 					</tr>
 					<tr>
@@ -170,8 +179,11 @@
 							</div>
 						</td>
 						<td>
-							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo}</a></h4>
-							<p>${cuatro.contenido}</p>
+							<hr>
+							<a class="link-a text-white" href="/foro/${hilo.id }">
+							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
+							<p class="overflow-y-hidden pre-contenido-size">${cuatro.contenido}</p>
+							</a>
 						</td>
 					</tr>
 				</table>
@@ -181,7 +193,7 @@
 	
 		</div>
 		<!-- Contenido Derecho -->
-		<div class="col-5 text-center mx-2 my-2">
+		<div class="col-5 text-center mx-2">
 			<div class="card text-center my-2" style="width: 30rem; height: 24rem;">
 				<img src="/img/forge.jpg" class="card-img-top" alt="foto forge" style="height: 55%;">
 				<div class="card-body">
@@ -192,7 +204,7 @@
 				</div>
 			</div>
 					
-			<div class="card text-center my-2" style="width: 30rem; height: 24rem;">
+			<div class="card text-center my-2 mt-5" style="width: 30rem; height: 24rem;">
 				<img src="/img/santander.jpg" class="card-img-top" alt="foto santader" style="height: 55%;">
 				<div class="card-body">
 					<h5 class="card-title">Postulación a Fondos</h5>
