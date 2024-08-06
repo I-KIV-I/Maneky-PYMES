@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page isErrorPage="true" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="/css/workbench.css">
 	<title>Foro!</title>
 </head>
+
 <body class="fondo-azul text-white">
 	<!-- navbar -->
 	<div class="topbar">
@@ -61,6 +63,7 @@
 	    <!--Final Contenido-->
 	</div>    
     <!-- FINAL Contenido Principal -->
+
     <script src="/js/workbench.js"></script>
 	<script src="/js/bootstrap.bundle.js"></script>
 </body>

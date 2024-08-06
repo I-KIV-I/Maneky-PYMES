@@ -3,8 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page isErrorPage="true" %>
-<!DOCTYPE html>
-<html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="/css/Foro.css">
@@ -87,6 +86,7 @@
 		</div>
 	</div>	
 	<!-- final navbar -->
+
 	
 	<!-- Contenido Principal -->
 	<!-- Publicacion Principal -->
@@ -103,19 +103,22 @@
 							<img class="user" src="/img/pfp5.jpg" alt="profile pic">
 							<h3 class="ms-3">${hilo.usuario.nombre}</h3>
 						</div>
+						<br>
 						<div>
-							<h5 class="fw-lighter">fecha creacion</h5>
+							<h2>${hilo.titulo}</h2>	 	
 						</div>
+						<div>
+							<h5 class="fw-lighter"><em><fmt:formatDate value="${hilo.fechaActualizacion}" pattern="yyyy-MM-dd"/> / <fmt:formatDate value="${hilo.fechaActualizacion}" pattern="HH:mm"/></em></h5>
+						</div>
+						
 					</div>
 				</a>
 				<hr>
-				<div>
-					<h4>${hilo.titulo}</h4>	 	
-				</div>
 				<div class="overflow-y-auto contenido-size">
 					<h4>${hilo.contenido}</h4>	 	
 				</div>
 			</div>
+				
 		</c:forEach>
 	</div>
 	
@@ -133,16 +136,21 @@
 				</div>
 				<div class="input-size">
 				<form:input class="form-control" path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
+				<form:errors class="alert alert-danger" path="titulo"/>
 				</div>
 			</div>
 			<div class="mt-4">
 				<form:label class="form-label" path="contenido">Agrega el contenido aquí:</form:label>
 				<form:textarea class="form-control overflow-y-scroll" type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
+			    <form:errors class="alert alert-danger" path="contenido"/>
 			</div>
 				
 		</form:form>
 	</div>
 	<!-- FINAL Nueva Publicacion -->
+
+
+</div>
 
 	<!-- Final Contenido Principal -->
     <!-- Footer -->
