@@ -88,6 +88,12 @@
 .password-wrapper {
 	position: relative;
 }
+.pre-foro-size{
+	height: 500px;
+}
+.pre-contenido-size{
+	height: 60px;
+}
 
 .toggle-button {
 	display: inline-flex;

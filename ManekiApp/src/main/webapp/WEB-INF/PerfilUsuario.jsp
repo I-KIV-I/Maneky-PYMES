@@ -7,60 +7,111 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/perfil.css">
     <meta charset="UTF-8">
     <title>Perfil</title>
 </head>
 
 <body>
-    <div>
-         <!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbbarback" data-bs-theme="dark">
-              <div class="container">
-                <a class="navbar-brand d-flex align-items-center mx-auto" href="/herramientas">
-                  <img src="/img/logoManeki.png" alt="Logo" width="50" height="50"
-                    class="d-inline-block align-text-center iconmaneki">
-                  <span class="ms-4 fs-2 raleway">Maneki Pymes</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <form action="/procesar/logout">
-                        <button class="btn btn-secondary ms-5 p-2 raleway" aria-current="page">Cerrar Sesión</button>
-                      </form>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-        <section>
-                <h2>Tu informacion</h2>
-                <h5>${usuario.nombre} ${usuario.apellido}</h5>  
-                <h5>${usuario.rut}</h5>
-                <h5>${usuario.correo}</h5>
-        </section>
-        <!--<form action="/procesar/edicion" method="get">
-        	<button type="submit">Edita tu perfil</button>
-         </form>-->
+<div class="barContainer">
+	<div class="navigation">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
+					<span class="title"><strong>Maneki Pymes</strong></span>
+				</a>
+			</li>
+			<li>
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="title">DashBoard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/perfil" class="seleccion">
+					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
+					<span class="title">Perfil</span>
+				</a>
+			</li>
+			<li>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme }">
+							<li><a href="/finanzas/${pyme.id }" class="pyme">${pyme.nombre }</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
+			</li>
+			<li>
+				<a href="/noticias" class="seleccion">
+					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
+					<span class="title">Noticias</span>
+				</a>
+			</li>
+			<li>
+				<a href="/foro" class="seleccion">
+					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
+					<span class="title">Foro</span>
+				</a>
+			</li>
+			<li>
+				<a href="/procesar/logout" class="seleccion">
+					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
+					<span class="title">Cerrar Sesión</span>
+				</a>
+			</li>
+		</ul>
 	</div>
-	<div>
-        <section>
-            <h2>Tus Pymes</h2>
-            <c:forEach var="pyme" items="${listaPymes}">
-	        	<h3><a href="/finanzas/${pyme.id}">${pyme.nombre}</a></h3>
-				<p>Rol: ${pyme.rol }</p>				
-				<p>Rut Creador: ${pyme.rutCreador }</p>
-				<p>Ubicación:${pyme.ubicacion }</p>
-			</c:forEach>
-			<form action="/inscripcion/pyme">
-				<input type="submit" value="Agregar Nueva Pyme">
-			</form>
-        </section>
-    </div>
-</body>
+</div>
 
+
+<div class="main">
+	<div class="topbar">
+		<div class="toggle">
+			<img src="/img/toggle.svg" alt="toggle">
+		</div>
+		<div class="search">
+			<h1>Revisa tu Perfil</h1>
+		</div>
+		<div></div>
+	</div>
+	
+	<div class="graphBox">
+		<div class="box">
+			<img src="/img/pfp5.jpg" alt="profile picture">
+                <h2>${usuario.nombre} ${usuario.apellido}</h2>  
+                <h3>RUT: ${usuario.rut}</h3>
+                <h3>Correo: ${usuario.correo}</h3>
+                <form action="/procesar/edicion" method="get">
+        			<button class="backButton" type="submit">Edita tu perfil</button>
+         		</form>
+		</div>	
+        <div class="graphBox">
+        	<div class="box">
+            	<h2>Tus Pymes</h2>
+            		<c:forEach var="pyme" items="${listaPymes}">
+	        			<h3><a href="/finanzas/${pyme.id}">${pyme.nombre}</a></h3>
+							<p>Rol: ${pyme.rol }</p>				
+							<p>Rut Creador: ${pyme.rutCreador }</p>
+							<p>Ubicación:${pyme.ubicacion }</p>
+					</c:forEach>
+					<form action="/inscripcion/pyme">
+						<input class="backButton" type="submit" value="Agregar Nueva Pyme">
+					</form>
+			</div>
+    	</div>
+	</div>
+</div>    
+<script src="/js/workbench.js"></script>
+</body>
 </html>

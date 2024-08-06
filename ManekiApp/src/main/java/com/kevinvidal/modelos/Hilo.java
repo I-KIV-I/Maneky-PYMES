@@ -29,11 +29,11 @@ public class Hilo {
 	private Long id;
 	
 	@NotBlank(message = "El contenido no puede estar vacío")
-	@Size(min = 1, max = 500, message = "El contenido debe tener entre 1 y 500 caracteres")
+	
 	private String titulo;
 	
 	@NotBlank(message = "El contenido no puede estar vacío")
-	@Size(min = 1, max = 500, message = "El contenido debe tener entre 1 y 500 caracteres")
+	
 	private String contenido;
 	
 	
@@ -44,11 +44,11 @@ public class Hilo {
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="fecha_creacion")
 	private Date fechaCreacion;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="fecha_actualizacion")
 	private Date fechaActualizacion;
 	
@@ -103,6 +103,14 @@ public class Hilo {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public Date getFechaActualizacion() {
+		return fechaActualizacion;
+	}
+
+	public void setFechaActualizacion(Date fechaActualizacion) {
+		this.fechaActualizacion = fechaActualizacion;
 	}
 	
 }

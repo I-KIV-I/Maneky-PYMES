@@ -81,7 +81,7 @@
 			<img src="/img/whiteToggle.svg" alt="toggle">
 		</div>
 		<div class="search">
-			<h1>Finanzas "${pyme.nombre}"</h1>
+			<h1>"${pyme.nombre}"</h1>
 		</div>
 		<div class="user">
 			<a href="/perfil"><img src="/img/pfp5.jpg" alt="profile pic"></a>

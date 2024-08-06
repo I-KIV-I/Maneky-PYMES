@@ -20,6 +20,7 @@ import com.kevinvidal.servicios.ServicioUsuario;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+import java.util.Collections;
 
 @Controller
 public class ControladorForo {
@@ -45,7 +46,9 @@ public class ControladorForo {
 		if(sesion.getId() == null) {
 			return "redirect:/login";
 		}
-		modelo.addAttribute("listaHilos", servicioHilo.obtenerTodos());
+		List<Hilo> listaHilos = servicioHilo.obtenerTodos();
+		Collections.reverse(listaHilos);
+		modelo.addAttribute("listaHilos", listaHilos);
 		return "ForoHome.jsp";
 	}
 	@PostMapping("/foro")
@@ -80,6 +83,7 @@ public class ControladorForo {
 		}
 		modelo.addAttribute("hilo", servicioHilo.obtenPorId(idHilo));
 		List<Mensaje> listaMensajes = servicioMensaje.obtenerPorHiloId(idHilo);
+		Collections.reverse(listaMensajes);
 		modelo.addAttribute("listaMensajes", listaMensajes);
 		
 		return "ForoHilo.jsp";
