@@ -86,21 +86,7 @@
 		</div>
 	</div>	
 	<!-- final navbar -->
-<div class="contenedor">
-	<table>
-			<tr>
-				 <th>
-					<h2>Hilos Activos</h2>
-				</th>
-			</tr>
-		<c:forEach var="hilo" items="${listaHilos }">
-			<tr>
-				<td><a href="/foro/${hilo.id }">${hilo.titulo}</a></td>			 	
-			</tr>
-		</c:forEach>
-	</table>
-</div>
-	<h2>Crea tu Hilo aquí</h2>
+		<h2>Crea tu Hilo aquí</h2>
 	<form:form method="post"  action="/foro" modelAttribute="formHilo">
 		<div>
 			<form:label path="titulo">Agrega un titulo para tu Hilo</form:label>
@@ -112,6 +98,20 @@
 		</div>
 			<button>Publicar</button>
 	</form:form>
+	<div class="contenedor">
+		<table>
+			<tr>
+				 <th>
+					<h2>Hilos Activos</h2>
+				</th>
+			</tr>
+		<c:forEach var="hilo" items="${listaHilos }">
+			<tr>
+				<td><a href="/foro/${hilo.id }">${hilo.titulo}</a></td>			 	
+			</tr>
+		</c:forEach>
+		</table>
+	</div>
 </div>
 
   <!-- Footer -->

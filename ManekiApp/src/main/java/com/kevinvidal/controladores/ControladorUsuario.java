@@ -97,6 +97,6 @@ public class ControladorUsuario{
 	@GetMapping("/procesar/logout")
 	public String procesarLogout(HttpSession sesion) {
 		sesion.invalidate();
-		return "redirect:/login";
+		return "redirect:/";
 	}
 }
