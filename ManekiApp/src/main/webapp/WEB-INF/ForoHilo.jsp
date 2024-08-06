@@ -55,10 +55,20 @@
 		    <h4 class="text-center">Comentarios</h4>
 		    <div class="tamaño-contenido-mensaje bg-black bg-opacity-25 rounded p-4 text-white overflow-y-auto">
 		    	<c:forEach var="mensaje" items="${listaMensajes}">
-		        <div>
-		            <p><strong>${mensaje.usuario.nombre} ${mensaje.usuario.apellido}</strong></p>
-		            <p>${mensaje.contenido}</p>
-		            <p><em>${mensaje.updatedAt}</em></p>
+		        <div class="bg-black bg-opacity-25 rounded p-2 my-3">
+		        	<div class="d-flex justify-content-between ">
+		        		<div class="d-flex">
+				        	<img class="rounded-circle me-3" width="30px" height="30px" src="/img/pfp6.jpg">
+				            <p><strong>${mensaje.usuario.nombre} ${mensaje.usuario.apellido}</strong></p>
+			            </div>
+			            <div>
+			            	<p class="fw-lighter">${mensaje.updatedAt}</p>
+			             </div>
+		            </div>
+		            <hr>
+		            
+		            <p class=""><em>${mensaje.contenido}</em></p>
+		            
 		        </div>
 		    </c:forEach>
 		    </div>
