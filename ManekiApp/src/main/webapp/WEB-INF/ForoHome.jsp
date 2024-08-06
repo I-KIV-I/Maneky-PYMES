@@ -6,14 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/Foro.css">
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/workbench.css">
-	<title>Foro!</title>
+<link rel="stylesheet" href="/css/Foro.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<meta charset="UTF-8">
+<title>Foro!</title>
 </head>
 <body>
-	<div class="barContainer">
+<div class="barContainer">
 	<div class="navigation">
 		<ul>
 			<li>
@@ -76,15 +75,15 @@
 		</div>
 	</div>	
 	<!-- final navbar -->
-<div>
-				 <table>
-				 		<tr>
-				 			<th>
-				 				<h2>Hilos Activos</h2>
-				 			</th>
-				 		</tr>
-						<c:forEach var="hilo" items="${listaHilos }">
-				 			<tr>
+	<div>
+		<table>
+			<tr>
+				<th>
+				 	<h2>Hilos Activos</h2>
+				 </th>
+			</tr>
+			<c:forEach var="hilo" items="${listaHilos }">
+				<tr>
 				 				<td><a href="/foro/${hilo.id }">${hilo.titulo}</a></td>			 	
 				 			</tr>
 				 		</c:forEach>
@@ -104,7 +103,7 @@
 			</form:form>
 		</div>
 
-  <!-- Footer -->
+  <!-- Footer 
 <div class="footer-position">
 	<ul class="nav justify-content-center bg-dark bg-opacity-50">
 		<li class="nav-item">
@@ -119,8 +118,8 @@
 	</ul>
 </div>		
 <script src="/js/workbench.js"></script>
-<script src="/js/bootstrap.bundle.js"></script>
-<!--  
+<script src="/js/bootstrap.bundle.js"></script> -->
+<%--  
 <main>
 		
 		<div class="contenido-foro mt-5 ms-0 position-absolute start-50 translate-middle-x">
@@ -158,6 +157,6 @@
 		</div>
 
 	</main>
--->	
+--%>	
 </body>
 </html>

@@ -88,16 +88,7 @@
 		</div>
 	</div>	
 
-	
-	<!-- barra perfil y titulo 
-	<div class="topbar">
-		<div class="title">
-			<h1>Hablemos de números ${pyme.nombre}</h1>
-		</div>
-		<div class="user">
-			<img src="/img/pfp5.jpg" alt="img usuario">
-		</div>
-	</div> -->
+
 	
 	<div class="cardbox">
 		<div class="cardcss">
@@ -203,15 +194,8 @@
 				</tbody>
 			</table>
 		</div>
-		<%--<div>
-            <section>
-					<ul>
-						<c:forEach var="informes" items="${informes}">
-							<li><div><a href="/finanzas/pyme/${pyme.id}"></a>${informes}</div></li>
-						</c:forEach>
-					</ul>
-            </section>
-        </div> --%>
+		
+		
 		<div class="recentCustomers">
 			<div class="cardHeader">
 				<h2>Consejos</h2>
