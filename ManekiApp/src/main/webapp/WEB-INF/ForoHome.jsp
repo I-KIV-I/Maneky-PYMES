@@ -134,11 +134,13 @@
 				</div>
 				<div class="input-size">
 				<form:input class="form-control" path="titulo" type="text" placeHolder="Escribe tu titulo aqui..."/>
+				<form:errors class="alert alert-danger" path="titulo"/>
 				</div>
 			</div>
 			<div class="mt-4">
 				<form:label class="form-label" path="contenido">Agrega el contenido aquí:</form:label>
 				<form:textarea class="form-control overflow-y-scroll" type="textArea" path="contenido" placeHolder="Escribe tu comentario aqui..."/>
+			    <form:errors class="alert alert-danger" path="contenido"/>
 			</div>
 				
 		</form:form>
