@@ -5,69 +5,18 @@
 	box-sizing: border-box;
 }
 
-body{
-	min-height: 100vh;
-	overflow-x: hidden;
-}
-
-.link-a{
-	text-decoration: none;
-	text-decoration-line: none ;
-	text-decoration-color: none;
-	text-decoration-style: none ;
-}
-.fondo-azul{
-	background: #003049;
-}
-.comentario-size{
-	width: 1050px;
-	height: 100px;
-}
-.fondo-hilos{
-	background: linear-gradient(0deg, rgba(0,19,29,1) 0%, rgba(0,84,128,1) 100%);
-}
-.fondo-crear-hilos{
-	background: linear-gradient(0deg, rgba(0,84,128,1) 0%, rgba(0,19,29,1) 100%);
-}
-.tamaño-contenido-mensaje{
-	width: 1252px;
-	height: 200px;
-}
-.tamaño-contenido-publicacion{
-	width: 1252px;
-	height: 150px;
-}
-.publicaciones-size{
-	height: 480px;
-}
-.contenido-size{
-	height: 90px;
-}
-.input-size{
-	width: 500px;
-}
-.crear-publi-position{
-	position: fixed;
-	width: 82%;
-	bottom: 0px;
-}
-
-.main-hilo{
-	width: 1300px;
-	height: 800px;
-	margin: 0 auto;
-}
-.main.active{
-	width: calc(100% - 100px);
-	left: 100px;
-}
-
 :root{
 	--blue:#00131D;
 	--white: #fff;
 	--blue2: lightblue;
 	--black: #222;
 	--black2: #999;
+}
+
+body{
+	min-height: 100vh;
+	overflow-x: hidden;
+	background-color: var(--white);
 }
 
 .barContainer{
@@ -230,13 +179,12 @@ body{
 }
 
 .main{
-
-    position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
-    min-height: 100vh;
-    background: #003049;
-    transition: 0.5s;
+	position: absolute;
+	width: calc(100% - 300px);
+	left: 300px;
+	min-height: 100vh;
+	background: var(--white);
+	transition: 0.5s;
 }
 
 .main.active{
@@ -251,6 +199,7 @@ body{
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 10px;
+	margin-right:20px;
 }
 
 .toggle{
@@ -262,6 +211,7 @@ body{
 	align-items: center;
 	font-size: 2.5em;
 	cursor: pointer;
+	left: 20px;
 }
 
 .toggle img{
@@ -272,112 +222,66 @@ body{
 	position: relative;
 	width: 400px;
 	margin: 0 10px;
+	text-align: center;
+}
+.search h1{
+	font-size: 2.5em;
 }
 
-.search label{
-	position: relative;
+.graphBox{
+	position:relative;
 	width: 100%;
-}
-
-.search label input{
-	width: 100%;
-	height: 40px;
-	border-radius: 40px;
-	padding: 5px 20px;
-	padding-left: 35px;
-	font-size: 18px;
-	outline: none;
-	border: 1px solid var(--black2);
-}
-
-.search label img{
-	position: absolute;
-	top: 0;
-	left: 10px;
-	font-size: 1.2em;
-}
-
-.user{
-	position: relative;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	overflow: hidden;
-	cursor: pointer;
-}
-
-.user img{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.recentChat{
-	display:grid;
-	margin-top: 30px;
-	position: relative;
-	min-height: 500px;
 	padding: 20px;
-	background: rgba(0, 19, 29, 0.5);
-	color: var(--white);
-	box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-	border-radius:20px;
+	display:grid;
+	grid-template-columns:repeat(1, 1fr);
+	grid-gap:30px;
+	min-height: 200px;
 }
 
-.recentChat .Header{
+.graphBox .box{
 	position: relative;
-	font-size: 1em;
-}
-
-.recentChat .imgBx{
-	position: realitve;
-	width: 40px;
-	height:40px;
-	border-radius: 50%;
-	overflow: hidden;
-}
-
-.recentChat .imgBx img{
-	top: 0;
-	left: 0;
+	background: #fff;
+	padding: 20px;
 	width: 100%;
-	height: 100%;
-	object-fit: contain;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
 }
 
-.recentChat table{
-	background: rgba(0, 19, 29, 0.5);
-	color: var(--white);
+.graphBox .box img{
+	border-radius: 50%;
+	border: solid 5px #00131D;
+	width: 10em;
 }
 
-.recentChat table tr td{
-	padding: 12px 10px;
+.graphBox .box h2{
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+	font-size: 2.3em;
 }
 
-.recentChat table tr td h4 a{
-	color: white;
-	text-decoration:none;
-	font-size: 0.75em;
-	font-weight: 500;
-	line-height: 1.2em;
+.graphBox .box h3{
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+	font-size: 1.5em;
 }
 
-.recentChat table tr td p{
-	font-size: 14px;
-	color: var(--white);
+.graphBox .box h3 a{
+	text-decoration: none;
+	color: #00131D;
 }
 
-.recentChat table tr:hover{
-	background: var(--blue2);
-	color: var(--blue);
+.graphBox .box h3 a:hover{
+	text-decoration: none;
+	color: lightblue;;
 }
-
-.recentChat table tr:hover td h4 a,
-.recentChat table tr:hover td p{
-	color: var(--blue);
+.graphBox .box p{
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	font-size: 1.2em;
 }
 
 
@@ -411,4 +315,3 @@ body{
   box-shadow: none;
   transform: translateY(4px);
 }
-

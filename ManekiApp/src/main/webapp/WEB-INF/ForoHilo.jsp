@@ -10,7 +10,7 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="/css/Foro.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/workbench.css">
+    
 	<title>Foro!</title>
 </head>
 
@@ -32,7 +32,7 @@
 	<div class="main-hilo fondo-hilos rounded mt-2 p-4">
 		<div class="d-flex align-items-center">
 			<div class="d-flex align-items-center">
-				<img class="rounded-circle m-3"  width="100px" src="/img/pfp4.jpg">
+				<img class="rounded-circle me-3"  width="100px" src="/img/pfp4.jpg">
 				<h1 class="me-5">${hilo.usuario.nombre}</h1>
 			</div>
 			<div>
@@ -42,23 +42,42 @@
 			
 			
 		</div>
+		<hr>
 			<h2 class="text-center">${hilo.titulo}</h2>
+		<hr>	
+		<div class="tamaño-contenido-publicacion bg-black bg-opacity-25 rounded p-4 text-white mb-3">
+		    <p>${hilo.contenido}</p>
+		</div>
 		<hr>
 		<!--Contenido-->
 		<div>
-		    <h3>${hilo.contenido}</h3>
-		    <form:form method="post" action="/foro/${hilo.id}" modelAttribute="formMensaje">
-		        <form:label path="contenido">Comenta algo:</form:label>
-		        <form:input type="text" path="contenido" placeholder="Escribe tu comentario aquí..." />
-		        <button type="submit">Publicar</button>
-		    </form:form>
-		    <c:forEach var="mensaje" items="${listaMensajes}">
+
+		    <h4 class="text-center">Comentarios</h4>
+		    <div class="tamaño-contenido-mensaje bg-black bg-opacity-25 rounded p-4 text-white overflow-y-auto">
+		    	<c:forEach var="mensaje" items="${listaMensajes}">
 		        <div>
 		            <p><strong>${mensaje.usuario.nombre} ${mensaje.usuario.apellido}</strong></p>
 		            <p>${mensaje.contenido}</p>
 		            <p><em>${mensaje.updatedAt}</em></p>
 		        </div>
 		    </c:forEach>
+		    </div>
+		    <hr>
+		    <form:form method="post" action="/foro/${hilo.id}" modelAttribute="formMensaje">
+		    	<div class="d-flex">
+		    	<div class="me-3">
+			    	<div>
+			        	<form:label path="contenido"><h4>Comenta algo </h4></form:label>
+			        </div>
+			        <div class="d-flex justify-content-center mt-3 overflow-y-auto">
+			        	<button class="btn btn-success" type="submit">Publicar</button>
+			        </div>
+		        </div>
+		        <div>
+		        	<form:textarea class="comentario-size" type="text" path="contenido" placeholder="Escribe tu comentario aquí..." />
+		        </div>
+		        </div>
+		    </form:form>
 	    </div>
 	    <!--Final Contenido-->
 	</div>    
