@@ -1,9 +1,47 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 .contenedor{
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 }
+.link-a{
+	text-decoration: none;
+	text-decoration-line: none ;
+	text-decoration-color: none;
+	text-decoration-style: none ;
+}
+.fondo-azul{
+	background: #00131D;	
+}
+.fondo-hilos{
+	background: linear-gradient(0deg, rgba(0,19,29,1) 0%, rgba(0,84,128,1) 100%);
+}
+.fondo-crear-hilos{
+	background: linear-gradient(0deg, rgba(0,84,128,1) 0%, rgba(0,19,29,1) 100%);
+}
+.publicaciones-size{
+	height: 480px;
+}
+.contenido-size{
+	height: 90px;
+}
+.input-size{
+	width: 500px;
+}
+.crear-publi-position{
+	position: fixed;
+	width: 82%;
+	bottom: 0px;
+}
+.main-foro{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #003049;
+    transition: 0.5s;
+}
+
 .contenedor table th{
 	border: solid black;
 	width: 1500px;
