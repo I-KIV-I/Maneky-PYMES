@@ -37,14 +37,15 @@ public class ControladorFinanzas {
     ObjectMapper objectMapper = new ObjectMapper();
 
     @GetMapping("/finanzas/{id}")
-    public String desplegarInformeFinanzas(@PathVariable("id") Long id, @ModelAttribute("form")FormularioFinanzaDiario form, HttpSession session, Model model) throws JsonProcessingException {
+    public String desplegarInfaormeFinanzas(@PathVariable("id") Long id, @ModelAttribute("form")FormularioFinanzaDiario form,  @ModelAttribute("pyme")Pyme pyme, HttpSession session, Model model) throws JsonProcessingException {
         if (session.getAttribute("idUsuario") == null) {
             return "redirect:/login";
         }
+        List<Pyme> listaPymes = this.servicioPyme.obtenerPymePorUsuarioId(pyme.getId());
+        model.addAttribute(listaPymes);
         model.addAttribute("pyme", servicioPyme.obtenerPorId(id));
         String datos = objectMapper.writeValueAsString(servicioFinanzas.findByPyme(id));
         model.addAttribute("datos", datos);
-
         return "AdministradorDeFinanzas.jsp";
     }
 
