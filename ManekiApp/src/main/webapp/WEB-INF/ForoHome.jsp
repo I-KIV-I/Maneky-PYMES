@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="/css/Foro.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/workbench.css">
+ 
 	<title>Foro!</title>
 </head>
 <body>
@@ -73,7 +73,7 @@
 	</div>
 </div>
 
-<div class="main-foro px-4">
+<div class="main px-4">
 	<!-- navbar -->
 	<div class="topbar">
 		<div class="toggle">
@@ -143,21 +143,22 @@
 		</form:form>
 	</div>
 	<!-- FINAL Nueva Publicacion -->
-</div>
+
 	<!-- Final Contenido Principal -->
     <!-- Footer -->
-<div class="footer-position">
-	<ul class="nav justify-content-center bg-dark bg-opacity-50">
-		<li class="nav-item">
-    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link text-white" href="#">Acerca de</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
-  		</li>
-	</ul>
+	<div class="footer-position">
+		<ul class="nav justify-content-center bg-dark bg-opacity-50">
+			<li class="nav-item">
+	    		<a class="nav-link active text-white" aria-current="page" href="#">Háblanos</a>
+	  		</li>
+	  		<li class="nav-item">
+	    		<a class="nav-link text-white" href="#">Acerca de</a>
+	  		</li>
+	  		<li class="nav-item">
+	    		<a class="nav-link disabled" aria-disabled="true">Donaciones</a>
+	  		</li>
+		</ul>
+	</div>
 </div>		
 	<!-- FINAL Footer -->
 <script src="/js/workbench.js"></script>
