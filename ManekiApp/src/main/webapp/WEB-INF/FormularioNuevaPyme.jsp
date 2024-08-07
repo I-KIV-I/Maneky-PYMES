@@ -29,13 +29,8 @@
                     <form:errors class="text-danger" path="nombre"/>
                 </div>
                 <div class="mb-3">
-                    <form:label class="form-label" path="rutPyme"><strong>Rut Pyme:</strong></form:label>
-                    <form:input id="rutPyme" class="form-control mb-4 text-center" placeholder="12.345.678-9" path="rutPyme" type="text"/>
-                    <form:errors class="text-danger" path="rutPyme"/>
-                </div>
-                <div class="mb-3">
                     <form:label class="form-label" path="rol"><strong>Rol:</strong></form:label>
-                    <form:input class="form-control mb-4 text-center" path="rol" type="text"/>
+                    <form:input class="form-control mb-4 text-center" path="rol" type="text" placeholder="xx.xxx.xxx-x"/>
                     <form:errors class="text-danger" path="rol"/>
                 </div>
                 <div class="mb-3">

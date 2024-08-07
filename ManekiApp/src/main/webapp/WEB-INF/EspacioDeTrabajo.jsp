@@ -167,7 +167,7 @@
 						<td>
 							<hr>
 							<a class="link-a text-white" href="/foro/${hilo.id }">
-							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
+							<h4><a href="/foro/${tres.id}"> ${tres.titulo}</a></h4>
 							<p class="overflow-y-hidden pre-contenido-size">${tres.contenido}</p>
 							</a>
 						</td>
@@ -181,7 +181,7 @@
 						<td>
 							<hr>
 							<a class="link-a text-white" href="/foro/${hilo.id }">
-							<h4><a href="/foro/${dos.id}"> ${dos.titulo}</a></h4>
+							<h4><a href="/foro/${cuatro.id}"> ${cuatro.titulo}</a></h4>
 							<p class="overflow-y-hidden pre-contenido-size">${cuatro.contenido}</p>
 							</a>
 						</td>

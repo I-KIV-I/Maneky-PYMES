@@ -81,6 +81,8 @@ public class ControladorForo {
 		if(sesion.getAttribute("idUsuario") == null) {
 		return "redirect:/login";
 		}
+		List<Hilo> listaHilos = servicioHilo.obtenerTodos();
+		modelo.addAttribute("listaHilos", listaHilos);
 		modelo.addAttribute("hilo", servicioHilo.obtenPorId(idHilo));
 		List<Mensaje> listaMensajes = servicioMensaje.obtenerPorHiloId(idHilo);
 		Collections.reverse(listaMensajes);
@@ -100,8 +102,7 @@ public class ControladorForo {
 			modelo.addAttribute("listaMensajes", servicioMensaje.obtenerPorHiloId(idHilo));
 			return "ForoHilo.jsp";
 		}
-		List<Hilo> listaHilos = servicioHilo.obtenerTodos();
-		modelo.addAttribute("listaHilos", listaHilos);
+		
 		Usuario usuario = servicioUsuario.obtenerUno((Long)sesion.getAttribute("idUsuario"));
 		Hilo hilo = servicioHilo.obtenPorId(idHilo);
 		nuevoMensaje.setHilo(hilo);

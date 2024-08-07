@@ -42,10 +42,7 @@ public class Pyme {
     private String nombre;
     
     @NotBlank
-    private String ubicacion;
-    
-    @NotBlank 
-    private String rutPyme;
+    private String ubicacion;  
     
     @NotNull
     @Column(updatable=false)
@@ -88,7 +85,7 @@ public class Pyme {
     private Date fechaActualizacion;
     
 	public Pyme() {
-		super();
+		
 	}
 
 	public Long getId() {
@@ -193,14 +190,6 @@ public class Pyme {
 
 	public void setFechaActualizacion(Date fechaActualizacion) {
 		this.fechaActualizacion = fechaActualizacion;
-	}
-
-	public String getRutPyme() {
-		return rutPyme;
-	}
-
-	public void setRutPyme(String rutPyme) {
-		this.rutPyme = rutPyme;
 	}
 	
     

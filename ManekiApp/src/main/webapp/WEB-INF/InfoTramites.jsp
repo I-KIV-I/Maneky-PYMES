@@ -65,8 +65,8 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
-					<h3>hola uwu</h3>
-					<p>info tramite 1: tienes que hacer esto!</p>
+					<h3>EMPEZEMOS</h3>
+					<p>        </p>
 				</div>
 			</div>
 		</div>
@@ -81,8 +81,8 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
-					<h3>hola uwu</h3>
-					<p>info tramite 2: tienes que hacer esto!</p>
+					<h3>FINANZAS</h3>
+					<p>   </p>
 				</div>
 			</div>
 		</div>
@@ -97,8 +97,8 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
-					<h3>hola uwu</h3>
-					<p>info tramite 3: tienes que hacer esto!</p>
+					<h3>BONOS</h3>
+					<p>    </p>
 				</div>
 			</div>
 		</div>
@@ -113,8 +113,8 @@
 			</div>
 			<div class="face face2">
 				<div class="content">
-					<h3>hola uwu</h3>
-					<p>info tramite 3: tienes que hacer esto!</p>
+					<h3>PERMISOS</h3>
+					<p>     </p>
 				</div>
 			</div>
 		</div>
@@ -125,13 +125,13 @@
 			<div class="face face1">
 				<div class="content">
 					<img src="/img/document.svg">
-					<h3>Tramite 1</h3>
+					<h3>Tramite 5</h3>
 				</div>
 			</div>
 			<div class="face face2">
 				<div class="content">
-					<h3>hola uwu</h3>
-					<p>info tramite 1: tienes que hacer esto!</p>
+					<h3>IMPUESTOS</h3>
+					<p>     </p>
 				</div>
 			</div>
 		</div>
@@ -141,13 +141,13 @@
 			<div class="face face1">
 				<div class="content">
 					<img src="/img/thumb.svg">
-					<h3>Tramite 2</h3>
+					<h3>Tramite 6</h3>
 				</div>
 			</div>
 			<div class="face face2">
 				<div class="content">
-					<h3>hola uwu</h3>
-					<p>info tramite 2: tienes que hacer esto!</p>
+					<h3>MERCADO</h3>
+					<p>   </p>
 				</div>
 			</div>
 		</div>
