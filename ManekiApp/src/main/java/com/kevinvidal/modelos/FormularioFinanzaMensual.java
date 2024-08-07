@@ -20,6 +20,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="formulario_mensual")
@@ -29,18 +30,25 @@ public class FormularioFinanzaMensual {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
+	@NotBlank
 	private Integer ingresoTotalDiario;
 	
+	@NotBlank
 	private Integer CPV;
 	
+	@NotBlank
 	private Integer gastosDeOperacion;
 	
+	@NotBlank
 	private Integer iva;
 	
+	@NotBlank
 	private Integer impuestos;
 	
+	@NotBlank
 	private Integer declaracionDeRenta;
 	
+	@NotBlank
 	private Integer gananciaNeta;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

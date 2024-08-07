@@ -42,13 +42,13 @@
                 </li>
                 <li>
                     <a href="/informes" class="seleccion">
-                        <span class="icon"><img src="<c:url value='/img/informes.svg'/>" alt="informes" style="height:75px;"></span>
+                        <span class="icon"><img src="<c:url value='/img/informes.svg'/>" alt="informes" style="height:75px"></span>
                         <span class="title" style="height:75px;">Informes</span>
                     </a>
                 </li>
                 <li>
                     <a href="/ajustes" class="seleccion">
-                        <span class="icon"><img src="<c:url value='/img/ajustes.svg'/>" alt="ajustes" style="height:75px;"></span>
+                        <span class="icon"><img src="/img/ajustes.svg" alt="ajustes" style="height:75px"></span>
                         <span class="title" style="height:75px;">Ajustes</span>
                     </a>
                 </li>
@@ -75,7 +75,7 @@
                     <div class="cardName">Ingreso Diario</div>
                 </div>
                 <div class="iconBx">
-                    <img src="<c:url value='/img/coinsCash.svg'/>" alt="Ingreso Diario">
+                    <img src="/img/coinsCash.svg" alt="Ingreso Diario">
                 </div>
             </div>
             <div class="cardcss">
@@ -84,7 +84,7 @@
                     <div class="cardName">CPV</div>
                 </div>
                 <div class="iconBx">
-                    <img src="<c:url value='/img/coins.svg'/>" alt="CPV">
+                    <img src="/img/coins.svg" alt="CPV">
                 </div>
             </div>
             <div class="cardcss">
@@ -102,7 +102,7 @@
                     <div class="cardName">Impuestos</div>
                 </div>
                 <div class="iconBx">
-                    <img src="<c:url value='/img/tax.svg'/>" alt="Impuestos">
+                    <img src="/img/tax.svg" alt="Impuestos">
                 </div>
             </div>
             <div class="cardcss">
@@ -111,7 +111,7 @@
                     <div class="cardName">Ganancia Neta</div>
                 </div>
                 <div class="iconBx">
-                    <img src="<c:url value='/img/profit.svg'/>" alt="Ganancia Neta">
+                    <img src="/img/profit.svg" alt="Ganancia Neta">
                 </div>
             </div>
             <div class="cardcss">
@@ -132,10 +132,130 @@
             </div>
         </div>
         <div class="details">
-            <!-- Detalles aquí -->
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Historial Finanzas</h2>
+                    <a href="#" class="viewAll">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Mes</td>
+                            <td>Ganancia</td>
+                            <td>Gastos(IVA)</td>
+                            <td>Ganancia Neta</td>
+                            <td>Estado</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Enero</td>
+                            <td>$420.000</td>
+                            <td>$120.000</td>
+                            <td>$300.000</td>
+                            <td><span class="status bien">Bien!</span></td>
+                        </tr>
+                        <tr>
+                            <td>Febrero</td>
+                            <td>$120.000</td>
+                            <td>$120.000</td>
+                            <td>$150.000</td>
+                            <td><span class="status regular">Regular</span></td>
+                        </tr>
+                        <tr>
+                            <td>Marzo</td>
+                            <td>$240.000</td>
+                            <td>$120.000</td>
+                            <td>$100.000</td>
+                            <td><span class="status mal">Mejorable</span></td>
+                        </tr>
+                        <tr>
+                            <td>Abril</td>
+                            <td>$240.000</td>
+                            <td>$120.000</td>
+                            <td>$120.000</td>
+                            <td><span class="status regular">Regular</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mayo</td>
+                            <td>$320.000</td>
+                            <td>$120.000</td>
+                            <td>$120.000</td>
+                            <td><span class="status regular">Regular</span></td>
+                        </tr>
+                        <tr>
+                            <td>Junio</td>
+                            <td>$420.000</td>
+                            <td>$120.000</td>
+                            <td>$300.000</td>
+                            <td><span class="status bien">Bien!</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <h2>Consejos</h2>
+                </div>
+                <table>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBx">
+                                <img src="/img/LogoManeki.png">
+                            </div>
+                        </td>
+                        <td>
+                            <h4>
+                                Cuidado
+                                <span>Parece que tus ahorros son bajos, recuerda no gastar demasiado</span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBx">
+                                <img src="/img/LogoManeki.png">
+                            </div>
+                        </td>
+                        <td>
+                            <h4>
+                                Ahorra
+                                <span>Manten siempre un colchon de dinero ahorrado ante cualquier cosa</span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBx">
+                                <img src="/img/LogoManeki.png">
+                            </div>
+                        </td>
+                        <td>
+                            <h4>
+                                Cuidado
+                                <span>No es momento de expandirse por si lo estabas pensando</span>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBx">
+                                <img src="/img/LogoManeki.png">
+                            </div>
+                        </td>
+                        <td>
+                            <h4>
+                                Mantente informado
+                                <span>¿Ya revisaste las ultimas noticias?</span>
+                            </h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Obtener los datos del modelo en formato JSON
             var datos = {
@@ -199,24 +319,18 @@
                             ${finanzasMensuales[4].gananciaNeta},
                             ${finanzasMensuales[5].gananciaNeta}
                         ],
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        fill: true
+                        borderWidth: 1,
+                        backgroundColor: 'rgba(0, 0, 139, 0.2)',
+                        borderColor: 'rgba(0, 0, 139, 1)',
+                        fill: false
                     }]
                 },
                 options: {
                     responsive: true,
-                    scales: {
-                        x: {
-                            beginAtZero: true
-                        },
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
                 }
             });
         });
     </script>
+    <script src="/js/finanzas.js"></script>
 </body>
 </html>
