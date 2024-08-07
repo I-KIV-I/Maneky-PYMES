@@ -1,5 +1,6 @@
 package com.kevinvidal.servicios;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +22,7 @@ public class ServicioFinanzaTotales {
 
     @Autowired
     private RepositorioFinanzasDiarias repositorioFinanzasDiarias;
-    
+
     public List<FinanzasTotales> findAll() {
         List<FinanzasTotales> lista = new ArrayList<>();
         repositorioFinanzaTotales.findAll().forEach(lista::add);
@@ -32,41 +33,51 @@ public class ServicioFinanzaTotales {
         return repositorioFinanzaTotales.findById(id);
     }
     
-    public List<FinanzasTotales> findByPyme(Pyme pyme) {
+    public FinanzasTotales findByPyme(Pyme pyme) {
         return repositorioFinanzaTotales.findByPyme(pyme);
     }
 
     public FinanzasTotales save(FinanzasTotales finanzas, Pyme pyme) {
         List<FormularioFinanzaDiario> listaInforme = repositorioFinanzasDiarias.findByPymeId(pyme.getId());
-        for (FormularioFinanzaDiario form : listaInforme) {
-            // Datos formulario
-            int ingreso = form.getIngresoTotalDiario();
-            int cpv = form.getCPV();
-            int gastosDeOperacion = form.getGastosDeOperacion();
-            int impuestos = form.getImpuestos();
-            int gananciaNeta = form.getGananciaNeta();
-            
-            // Datos montos totales
-            int ingresoTotal = finanzas.getIngresoTotalDiario() + ingreso;
-            int cPVTotal = finanzas.getCPV() + cpv;
-            int gastosDeOperacionTotal = finanzas.getGastosDeOperacion() + gastosDeOperacion;
-            int impuestosTotal = finanzas.getImpuestos() + impuestos;
-            int gananciaNetaTotal = finanzas.getGananciaNeta() + gananciaNeta;
-            
-            finanzas.setIngresoTotalDiario(ingresoTotal);
-            finanzas.setCPV(cPVTotal);
-            finanzas.setGastosDeOperacion(gastosDeOperacionTotal);
-            finanzas.setImpuestos(impuestosTotal);
-            finanzas.setGananciaNeta(gananciaNetaTotal);
+        FinanzasTotales informePorPymes = this.repositorioFinanzaTotales.findByPyme(pyme);
+
+        if (informePorPymes == null) {
+            informePorPymes = new FinanzasTotales();
+            informePorPymes.setPyme(pyme);
         }
 
+        // Inicializar los totales a 0 si es un nuevo informe
+        int ingresoTotal = informePorPymes.getIngresoTotalDiario() == null ? 0 : informePorPymes.getIngresoTotalDiario();
+        int cPVTotal = informePorPymes.getCPV() == null ? 0 : informePorPymes.getCPV();
+        int gastosDeOperacionTotal = informePorPymes.getGastosDeOperacion() == null ? 0 : informePorPymes.getGastosDeOperacion();
+        int impuestosTotal = informePorPymes.getImpuestos() == null ? 0 : informePorPymes.getImpuestos();
+        int gananciaNetaTotal = informePorPymes.getGananciaNeta() == null ? 0 : informePorPymes.getGananciaNeta();
+        
+        // Sumar los datos de todos los formularios
+        for (FormularioFinanzaDiario form : listaInforme) {
+            ingresoTotal += form.getIngresoTotalDiario() == null ? 0 : form.getIngresoTotalDiario();
+            cPVTotal += form.getCPV() == null ? 0 : form.getCPV();
+            gastosDeOperacionTotal += form.getGastosDeOperacion() == null ? 0 : form.getGastosDeOperacion();
+            impuestosTotal += form.getImpuestos() == null ? 0 : form.getImpuestos();
+            gananciaNetaTotal += form.getGananciaNeta() == null ? 0 : form.getGananciaNeta();
+        }
+
+        // Actualizar los totales en el objeto FinanzasTotales
+        informePorPymes.setIngresoTotalDiario(ingresoTotal);
+        informePorPymes.setCPV(cPVTotal);
+        informePorPymes.setGastosDeOperacion(gastosDeOperacionTotal);
+        informePorPymes.setImpuestos(impuestosTotal);
+        informePorPymes.setGananciaNeta(gananciaNetaTotal);
+
+        // Configurar informes diários y pyme si la lista no está vacía
         if (!listaInforme.isEmpty()) {
             FormularioFinanzaDiario form = listaInforme.get(0);
-            finanzas.setInformesDiarios(listaInforme);
-            finanzas.setPyme(form.getPyme());
+            informePorPymes.setInformesDiarios(listaInforme);
+            informePorPymes.setPyme(form.getPyme());
         }
         
-        return repositorioFinanzaTotales.save(finanzas);
+        // Guardar el objeto actualizado en el repositorio
+        return repositorioFinanzaTotales.save(informePorPymes);
     }
 
     public void deleteById(Long id) {

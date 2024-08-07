@@ -9,7 +9,6 @@ import com.kevinvidal.modelos.Pyme;
 
 @Repository
 public interface RepositorioFinanzasTotales extends CrudRepository<FinanzasTotales, Long> {
-	List<FinanzasTotales> findAll();
-	List<FinanzasTotales> findByPyme(Pyme pyme);
-
+    List<FinanzasTotales> findAll();
+    FinanzasTotales findByPyme(Pyme pyme);
 }

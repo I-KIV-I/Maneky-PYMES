@@ -2,12 +2,13 @@ package com.kevinvidal.modelos;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,8 +20,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -31,67 +31,64 @@ import jakarta.validation.constraints.NotNull;
 @Table(name="pymes")
 public class Pyme {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@NotBlank
-	private String rol;
-	
-	@NotBlank
-	private String nombre;
-	
-	@NotBlank
-	private String ubicacion;
-	
-	@NotNull
-	@Column(updatable=false)
-	private String rutCreador;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fechaCreacionEmpresa; 
-	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-		name = "categorias_pymes", 
-		joinColumns = @JoinColumn(name = "pyme_id"), 
-		inverseJoinColumns = @JoinColumn(name = "categoria_id")
-	)
-	private List<Categoria> categorias;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonIgnore
-	@JoinColumn(name="id_usuario")
-	private Usuario usuario;
-	
-	@OneToMany(mappedBy = "pyme")
-	private List<FormularioFinanzaDiario> informesDiarios;
-	
-	@OneToMany(mappedBy = "pyme")
-	private List<FormularioFinanzaMensual> informesMensuales;
-	
-	@OneToMany(mappedBy = "pyme")
-	private List<FinanzasTotales> finanzaTotal;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @NotBlank
+    private String rol;
+    
+    @NotBlank
+    private String nombre;
+    
+    @NotBlank
+    private String ubicacion;
+    
+    @NotBlank 
+    private String rutPyme;
+    
+    @NotNull
+    @Column(updatable=false)
+    private String rutCreador;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fechaCreacionEmpresa; 
+    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "categorias_pymes", 
+        joinColumns = @JoinColumn(name = "pyme_id"), 
+        inverseJoinColumns = @JoinColumn(name = "categoria_id")
+    )
+    private List<Categoria> categorias;
+    
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name="id_usuario")
+    private Usuario usuario;
+    
+    @OneToMany(mappedBy = "pyme")
+    @JsonBackReference
+    private List<FormularioFinanzaDiario> informesDiarios;
+    
+    @OneToMany(mappedBy = "pyme")
+    @JsonBackReference
+    private List<FormularioFinanzaMensual> informesMensuales;
+    
+    @OneToOne(mappedBy="pyme", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @JsonBackReference
+    private FinanzasTotales finanzasTotales;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name="fecha_creacion")
-	private Date fechaCreacion;
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name="fecha_actualizacion")
-	private Date fechaActualizacion;
-	
-	public Pyme() {}
-	
-	@PrePersist
-	protected void onCreate() {
-		this.fechaCreacion = new Date();
-		this.fechaActualizacion = this.fechaCreacion;
-	}
-	
-	@PreUpdate
-	protected void onUpdate() {
-		this.fechaActualizacion = new Date();
+    @Temporal(TemporalType.DATE)
+    @Column(name="fecha_creacion")
+    private Date fechaCreacion;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name="fecha_actualizacion")
+    private Date fechaActualizacion;
+    
+	public Pyme() {
+		super();
 	}
 
 	public Long getId() {
@@ -157,7 +154,7 @@ public class Pyme {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
+
 	public List<FormularioFinanzaDiario> getInformesDiarios() {
 		return informesDiarios;
 	}
@@ -174,12 +171,12 @@ public class Pyme {
 		this.informesMensuales = informesMensuales;
 	}
 
-	public List<FinanzasTotales> getFinanzaTotal() {
-		return finanzaTotal;
+	public FinanzasTotales getFinanzasTotales() {
+		return finanzasTotales;
 	}
 
-	public void setFinanzaTotal(List<FinanzasTotales> finanzaTotal) {
-		this.finanzaTotal = finanzaTotal;
+	public void setFinanzasTotales(FinanzasTotales finanzasTotales) {
+		this.finanzasTotales = finanzasTotales;
 	}
 
 	public Date getFechaCreacion() {
@@ -197,4 +194,14 @@ public class Pyme {
 	public void setFechaActualizacion(Date fechaActualizacion) {
 		this.fechaActualizacion = fechaActualizacion;
 	}
+
+	public String getRutPyme() {
+		return rutPyme;
+	}
+
+	public void setRutPyme(String rutPyme) {
+		this.rutPyme = rutPyme;
+	}
+	
+    
 }

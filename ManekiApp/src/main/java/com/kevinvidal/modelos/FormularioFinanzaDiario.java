@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -37,13 +37,13 @@ public class FormularioFinanzaDiario {
 	private Integer gananciaNeta;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnore
-    @JoinColumn(name="pymeId")
+	@JsonBackReference
+    @JoinColumn(name="pyme_id")
     private Pyme pyme;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnore
-    @JoinColumn(name="finanzas_id")
+	@JsonBackReference
+    @JoinColumn(name="finanzas_totales_id")
     private FinanzasTotales finanzasTotales;
 	
 	public FormularioFinanzaDiario() {
@@ -113,5 +113,12 @@ public class FormularioFinanzaDiario {
 	public void setPyme(Pyme pyme) {
 		this.pyme = pyme;
 	}
-	
+
+	public FinanzasTotales getFinanzasTotales() {
+		return finanzasTotales;
+	}
+
+	public void setFinanzasTotales(FinanzasTotales finanzasTotales) {
+		this.finanzasTotales = finanzasTotales;
+	}
 }

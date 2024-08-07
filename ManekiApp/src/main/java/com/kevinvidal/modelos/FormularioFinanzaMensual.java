@@ -172,6 +172,14 @@ public class FormularioFinanzaMensual {
 		this.pyme = pyme;
 	}
 
+	public FinanzasTotales getFinanzasTotales() {
+		return finanzasTotales;
+	}
+
+	public void setFinanzasTotales(FinanzasTotales finanzasTotales) {
+		this.finanzasTotales = finanzasTotales;
+	}
+
 	
 	
 	

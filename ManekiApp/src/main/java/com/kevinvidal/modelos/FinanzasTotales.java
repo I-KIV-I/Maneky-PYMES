@@ -1,24 +1,27 @@
 package com.kevinvidal.modelos;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="finanzasTotales")
+@Table(name="finanzas_totales")
 public class FinanzasTotales {
 
     @Id
@@ -33,99 +36,141 @@ public class FinanzasTotales {
     private Integer gastosDeOperacion = 0;
     private Integer impuestos = 0;
     private Integer gananciaNeta = 0;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
-    @JoinColumn(name="pymeId")
+    
+    @OneToOne(fetch=FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name="pyme_id") 
     private Pyme pyme;
 
     @OneToMany(mappedBy = "finanzasTotales")
-    private List<FormularioFinanzaDiario> informesDiarios;
+    @JsonBackReference
+    private List<FormularioFinanzaDiario> informesDiarios = new ArrayList<>();
 
     @OneToMany(mappedBy = "finanzasTotales")
-    private List<FormularioFinanzaMensual> informesMensuales;
+    @JsonBackReference
+    private List<FormularioFinanzaMensual> informesMensuales = new ArrayList<>();
 
-    public FinanzasTotales() {
-        super();
+    @PrePersist
+    public void prePersist() {
+        if (informesDiarios == null) {
+            informesDiarios = new ArrayList<>();
+        }
+        for (FormularioFinanzaDiario informeDiario : informesDiarios) {
+            informeDiario.setFinanzasTotales(this);
+        }
     }
 
-    public Long getId() {
-        return id;
+    public void addInformeDiario(FormularioFinanzaDiario informeDiario) {
+        informesDiarios.add(informeDiario);
+        informeDiario.setFinanzasTotales(this);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void removeInformeDiario(FormularioFinanzaDiario informeDiario) {
+        informesDiarios.remove(informeDiario);
+        informeDiario.setFinanzasTotales(null);
     }
 
-    public Date getFechaInformeDiario() {
-        return fechaInformeDiario;
+
+    public void calcularTotales() {
+        this.ingresoTotalDiario = informesDiarios.stream()
+            .mapToInt(FormularioFinanzaDiario::getIngresoTotalDiario)
+            .sum();
+
+        this.CPV = informesDiarios.stream()
+            .mapToInt(FormularioFinanzaDiario::getCPV)
+            .sum();
+
+        this.gastosDeOperacion = informesDiarios.stream()
+            .mapToInt(FormularioFinanzaDiario::getGastosDeOperacion)
+            .sum();
+
+        this.impuestos = informesDiarios.stream()
+            .mapToInt(FormularioFinanzaDiario::getImpuestos)
+            .sum();
+
+        this.gananciaNeta = informesDiarios.stream()
+            .mapToInt(FormularioFinanzaDiario::getGananciaNeta)
+            .sum(); 
     }
 
-    public void setFechaInformeDiario(Date fechaInformeDiario) {
-        this.fechaInformeDiario = fechaInformeDiario;
-    }
 
-    public Integer getIngresoTotalDiario() {
-        return ingresoTotalDiario;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setIngresoTotalDiario(Integer ingresoTotalDiario) {
-        this.ingresoTotalDiario = ingresoTotalDiario;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Integer getCPV() {
-        return CPV;
-    }
+	public Date getFechaInformeDiario() {
+		return fechaInformeDiario;
+	}
 
-    public void setCPV(Integer cPV) {
-        CPV = cPV;
-    }
+	public void setFechaInformeDiario(Date fechaInformeDiario) {
+		this.fechaInformeDiario = fechaInformeDiario;
+	}
 
-    public Integer getGastosDeOperacion() {
-        return gastosDeOperacion;
-    }
+	public Integer getIngresoTotalDiario() {
+		return ingresoTotalDiario;
+	}
 
-    public void setGastosDeOperacion(Integer gastosDeOperacion) {
-        this.gastosDeOperacion = gastosDeOperacion;
-    }
+	public void setIngresoTotalDiario(Integer ingresoTotalDiario) {
+		this.ingresoTotalDiario = ingresoTotalDiario;
+	}
 
-    public Integer getImpuestos() {
-        return impuestos;
-    }
+	public Integer getCPV() {
+		return CPV;
+	}
 
-    public void setImpuestos(Integer impuestos) {
-        this.impuestos = impuestos;
-    }
+	public void setCPV(Integer cPV) {
+		CPV = cPV;
+	}
 
-    public Integer getGananciaNeta() {
-        return gananciaNeta;
-    }
+	public Integer getGastosDeOperacion() {
+		return gastosDeOperacion;
+	}
 
-    public void setGananciaNeta(Integer gananciaNeta) {
-        this.gananciaNeta = gananciaNeta;
-    }
+	public void setGastosDeOperacion(Integer gastosDeOperacion) {
+		this.gastosDeOperacion = gastosDeOperacion;
+	}
 
-    public Pyme getPyme() {
-        return pyme;
-    }
+	public Integer getImpuestos() {
+		return impuestos;
+	}
 
-    public void setPyme(Pyme pyme) {
-        this.pyme = pyme;
-    }
+	public void setImpuestos(Integer impuestos) {
+		this.impuestos = impuestos;
+	}
 
-    public List<FormularioFinanzaDiario> getInformesDiarios() {
-        return informesDiarios;
-    }
+	public Integer getGananciaNeta() {
+		return gananciaNeta;
+	}
 
-    public void setInformesDiarios(List<FormularioFinanzaDiario> informesDiarios) {
-        this.informesDiarios = informesDiarios;
-    }
+	public void setGananciaNeta(Integer gananciaNeta) {
+		this.gananciaNeta = gananciaNeta;
+	}
 
-    public List<FormularioFinanzaMensual> getInformesMensuales() {
-        return informesMensuales;
-    }
+	public Pyme getPyme() {
+		return pyme;
+	}
 
-    public void setInformesMensuales(List<FormularioFinanzaMensual> informesMensuales) {
-        this.informesMensuales = informesMensuales;
-    }
+	public void setPyme(Pyme pyme) {
+		this.pyme = pyme;
+	}
+
+	public List<FormularioFinanzaDiario> getInformesDiarios() {
+		return informesDiarios;
+	}
+
+	public void setInformesDiarios(List<FormularioFinanzaDiario> informesDiarios) {
+		this.informesDiarios = informesDiarios;
+	}
+
+	public List<FormularioFinanzaMensual> getInformesMensuales() {
+		return informesMensuales;
+	}
+
+	public void setInformesMensuales(List<FormularioFinanzaMensual> informesMensuales) {
+		this.informesMensuales = informesMensuales;
+	}
 }
