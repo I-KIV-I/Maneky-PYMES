@@ -100,6 +100,8 @@ public class ControladorForo {
 			modelo.addAttribute("listaMensajes", servicioMensaje.obtenerPorHiloId(idHilo));
 			return "ForoHilo.jsp";
 		}
+		List<Hilo> listaHilos = servicioHilo.obtenerTodos();
+		modelo.addAttribute("listaHilos", listaHilos);
 		Usuario usuario = servicioUsuario.obtenerUno((Long)sesion.getAttribute("idUsuario"));
 		Hilo hilo = servicioHilo.obtenPorId(idHilo);
 		nuevoMensaje.setHilo(hilo);

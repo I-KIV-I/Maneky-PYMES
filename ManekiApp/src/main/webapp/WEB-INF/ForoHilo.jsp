@@ -36,7 +36,7 @@
 				<h1 class="me-5">${hilo.usuario.nombre}</h1>
 			</div>
 			<div>
-			<h4>fecha creacion</h4>
+			<h4><em><fmt:formatDate value="${hilo.fechaActualizacion}" pattern="yyyy-MM-dd"/> / <fmt:formatDate value="${hilo.fechaActualizacion}" pattern="HH:mm"/></em></h4>
 			</div>
 			
 			
