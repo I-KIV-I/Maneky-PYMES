@@ -19,6 +19,11 @@ body{
 	min-height: 100vh;
 	overflow-x: hidden;	
 }
+.centrado{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .barContainer{
 	position: relative;
@@ -551,4 +556,36 @@ body{
 	.user{
 		min-width: 40px;
 	}
+	
 }
+.backButton{
+	margin: 20px;
+ 	background-color: #00131D;
+ 	padding: 5px 10px;
+ 	text-align: center;
+ 	color: #fff;
+ 	border-radius:20px;
+ 	border: 2px solid #00131D;
+ 	box-shadow: 5px 5px 0px #000;
+ 	font-size: 1.2em;
+ 	font-weight: 500;
+ 	height: 70px;
+ 	width: 170px;
+ 	cursor: pointer;
+ 	transition: all 0.3s ease;
+ 	text-decoration: none;
+ }
+ 
+ .backButton:hover {
+  background-color: #fff;
+  color: #00131D;
+  border: 2px solid #00131D;
+  box-shadow: 5px 5px 0px #00131D;
+}
+
+.backButton:active {
+  background-color: #00131D;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+

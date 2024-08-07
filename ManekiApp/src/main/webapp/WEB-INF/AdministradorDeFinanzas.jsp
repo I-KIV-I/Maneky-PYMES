@@ -15,46 +15,64 @@
 </head>
 <body>
     <div class="barContainer">
-        <div class="navigation">
-            <ul class="mainUl">
-                <li class="first">
-                    <a href="/herramientas" class="seleccion">
-                        <span class="icon"><img src="<c:url value='/img/LogoManeki.png'/>" alt="logo" class="logo"></span>
-                        <span class="title"><strong>Maneki Pymes</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="seleccion finanzas">
-                        <div>
-                            <div class="titleBox">
-                                <span class="icon"><img src="<c:url value='/img/finances.svg'/>" alt="icono" style="height:75px;"></span>
-                                <span class="title" style="height:75px;">Finanzas</span>
-                            </div>
-                            <div class="pymeBox">
-                                <ul class="secondUl">
-                                    <c:forEach var="pyme" items="${listaPymes}">
-                                        <li><a href="/finanzas/${pyme.id}" class="pyme">${pyme.nombre}</a></li>
-                                    </c:forEach>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="/informes" class="seleccion">
-                        <span class="icon"><img src="<c:url value='/img/informes.svg'/>" alt="informes" style="height:75px"></span>
-                        <span class="title" style="height:75px;">Informes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/ajustes" class="seleccion">
-                        <span class="icon"><img src="/img/ajustes.svg" alt="ajustes" style="height:75px"></span>
-                        <span class="title" style="height:75px;">Ajustes</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<div class="navigation">
+		<ul class="mainUl">
+			<li class= "first">
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/LogoManeki.png" alt="logo" class="logo"></span>
+					<span class="title"><strong>Maneki Pymes</strong></span>
+				</a>
+			</li>
+			<li>
+				<a href="/herramientas" class="seleccion">
+					<span class="icon"><img src="/img/interface.svg" alt="icono"></span>
+					<span class="title">DashBoard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/perfil" class="seleccion">
+					<span class="icon"><img src="/img/profile.svg" alt="icono profile"></span>
+					<span class="title">Perfil</span>
+				</a>
+			</li>
+			<li>
+				<div class="seleccion finanzas">
+					<div>
+						<div class="titleBox">
+							<span class="icon"><img src="/img/finances.svg" alt="icono" style="height:75px;"></span>
+							<span class="title"  style="height:75px;">Finanzas</span>
+						</div>
+					<div class= "pymeBox">
+						<ul class= "secondUl">
+						<c:forEach var="pyme" items="${listaPyme }">
+							<li><a href="/finanzas/${pyme.id }" class="pyme">${pyme.nombre }</a></li>
+			   			</c:forEach>
+			   			</ul>
+		   			</div>
+		   			</div>
+		   		</div>
+			</li>
+			<li>
+				<a href="/noticias" class="seleccion">
+					<span class="icon"><img src="/img/news.svg" alt="icono"></span>
+					<span class="title">Noticias</span>
+				</a>
+			</li>
+			<li>
+				<a href="/foro" class="seleccion">
+					<span class="icon"><img src="/img/people.svg" alt="icono"></span>
+					<span class="title">Foro</span>
+				</a>
+			</li>
+			<li>
+				<a href="/procesar/logout" class="seleccion">
+					<span class="icon"><img src="/img/logout.svg" alt="icono"></span>
+					<span class="title">Cerrar Sesión</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
     <div class="main">
         <div id="particles-js"></div>
         <div class="topbar">
@@ -84,7 +102,7 @@
                     <div class="cardName">CPV</div>
                 </div>
                 <div class="iconBx">
-                    <img src="/img/coins.svg" alt="CPV">
+                    <img src="/img/coinsCash.svg" alt="Ingreso Diario">
                 </div>
             </div>
             <div class="cardcss">
@@ -93,7 +111,7 @@
                     <div class="cardName">Gastos de Operación</div>
                 </div>
                 <div class="iconBx">
-                    <img src="<c:url value='/img/expenses.svg'/>" alt="Gastos de Operación">
+                    <img src="/img/coinsCash.svg" alt="Ingreso Diario">
                 </div>
             </div>
             <div class="cardcss">
@@ -102,7 +120,7 @@
                     <div class="cardName">Impuestos</div>
                 </div>
                 <div class="iconBx">
-                    <img src="/img/tax.svg" alt="Impuestos">
+                    <img src="/img/coinsCash.svg" alt="Ingreso Diario">
                 </div>
             </div>
             <div class="cardcss">
@@ -111,16 +129,13 @@
                     <div class="cardName">Ganancia Neta</div>
                 </div>
                 <div class="iconBx">
-                    <img src="/img/profit.svg" alt="Ganancia Neta">
+                    <img src="/img/coinsCash.svg" alt="Ingreso Diario">
                 </div>
             </div>
-            <div class="cardcss">
-                <div class="cardName">
+            <div class="cardcss centrado">
                     <form action="/finanzas/informe/diario/${pyme.id}">
-                        <button class="btn btn-link">Ingresa Informe</button>
+                        <button class="backButton">Ingresa Informe</button>
                     </form>
-                </div>
-                <div class="cardName">Ingresa Informe Diario</div>
             </div>
         </div>
         <div class="graphBox">
@@ -166,7 +181,7 @@
                             <td>Marzo</td>
                             <td>$240.000</td>
                             <td>$120.000</td>
-                            <td>$100.000</td>
+                            <td>$120.000</td>
                             <td><span class="status mal">Mejorable</span></td>
                         </tr>
                         <tr>
@@ -312,12 +327,12 @@
                     datasets: [{
                         label: 'Ganancia Neta',
                         data: [
-                            ${finanzasMensuales[0].gananciaNeta},
-                            ${finanzasMensuales[1].gananciaNeta},
-                            ${finanzasMensuales[2].gananciaNeta},
-                            ${finanzasMensuales[3].gananciaNeta},
-                            ${finanzasMensuales[4].gananciaNeta},
-                            ${finanzasMensuales[5].gananciaNeta}
+                        	300.000,
+                        	150.000,
+                        	120.000,
+                            220.000,
+                            120.000,
+                            300.000
                         ],
                         borderWidth: 1,
                         backgroundColor: 'rgba(0, 0, 139, 0.2)',
